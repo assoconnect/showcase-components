@@ -31,9 +31,9 @@ export { default as AnimationBubbles } from './Animations/AnimationBubbles'
 /**
  * Buttons
  */
-export { default as Button } from './Buttons/Button.tsx'
-export { default as ButtonLink } from './Buttons/ButtonLink.tsx'
-export { default as ButtonText } from './Buttons/ButtonText.tsx'
+export { default as Button } from './Buttons/Button'
+export { default as ButtonLink } from './Buttons/ButtonLink'
+export { default as ButtonText } from './Buttons/ButtonText'
 
 /**
  * Headers

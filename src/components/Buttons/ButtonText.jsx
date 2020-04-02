@@ -65,16 +65,7 @@ const ButtonTextArrow = styled(props => <Svg {...props} />)`
 /**
  * Component
  */
-interface Props {
-  children: ReactNode
-  className: string
-  href: string
-}
-const ButtonText = ({
-  className,
-  href,
-  children = 'en savoir plus',
-}: Props) => {
+const ButtonText = ({ className, href, children = 'en savoir plus' }) => {
   return (
     <ButtonStyled
       className={classNames('button', 'button--type-text', className)}

@@ -6,11 +6,8 @@ import classNames from 'classnames/bind'
 /**
  * Style
  */
-interface PropsButtonWrapper {
-  align: string
-}
 const ButtonWrapper = styled.div`
-  text-align: ${({ align }: PropsButtonWrapper) => align};
+  text-align: ${({ align }) => align};
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
@@ -63,15 +60,6 @@ const ButtonStyled = styled.button`
     border: 1px solid ${UI.colors.middleGrey};
   }
 `
-interface PropsButton {
-  children: ReactNode
-  animationOff: boolean
-  className: string
-  size: string
-  theme: string
-  type: string
-  align: string
-}
 
 /**
  * Component
@@ -84,7 +72,7 @@ const Button = ({
   theme,
   type,
   align = 'left',
-}: PropsButton) => (
+}) => (
   <ButtonWrapper align={align} className={classNames(className)}>
     <ButtonStyled
       type={type}

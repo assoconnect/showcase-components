@@ -1,4 +1,4 @@
-import React, { ReactNode, createElement } from 'react'
+import React, { createElement } from 'react'
 import { UI } from '../'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'
@@ -6,25 +6,16 @@ import classNames from 'classnames/bind'
 /**
  * Style
  */
-interface Props {
-  align: string
-  children: ReactNode
-  className: string
-  color: string
-  font: string
-  tag: string
-  id: string
-}
-const MiddleTitleStyled = styled(({ tag, children, ...rest }: Props) =>
+const MiddleTitleStyled = styled(({ tag, children, ...rest }) =>
   createElement(tag, rest, children)
 )`
-  font-family: ${({ font }: Props) => UI.fonts.family[font]};
+  font-family: ${({ font }) => UI.fonts.family[font]};
   font-weight: ${UI.fonts.weight.light};
   font-size: 2.059rem;
   line-height: 3rem;
   letter-spacing: 0.5px;
-  text-align: ${({ align }: Props) => align};
-  color: ${({ color }: Props) => UI.colors[color]};
+  text-align: ${({ align }) => align};
+  color: ${({ color }) => UI.colors[color]};
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
@@ -45,7 +36,7 @@ const MiddleTitle = ({
   font = 'baloo',
   tag = 'h2',
   id,
-}: Props) => (
+}) => (
   <MiddleTitleStyled
     tag={tag}
     align={align}

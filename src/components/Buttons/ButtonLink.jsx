@@ -5,15 +5,6 @@ import classNames from 'classnames/bind'
 /**
  * Component
  */
-interface Props {
-  align: string
-  children: ReactNode
-  className: string
-  href: string
-  size: string
-  target?: string
-  theme: string
-}
 const ButtonLink = ({
   align,
   children,
@@ -22,7 +13,7 @@ const ButtonLink = ({
   target,
   theme,
   size,
-}: Props) => (
+}) => (
   <Link
     href={href}
     target={target}

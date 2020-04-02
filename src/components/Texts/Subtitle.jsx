@@ -6,14 +6,7 @@ import classNames from 'classnames/bind'
 /**
  * Style
  */
-interface Props {
-  align: string
-  children: ReactNode
-  className: string
-  color: string
-  tag: string
-}
-const SubtitleStyled = styled(({ tag, children, ...rest }: Props) =>
+const SubtitleStyled = styled(({ tag, children, ...rest }) =>
   createElement(tag, rest, children)
 )`
   font-family: ${UI.fonts.family.roboto};
@@ -21,8 +14,8 @@ const SubtitleStyled = styled(({ tag, children, ...rest }: Props) =>
   font-size: 1.375rem;
   line-height: 2.1875rem;
   letter-spacing: 0.5px;
-  text-align: ${({ align }: Props) => align};
-  color: ${({ color }: Props) => UI.colors[color]};
+  text-align: ${({ align }) => align};
+  color: ${({ color }) => UI.colors[color]};
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {

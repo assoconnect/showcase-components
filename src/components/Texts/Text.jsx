@@ -1,4 +1,4 @@
-import React, { ReactNode, createElement } from 'react'
+import React, { createElement } from 'react'
 import { UI } from '../'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'
@@ -6,21 +6,12 @@ import classNames from 'classnames/bind'
 /**
  * Style
  */
-interface Props {
-  align: string
-  children: ReactNode
-  className: string
-  color: string
-  size: string
-  light: boolean
-  tag: string
-}
-const TextStyled = styled(({ tag, children, light, ...rest }: Props) =>
+const TextStyled = styled(({ tag, children, light, ...rest }) =>
   createElement(tag, rest, children)
 )`
   font-family: ${UI.fonts.family.roboto};
-  text-align: ${({ align }: Props) => align};
-  color: ${({ color }: Props) => UI.colors[color]};
+  text-align: ${({ align }) => align};
+  color: ${({ color }) => UI.colors[color]};
 
   &.text--size-small {
     font-size: 0.824rem;
@@ -28,8 +19,7 @@ const TextStyled = styled(({ tag, children, light, ...rest }: Props) =>
   }
   &.text--size-big {
     font-size: 1rem;
-    font-weight: ${({ light }: Props) =>
-      UI.fonts.weight[light ? 'light' : 'normal']};
+    font-weight: ${({ light }) => UI.fonts.weight[light ? 'light' : 'normal']};
   }
 `
 
@@ -44,7 +34,7 @@ const Text = ({
   size = 'big',
   tag = 'div',
   light = false,
-}: Props) => {
+}) => {
   /**
    * Output
    */

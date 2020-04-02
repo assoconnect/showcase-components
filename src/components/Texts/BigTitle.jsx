@@ -1,4 +1,4 @@
-import React, { ReactNode, createElement } from 'react'
+import React, { createElement } from 'react'
 import { UI } from '../'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'
@@ -6,28 +6,17 @@ import classNames from 'classnames/bind'
 /**
  * Style
  */
-interface Props {
-  align: string
-  children: ReactNode
-  className: string
-  color: string
-  font: string
-  tag: string
-  display: string
-  minHeight: string
-  id: string
-}
-const BigTitleStyled = styled(({ tag, minHeight, children, ...props }: Props) =>
+const BigTitleStyled = styled(({ tag, minHeight, children, ...props }) =>
   createElement(tag, props, children)
 )`
-  font-family: ${({ font }: Props) => UI.fonts.family[font]};
+  font-family: ${({ font }) => UI.fonts.family[font]};
   font-weight: ${UI.fonts.weight.light};
   font-size: 2.625rem;
   line-height: 3.375rem;
-  text-align: ${({ align }: Props) => align};
-  color: ${({ color }: Props) => UI.colors[color]};
-  min-height: ${({ minHeight }: Props) => minHeight};
-  ${({ display }: Props) => (display ? `display: ${display}` : ``)};
+  text-align: ${({ align }) => align};
+  color: ${({ color }) => UI.colors[color]};
+  min-height: ${({ minHeight }) => minHeight};
+  ${({ display }) => (display ? `display: ${display}` : ``)};
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
@@ -50,7 +39,7 @@ const BigTitle = ({
   display,
   minHeight = 'none',
   id,
-}: Props) => (
+}) => (
   <BigTitleStyled
     tag={tag}
     align={align}

@@ -10,7 +10,6 @@ module.exports = {
     'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-svg',
-    'gatsby-plugin-typescript',
     `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-google-tagmanager`,

@@ -6,7 +6,6 @@
   "main": "lib/components/index.js",
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
-    "@types/styled-components": "^4.1.10",
     "babel-plugin-styled-components": "^1.10.0",
     "classnames": "^2.2.6",
     "formik": "^1.4.3",
@@ -22,7 +21,6 @@
     "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sitemap": "^2.0.6",
     "gatsby-plugin-styled-components": "^3.0.4",
-    "gatsby-plugin-typescript": "^2.0.8",
     "gatsby-source-filesystem": "^2.0.4",
     "lodash": "^4.17.15",
     "rc-slider": "^8.6.4",

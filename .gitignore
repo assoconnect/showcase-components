@@ -1,11 +1,16 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-package-lock.json
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
 
-# misc
+# Build directory
+/public
 .DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+
+# IDE
+/.idea
+
+# Image conversion
+asset.sh
+/_images-a-convertir
+/_images-converties

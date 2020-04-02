@@ -1,0 +1,45 @@
+{
+  "name": "assoconnect-showcase-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "components/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/assoconnect/showcase-components.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/assoconnect/showcase-components/issues"
+  },
+  "homepage": "https://github.com/assoconnect/showcase-components#readme",
+  "devDependencies": {
+    "prettier": "^2.0.2",
+    "react": "^16.13.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "@rebass/grid": "^6.1.0",
+    "classnames": "^2.2.6",
+    "formik": "^2.1.4",
+    "gatsby": "^2.20.10",
+    "rc-table": "^7.4.3",
+    "react-animate-height": "^2.0.20",
+    "react-display-name": "^0.2.5",
+    "react-lazy-load-image-component": "^1.4.1",
+    "react-retina-image": "^2.0.5",
+    "react-scroll": "^1.7.16",
+    "react-slick": "^0.25.2",
+    "react-svg": "^11.0.15",
+    "styled-components": "^5.0.1"
+  }
+}

@@ -4,24 +4,7 @@
   "version": "1.0.0",
   "author": "AssoConnect",
   "main": "index.js",
-  "dependencies": {},
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "compile": "./node_modules/.bin/babel src --out-file index.js"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
-    "gatsby-plugin-remove-trailing-slashes": "^2.0.10",
-    "prettier": "^1.19.1",
+  "dependencies": {
     "@rebass/grid": "^6.0.0-7",
     "@types/styled-components": "^4.1.10",
     "babel-plugin-styled-components": "^1.10.0",
@@ -61,6 +44,24 @@
     "styled-components": "^4.1.1",
     "typed.js": "^2.0.9",
     "yup": "^0.26.10"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "compile": "./node_modules/.bin/babel src --out-file index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "gatsby-plugin-remove-trailing-slashes": "^2.0.10",
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",

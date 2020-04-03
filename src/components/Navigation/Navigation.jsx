@@ -284,6 +284,9 @@ class Navigation extends Component {
                       >
                         {navigationItem.boxes.map((box, j) => (
                           <Box key={j} width="auto" px={[0, '20px']}>
+                            <NavigationChildTitle>
+                              {box.title}
+                            </NavigationChildTitle>
                             {box.children.map((navigationChild, k) => (
                               <NavigationChild
                                 arrow={navigationChild.arrow}

@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import {
-  Box,
-  Flex,
-  NavigationChild,
-  NavigationCta,
-  NavigationItem,
-  NavigationToggle,
-  Svg,
-  UI,
-  Link,
-} from '..'
+import { Box, Flex, Svg, UI, Link } from '..'
+import NavigationChild from './NavigationChild'
+import NavigationCta from './NavigationCta'
+import NavigationItem from './NavigationItem'
+import NavigationToggle from './NavigationToggle'
 
 /**
  * Helpers css

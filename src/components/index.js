@@ -9,7 +9,6 @@ export { default as Box } from './Box'
 export { default as Card } from './Card'
 export { default as ExpansionPanel } from './ExpansionPanel'
 export { default as Flex } from './Flex'
-export { default as Footer } from './Footer'
 export { default as Image } from './Image'
 export { default as Layout } from './Layout'
 export { default as Link } from './Link'
@@ -61,10 +60,6 @@ export { default as CheckList } from './Lists/CheckList'
  * Navigation
  */
 export { default as Navigation } from './Navigation/Navigation'
-export { default as NavigationChild } from './Navigation/NavigationChild'
-export { default as NavigationCta } from './Navigation/NavigationCta'
-export { default as NavigationItem } from './Navigation/NavigationItem'
-export { default as NavigationToggle } from './Navigation/NavigationToggle'
 
 /**
  * Sliders

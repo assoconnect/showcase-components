@@ -228,7 +228,7 @@ class Navigation extends Component {
    * Render
    */
   render() {
-    const { cta, items, type } = this.props
+    const { cta, items, type, translations } = this.props
     const {
       navigationChildIconLoad,
       navigationIsFixed,
@@ -326,7 +326,11 @@ class Navigation extends Component {
               </Box>
             )}
             <Box width="auto" mt={['auto', 0]} ml="auto" px={[0, '30px']}>
-              <NavigationCta navigationType={type} navigationCta={cta} />
+              <NavigationCta
+                navigationType={type}
+                navigationCta={cta}
+                translations={translations}
+              />
             </Box>
           </NavigationInner>
         </NavigationStyled>

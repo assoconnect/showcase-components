@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ButtonLink, UI } from '..'
+import { formatMessage } from '../../utils/translations'
 
 /**
  * Style
@@ -49,7 +50,7 @@ const NavigationCtaStyled = styled(props => <ButtonLink {...props} />)`
 /**
  * Component
  */
-const NavigationCta = ({ navigationCta, navigationType }) => (
+const NavigationCta = ({ navigationCta, navigationType, translations }) => (
   <NavigationCtaWrapper width="auto" alignItems="flex-end">
     <NavigationCtaStyled
       href="https://app.assoconnect.com/login"
@@ -57,7 +58,7 @@ const NavigationCta = ({ navigationCta, navigationType }) => (
       theme="line-white"
       className="navigation__cta"
     >
-      Se&nbsp;connecter
+      {formatMessage('navigation_login', translations)}
     </NavigationCtaStyled>
     {navigationType !== 'signUp' && (
       <NavigationCtaStyled

@@ -107,7 +107,12 @@ class Layout extends Component {
           }}
         >
           <main>
-            <Navigation type={navigationType} cta={cta} items={headerItems} />
+            <Navigation
+              type={navigationType}
+              cta={cta}
+              items={headerItems}
+              translations={translations}
+            />
             {children}
             <Footer
               columns={footerColumns}

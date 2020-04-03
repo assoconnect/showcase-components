@@ -8,20 +8,6 @@ import colors from '../../styles/colors'
 import { formatMessage } from '../../utils/translations'
 
 /**
- * Validation schema
- */
-const validationSchema = yup.object().shape({
-  email: yup
-    .string()
-    .required(formatMessage('inputbutton_validation_required'))
-    .matches(
-      /^([a-z0-9!#$%&'*+/=?^_`{|}~.(),:;<>@[\\\]-]+)$/i,
-      formatMessage('inputbutton_validation_matches')
-    )
-    .email(formatMessage('inputbutton_validation_email')),
-})
-
-/**
  * Style
  */
 const FormStyled = styled(Form)`
@@ -167,7 +153,19 @@ const goToSignup = emailValue => {
 /**
  * Component
  */
-const InputButton = ({ className }) => {
+const InputButton = ({ className, translations }) => {
+  /** Validation schema */
+  const validationSchema = yup.object().shape({
+    email: yup
+      .string()
+      .required(formatMessage('inputbutton_validation_required', translations))
+      .matches(
+        /^([a-z0-9!#$%&'*+/=?^_`{|}~.(),:;<>@[\\\]-]+)$/i,
+        formatMessage('inputbutton_validation_matches', translations)
+      )
+      .email(formatMessage('inputbutton_validation_email', translations)),
+  })
+
   if (typeof window !== 'undefined') {
     return (
       <Formik
@@ -185,7 +183,10 @@ const InputButton = ({ className }) => {
                 <InputButtonStyled
                   name="email"
                   type="email"
-                  placeholder={formatMessage('inputbutton_placeholder')}
+                  placeholder={formatMessage(
+                    'inputbutton_placeholder',
+                    translations
+                  )}
                   icon="common/icon/unicolor/paperplane"
                 />
                 <InputButtonButton
@@ -194,7 +195,7 @@ const InputButton = ({ className }) => {
                   size="big"
                   animationOff
                 >
-                  {formatMessage('inputbutton_text')}
+                  {formatMessage('inputbutton_text', translations)}
                 </InputButtonButton>
               </InputButtonWrapper>
             </InputButtonContainer>

@@ -72,7 +72,7 @@ class VideoButton extends Component {
   }
 
   render() {
-    const { videoId, animationVideoButton = true } = this.props
+    const { videoId, animationVideoButton = true, translations } = this.props
     return (
       <VideoButtonWrapper onClick={this.handleVideoButtonWrapperClick}>
         <Button animationVideoButton={animationVideoButton}>
@@ -81,7 +81,7 @@ class VideoButton extends Component {
             width="20px"
             color="white"
           />
-          {formatMessage('videobutton_text')}
+          {formatMessage('videobutton_text', translations)}
         </Button>
         {this.state.wistiaPopoverVisible && (
           <Video

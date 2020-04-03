@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { AdaptiveImage, UI, Svg, Video } from '..'
-import _chunk from 'lodash/chunk'
+import { chunk } from '../../utils/array'
 
 /**
  * Style
@@ -92,7 +92,7 @@ class VideoPlaceholder extends Component {
       return null
     }
     const titleWords = title.split(' ')
-    return _chunk(titleWords, Math.ceil(titleWords.length / 2))
+    return chunk(titleWords, Math.ceil(titleWords.length / 2))
   }
 
   /**

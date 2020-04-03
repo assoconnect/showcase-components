@@ -186,12 +186,21 @@ class AnimationFooter extends React.Component {
 /**
  * Component
  */
-const Footer = ({ columns, copyrights, cta, preFooter, socials }) => (
+const Footer = ({
+  columns,
+  copyrights,
+  cta,
+  preFooter,
+  socials,
+  translations,
+}) => (
   <>
     {preFooter && (
       <Section wave={{ color: 'blue' }}>
         <Box width={1}>
-          <MiddleTitle>{formatMessage('footer_ready')}</MiddleTitle>
+          <MiddleTitle>
+            {formatMessage('footer_ready', translations)}
+          </MiddleTitle>
           <Space size="big" />
         </Box>
         <Box width={1 / 2} align="right">
@@ -262,7 +271,7 @@ const Footer = ({ columns, copyrights, cta, preFooter, socials }) => (
         </div>
 
         <FooterCopyright>
-          {formatMessage('footer_copyright')}
+          {formatMessage('footer_copyright', translations)}
           {copyrights.map((copyright, i) => (
             <>
               <span>{` • `}</span>

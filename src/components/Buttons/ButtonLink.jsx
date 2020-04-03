@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Button, Link } from '..'
 import classNames from 'classnames/bind'
 

@@ -1,4 +1,4 @@
-const chunk = (input, size) => {
+export const chunk = (input, size) => {
   return input.reduce((arr, item, idx) => {
     return idx % size === 0
       ? [...arr, [item]]

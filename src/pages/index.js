@@ -1,5 +1,4 @@
 import React from 'react'
-import CountTo from 'react-count-to'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
 import {
   AnimationBubbles,
@@ -171,10 +170,7 @@ const IndexPage = () => (
     <Section>
       <Box width={2 / 5}>
         <BigTitle align="left" color="yellow">
-          <LazyLoadComponent>
-            <CountTo to={10000} speed={2000} />
-          </LazyLoadComponent>{' '}
-          associations <br />
+          <LazyLoadComponent>10000</LazyLoadComponent> associations <br />
           <BigTitle align="left" color="blue" tag="span">
             de 8 à 800 000 membres
           </BigTitle>

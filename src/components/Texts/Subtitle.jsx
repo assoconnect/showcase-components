@@ -1,4 +1,4 @@
-import React, { ReactNode, createElement } from 'react'
+import React, { createElement } from 'react'
 import { UI } from '../'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'

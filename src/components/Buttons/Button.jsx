@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { UI } from '../'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'

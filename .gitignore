@@ -9,8 +9,3 @@ yarn-error.log
 
 # IDE
 /.idea
-
-# Image conversion
-asset.sh
-/_images-a-convertir
-/_images-converties

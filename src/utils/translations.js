@@ -3,6 +3,6 @@
  * @param id
  * @param
  */
-export const formatMessage = (id, translations) => {
+export const formatMessage = (id, translations = []) => {
   return translations[id] ? translations[id] : id
 }

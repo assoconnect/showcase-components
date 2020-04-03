@@ -54,6 +54,7 @@ const HeaderBig = ({
   },
   field,
   classNameForm,
+  translations,
 }) => (
   <Header image={wave} videoId={videoId}>
     <Box align="left" width={1 / 2}>
@@ -67,7 +68,7 @@ const HeaderBig = ({
       </Subtitle>
       <HeaderSpace size="medium" />
       {field ? (
-        <InputButton className={classNameForm} />
+        <InputButton className={classNameForm} translations={translations} />
       ) : (
         <ButtonLink href={button.href} button={{ size: 'big' }}>
           {button.children}

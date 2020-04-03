@@ -13,7 +13,13 @@ import {
 /**
  * Component
  */
-const HeaderHome = ({ cards = [], subTitle = '', title = '', videoId }) => (
+const HeaderHome = ({
+  cards = [],
+  subTitle = '',
+  title = '',
+  videoId,
+  translations,
+}) => (
   <Header
     image="components/headers/header-home/wave-blue.svg"
     videoId={videoId}
@@ -34,13 +40,10 @@ const HeaderHome = ({ cards = [], subTitle = '', title = '', videoId }) => (
         {title}
       </BigTitle>
       <Space size="medium" />
-      <InputButton />
+      <InputButton translations={translations} />
     </Box>
     <Box width={1 / 2} overflowRight>
-      <HeaderHomeAnimation
-        cards={cards}
-        yado={{ image: 'yado', alt: '' }}
-      />
+      <HeaderHomeAnimation cards={cards} yado={{ image: 'yado', alt: '' }} />
     </Box>
   </Header>
 )

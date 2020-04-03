@@ -61,6 +61,7 @@ class Layout extends Component {
           text: <>Placeholder </>,
         },
       },
+      translations,
     } = this.props
     return (
       <>
@@ -113,6 +114,7 @@ class Layout extends Component {
               cta={footerCta}
               preFooter={preFooter}
               socials={footerSocials}
+              translations={translations}
             />
           </main>
         </ThemeProvider>

@@ -1,8 +1,7 @@
 /**
  * Returns the translation for given id
  * @param id
- * @param
+ * @param translations
  */
-export const formatMessage = (id, translations = []) => {
-  return translations[id] ? translations[id] : id
-}
+export const formatMessage = (id, translations = []) =>
+  translations[id] ? translations[id] : id

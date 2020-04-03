@@ -37,6 +37,7 @@ const Header = ({
   image,
   videoId,
   animationVideoButton = true,
+  translations,
 }) => (
   <HeaderStyled
     style={{
@@ -50,6 +51,7 @@ const Header = ({
       <VideoButton
         animationVideoButton={animationVideoButton}
         videoId={videoId}
+        translations={translations}
       />
     )}
   </HeaderStyled>

@@ -135,6 +135,21 @@ const FooterList = styled.li`
     line-height: 48px;
   }
 `
+const FooterLanguageSwitch = styled(props => <select {...props} />)`
+  border-radius: 4px;
+  padding: 5px 20px 5px 5px;
+  font-size: 14px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  margin: 14px 0 2px;
+`
+const FooterLanguageSwitchOption = styled(props => <option {...props} />)`
+  color: #626262;
+  background: #fff;
+  transition: 0.3s ease;
+  min-height: 29px;
+`
 
 /**
  * Component used
@@ -242,6 +257,21 @@ const Footer = ({
             </FooterLink>
           ))}
         </FooterSocialWrapper>
+
+        {/* Temporarly disabled until US verison is ready */}
+        {/*<FooterLanguageSwitch*/}
+        {/*  value={formatMessage('site_url', translations)}*/}
+        {/*  onChange={event => {*/}
+        {/*    window.location.href = event.target.value*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  <FooterLanguageSwitchOption value="https://www.assoconnect.org/en-US">*/}
+        {/*    English (USA)*/}
+        {/*  </FooterLanguageSwitchOption>*/}
+        {/*  <FooterLanguageSwitchOption value="https://www.assoconnect.com/">*/}
+        {/*    France*/}
+        {/*  </FooterLanguageSwitchOption>*/}
+        {/*</FooterLanguageSwitch>*/}
 
         <Flex justifyContent="space-between" className="hidden-mobile">
           {columns.map((footerColumn, i) => (

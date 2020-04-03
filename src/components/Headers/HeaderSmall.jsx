@@ -34,8 +34,20 @@ const ImageStyled = styled(props => <AdaptiveImage {...props} />)`
 /**
  * Component
  */
-const HeaderSmall = ({ className, yado, title, subTitle, button, videoId }) => (
-  <HeaderStyled className={`${className} header`} videoId={videoId}>
+const HeaderSmall = ({
+  className,
+  yado,
+  title,
+  subTitle,
+  button,
+  videoId,
+  translations,
+}) => (
+  <HeaderStyled
+    className={`${className} header`}
+    videoId={videoId}
+    translations={translations}
+  >
     <Flex alignItems="center">
       <Box width={yado ? 3 / 4 : 1}>
         <BigTitle align="left" tag="h1">

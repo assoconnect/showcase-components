@@ -23,6 +23,7 @@ const HeaderHome = ({
   <Header
     image="components/headers/header-home/wave-blue.svg"
     videoId={videoId}
+    translations={translations}
   >
     <Box mt={['-2rem', '-4.375rem']} align="left" width={1 / 2}>
       <Svg

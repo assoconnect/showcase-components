@@ -56,7 +56,7 @@ const HeaderBig = ({
   classNameForm,
   translations,
 }) => (
-  <Header image={wave} videoId={videoId}>
+  <Header image={wave} videoId={videoId} translations={translations}>
     <Box align="left" width={1 / 2}>
       <Space size="big" className="hidden-desktop" />
       <BigTitle align="left" tag="h1">

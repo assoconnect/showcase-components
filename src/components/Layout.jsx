@@ -13,14 +13,14 @@ class Layout extends Component {
    * Component did mount
    */
   componentDidMount() {
-    const { meta } = this.props
+    const { meta, mixpanelEvent = 'view.page' } = this.props
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
       'page-viewed': meta.title,
     })
 
     if (this.context.mixpanel) {
-      this.context.mixpanel.track('view.page')
+      this.context.mixpanel.track(mixpanelEvent)
     }
   }
 

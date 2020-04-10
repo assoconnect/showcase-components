@@ -112,48 +112,52 @@ const getHubspotBody = data => {
   })
 }
 
-const fetchHubspot = emailValue => {
-  fetch(
-    'https://api.hsforms.com/submissions/v3/integration/submit/3038993/f4570db0-c0f3-4260-9c5d-8cb8cf4ab67d',
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      mode: 'cors',
-      method: 'POST',
-      body: getHubspotBody({
-        email: emailValue,
-        referrer: document.referrer,
-        page: document.title,
-        pageUri: window.location.href,
-        pageName: document.title,
-      }),
-    }
-  )
-    .catch(error => {
-      console.error(error)
-    })
-    .finally(() => {
-      goToSignup(emailValue)
-    })
-}
-
-const goToSignup = emailValue => {
-  setTimeout(() => {
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      'email-passed': emailValue,
-    })
-    window.location.href = `https://app.assoconnect.com/sign-up${
-      window.location.search.length ? `${window.location.search}&` : '?'
-    }email=${emailValue}`
-  }, 400)
-}
-
 /**
  * Component
  */
-const InputButton = ({ className, translations }) => {
+const InputButton = ({
+  className,
+  translations,
+  href = 'https://app.assoconnect.com/sign-up',
+}) => {
+  const goToSignup = emailValue => {
+    setTimeout(() => {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        'email-passed': emailValue,
+      })
+      window.location.href = `${href}${
+        window.location.search.length ? `${window.location.search}&` : '?'
+      }email=${emailValue}`
+    }, 400)
+  }
+
+  const fetchHubspot = emailValue => {
+    fetch(
+      'https://api.hsforms.com/submissions/v3/integration/submit/3038993/f4570db0-c0f3-4260-9c5d-8cb8cf4ab67d',
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+        method: 'POST',
+        body: getHubspotBody({
+          email: emailValue,
+          referrer: document.referrer,
+          page: document.title,
+          pageUri: window.location.href,
+          pageName: document.title,
+        }),
+      }
+    )
+      .catch(error => {
+        console.error(error)
+      })
+      .finally(() => {
+        goToSignup(emailValue)
+      })
+  }
+
   /** Validation schema */
   const validationSchema = yup.object().shape({
     email: yup

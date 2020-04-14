@@ -14,6 +14,7 @@ import {
  * Component
  */
 const HeaderHome = ({
+  buttonHref,
   cards = [],
   subTitle = '',
   title = '',
@@ -41,7 +42,7 @@ const HeaderHome = ({
         {title}
       </BigTitle>
       <Space size="medium" />
-      <InputButton translations={translations} />
+      <InputButton translations={translations} href={buttonHref} />
     </Box>
     <Box width={1 / 2} overflowRight>
       <HeaderHomeAnimation cards={cards} yado={{ image: 'yado', alt: '' }} />

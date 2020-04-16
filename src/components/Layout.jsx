@@ -29,6 +29,7 @@ class Layout extends Component {
    */
   render() {
     const {
+      hreflangs,
       children,
       meta: {
         title = 'AssoConnect',
@@ -64,9 +65,18 @@ class Layout extends Component {
       },
       translations,
     } = this.props
+    const url = typeof window !== 'undefined' ? window.location.href : ''
     return (
       <>
         <Helmet defer={false}>
+          {hreflangs.map(hreflang => (
+            <link
+              rel="alternate"
+              href={hreflang.href}
+              hreflang={hreflang.lang}
+            />
+          ))}
+          <link rel="canonical" href={url} />
           <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://showcase.azureedge.net" />

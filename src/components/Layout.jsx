@@ -29,7 +29,7 @@ class Layout extends Component {
    */
   render() {
     const {
-      hreflangs,
+      hreflangs = [],
       children,
       meta: {
         title = 'AssoConnect',

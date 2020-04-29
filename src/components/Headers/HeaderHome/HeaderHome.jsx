@@ -20,6 +20,7 @@ const HeaderHome = ({
   title = '',
   videoId,
   translations,
+  hubspotId,
 }) => (
   <Header
     image="components/headers/header-home/wave-blue.svg"
@@ -42,7 +43,11 @@ const HeaderHome = ({
         {title}
       </BigTitle>
       <Space size="medium" />
-      <InputButton translations={translations} href={buttonHref} />
+      <InputButton
+        translations={translations}
+        href={buttonHref}
+        hubspotId={hubspotId}
+      />
     </Box>
     <Box width={1 / 2} overflowRight>
       <HeaderHomeAnimation cards={cards} yado={{ image: 'yado', alt: '' }} />

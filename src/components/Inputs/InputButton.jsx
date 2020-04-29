@@ -134,29 +134,33 @@ const InputButton = ({
   }
 
   const fetchHubspot = emailValue => {
-    fetch(
-      `https://api.hsforms.com/submissions/v3/integration/submit/3038993/${hubspotId}`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-        method: 'POST',
-        body: getHubspotBody({
-          email: emailValue,
-          referrer: document.referrer,
-          page: document.title,
-          pageUri: window.location.href,
-          pageName: document.title,
-        }),
-      }
-    )
-      .catch(error => {
-        console.error(error)
-      })
-      .finally(() => {
-        goToSignup(emailValue)
-      })
+    if (hubspotId) {
+      fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/3038993/${hubspotId}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'cors',
+          method: 'POST',
+          body: getHubspotBody({
+            email: emailValue,
+            referrer: document.referrer,
+            page: document.title,
+            pageUri: window.location.href,
+            pageName: document.title,
+          }),
+        }
+      )
+        .catch(error => {
+          console.error(error)
+        })
+        .finally(() => {
+          goToSignup(emailValue)
+        })
+    } else {
+      goToSignup(emailValue)
+    }
   }
 
   /** Validation schema */

@@ -1,10 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import { ButtonText, SmallTitle, Text, Svg, UI } from "../../"
-// TODO Violaine : pourquoi pas nos flex et box ?
-import { Flex, Box } from "@rebass/grid"
-import { checkSize } from "../../../utils/validators"
-import Space from "../../Space"
+import React from 'react'
+import styled from 'styled-components'
+import { ButtonText, SmallTitle, Text, Svg, UI } from '../../'
+import { Flex, Box } from '@rebass/grid'
+import { checkSize } from '../../../utils/validators'
+import Space from '../../Space'
 
 /**
  * Style
@@ -53,9 +52,9 @@ const SliderFeatureSlide = ({ title, image, buttonText, href, text }) => {
       <SliderFeatureSlideCard>
         <Box
           width={[1, 1 / 4]}
-          mx={[0, "4rem"]}
-          my={[0, "2rem"]}
-          mt={["1rem", 0]}
+          mx={[0, '4rem']}
+          my={[0, '2rem']}
+          mt={['1rem', 0]}
         >
           <SliderFeatureSlideIco
             src={`common/icon/multicolor/${image.link}`}
@@ -63,7 +62,7 @@ const SliderFeatureSlide = ({ title, image, buttonText, href, text }) => {
             align="center"
           />
         </Box>
-        <Box mr={[0, "4rem"]} my={[0, "2rem"]} mt={["1rem", 0]}>
+        <Box mr={[0, '4rem']} my={[0, '2rem']} mt={['1rem', 0]}>
           <Space size="medium"></Space>
           <SmallTitle color="turquoise" align="left">
             {title}

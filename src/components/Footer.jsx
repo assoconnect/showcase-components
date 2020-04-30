@@ -77,7 +77,6 @@ const FooterStyled = styled.footer`
   font-size: 0.824rem;
   color: ${UI.colors.white};
   padding: 1rem 30px;
-  /* TODO Violaine : background-color inutile si background présent en dessous */
   background-color: ${UI.colors.darkBlue};
   position: relative;
   z-index: 10;
@@ -258,20 +257,19 @@ const Footer = ({
           ))}
         </FooterSocialWrapper>
 
-        {/* Temporarly disabled until US verison is ready */}
-        {/*<FooterLanguageSwitch*/}
-        {/*  value={formatMessage('site_url', translations)}*/}
-        {/*  onChange={event => {*/}
-        {/*    window.location.href = event.target.value*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <FooterLanguageSwitchOption value="https://www.assoconnect.org/en-US">*/}
-        {/*    English (USA)*/}
-        {/*  </FooterLanguageSwitchOption>*/}
-        {/*  <FooterLanguageSwitchOption value="https://www.assoconnect.com/">*/}
-        {/*    France*/}
-        {/*  </FooterLanguageSwitchOption>*/}
-        {/*</FooterLanguageSwitch>*/}
+        <FooterLanguageSwitch
+          value={formatMessage('site_url', translations)}
+          onChange={event => {
+            window.location.href = event.target.value
+          }}
+        >
+          <FooterLanguageSwitchOption value="https://www.assoconnect.org/en-US">
+            English (USA)
+          </FooterLanguageSwitchOption>
+          <FooterLanguageSwitchOption value="https://www.assoconnect.com/">
+            France
+          </FooterLanguageSwitchOption>
+        </FooterLanguageSwitch>
 
         <Flex justifyContent="space-between" className="hidden-mobile">
           {columns.map((footerColumn, i) => (

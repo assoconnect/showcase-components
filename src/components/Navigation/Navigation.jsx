@@ -228,7 +228,7 @@ class Navigation extends Component {
    * Render
    */
   render() {
-    const { cta, items, type, translations } = this.props
+    const { cta, items, type, translations, homeUrl } = this.props
     const {
       navigationChildIconLoad,
       navigationIsFixed,
@@ -254,7 +254,7 @@ class Navigation extends Component {
             alignItems="flex-end"
           >
             <NavigationLogoWrapper px="0" width="125px">
-              <Link href="/" isStyled={false}>
+              <Link href={homeUrl} isStyled={false}>
                 <NavigationLogo
                   className="navigation__logo"
                   navigationIsFixed={navigationIsFixed}

@@ -64,7 +64,6 @@ class Layout extends Component {
         },
       },
       translations,
-      homeUrl
     } = this.props
     const url = typeof window !== 'undefined' ? window.location.href : ''
     return (
@@ -123,7 +122,6 @@ class Layout extends Component {
               cta={cta}
               items={headerItems}
               translations={translations}
-              homeUrl={homeUrl}
             />
             {children}
             <Footer

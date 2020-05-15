@@ -233,6 +233,7 @@ class Navigation extends Component {
       navigationChildIconLoad,
       navigationIsFixed,
       navigationMobileIsOpened,
+      homePath,
     } = this.state
     return (
       <>
@@ -254,7 +255,7 @@ class Navigation extends Component {
             alignItems="flex-end"
           >
             <NavigationLogoWrapper px="0" width="125px">
-              <Link href="/" isStyled={false}>
+              <Link href={homePath} isStyled={false}>
                 <NavigationLogo
                   className="navigation__logo"
                   navigationIsFixed={navigationIsFixed}

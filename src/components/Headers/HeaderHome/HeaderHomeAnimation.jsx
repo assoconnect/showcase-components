@@ -63,6 +63,10 @@ const YadoStyled = styled(props => <AdaptiveImage {...props} />)`
   height: 20.5rem;
 `
 
+const DashboardContainerStyled = styled(props => <AdaptiveImage {...props} />)`
+  margin-top: 15px;
+`
+
 const AnimationHeaderText = styled.p`
   font-family: ${UI.fonts.family.baloo};
   font-weight: ${UI.fonts.weight.light};
@@ -77,7 +81,7 @@ const AnimationHeaderText = styled.p`
 /**
  * Component
  */
-const HeaderHomeAnimation = ({ cards, yado }) => (
+const HeaderHomeAnimation = ({ cards, srcYado, yado }) => (
   <>
     <Container className="hidden-mobile">
       <MenuStyled
@@ -128,10 +132,7 @@ const HeaderHomeAnimation = ({ cards, yado }) => (
         />
       )}
     </Container>
-    <AdaptiveImage
-      src="pages/index/dashboard-mobile"
-      className="hidden-desktop"
-    />
+    <DashboardContainerStyled className="hidden-desktop" src={srcYado} />
   </>
 )
 

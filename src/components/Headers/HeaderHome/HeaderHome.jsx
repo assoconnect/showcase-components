@@ -16,6 +16,7 @@ import {
 const HeaderHome = ({
   buttonHref,
   cards = [],
+  srcYado = '',
   subTitle = '',
   title = '',
   videoId,
@@ -50,7 +51,11 @@ const HeaderHome = ({
       />
     </Box>
     <Box width={1 / 2} overflowRight>
-      <HeaderHomeAnimation cards={cards} yado={{ image: 'yado', alt: '' }} />
+      <HeaderHomeAnimation
+        srcYado={srcYado}
+        cards={cards}
+        yado={{ image: 'yado', alt: '' }}
+      />
     </Box>
   </Header>
 )

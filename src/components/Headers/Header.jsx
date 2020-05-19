@@ -20,7 +20,12 @@ const HeaderStyled = styled(props => <Flex custom={false} {...props} />)`
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     background-size: auto 70%;
-    background-position: top left 28%;
+    background-position: top left;
+  }
+
+  @media screen and (max-width: ${UI.breakpoints.smallMobile}) {
+    background-size: auto 70%;
+    background-position: top left 19%;
   }
 `
 const HeaderContent = styled(props => <Flex {...props} />)`

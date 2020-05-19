@@ -43,6 +43,7 @@ const IndexPage = () => (
   >
     <HeaderHome
       cards={headerHomeCards}
+      srcYado="pages/index/yado_homepage_dashboard_fr"
       subTitle={
         <>
           Changez le monde,

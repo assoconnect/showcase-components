@@ -55,6 +55,7 @@ const HeaderBig = ({
   field,
   classNameForm,
   translations,
+  hubspotId,
 }) => (
   <Header image={wave} videoId={videoId} translations={translations}>
     <Box align="left" width={1 / 2}>
@@ -68,7 +69,7 @@ const HeaderBig = ({
       </Subtitle>
       <HeaderSpace size="medium" />
       {field ? (
-        <InputButton className={classNameForm} translations={translations} />
+        <InputButton className={classNameForm} hubspotId={hubspotId} translations={translations} />
       ) : (
         <ButtonLink href={button.href} button={{ size: 'big' }}>
           {button.children}

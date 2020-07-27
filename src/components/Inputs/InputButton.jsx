@@ -134,6 +134,7 @@ const InputButton = ({
   }
 
   const fetchHubspot = emailValue => {
+    console.log('hubspotId on InputButton', hubspotId);
     if (hubspotId) {
       fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/3038993/${hubspotId}`,

@@ -17,6 +17,7 @@ const AnimationImageInner = styled.div`
     height: 100%;
     width: auto;
     max-width: none !important;
+    display: block;
   }
   &:hover {
     .image--hover {

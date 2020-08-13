@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { Box, Flex, Svg, UI, Link } from '..'
 import NavigationChild from './NavigationChild'
-import NavigationCta from './NavigationCta'
+import NavigationButtons from './NavigationButtons'
 import NavigationItem from './NavigationItem'
 import NavigationToggle from './NavigationToggle'
 
@@ -16,7 +16,7 @@ const navigationWhiteCss = css`
   .navigation__logo .svg--color-primary {
     fill: ${UI.colors.blue};
   }
-  .navigation__cta .button--theme-line-white {
+  .navigation__buttons .button--theme-line-white {
     color: ${UI.colors.middleGrey};
     border-color: ${UI.colors.middleGrey};
   }
@@ -79,9 +79,8 @@ const NavigationStyled = styled.nav`
   padding-left: 2.5rem;
 
   /* White mode */
-  ${({ navigationType }) =>
-    ['white', 'signUp', 'network'].includes(navigationType) &&
-    navigationWhiteCss};
+  ${({ headerBackgroundColor }) =>
+    headerBackgroundColor === 'white' && navigationWhiteCss};
   /* Scroll Fixed (only desktop mode) */
   ${({ navigationIsFixed }) => navigationIsFixed && navigationFixedCss};
   /* Mobile mode */
@@ -213,22 +212,22 @@ class Navigation extends Component {
     })
   }
 
-  getNavigationLogoSrc = (navigationIsFixed, navigationType) => {
-    if (navigationIsFixed) {
-      return 'common/logo/assoconnect-simple'
-    }
-    if (navigationType === 'network') {
-      return 'common/logo/assoconnect-networks'
-    }
-
-    return 'common/logo/assoconnect'
+  getNavigationLogoSrc = navigationIsFixed => {
+    return navigationIsFixed
+      ? 'common/logo/assoconnect-simple'
+      : 'common/logo/assoconnect'
   }
 
   /**
    * Render
    */
   render() {
-    const { cta, homePath, items, type, translations } = this.props
+    const {
+      headerBackgroundColor,
+      homePath,
+      items,
+      navigationButtons,
+    } = this.props
     const {
       navigationChildIconLoad,
       navigationIsFixed,
@@ -241,12 +240,11 @@ class Navigation extends Component {
           navigationIsFixed={navigationIsFixed}
           navigationToggleBurgerFunction={this.handleNavigationToggleBurger}
           navigationMobileIsOpened={navigationMobileIsOpened}
-          navigationType={type}
         />
         <NavigationStyled
+          headerBackgroundColor={headerBackgroundColor}
           navigationIsFixed={navigationIsFixed}
           navigationMobileIsOpened={navigationMobileIsOpened}
-          navigationType={type}
         >
           <NavigationInner
             navigationIsFixed={navigationIsFixed}
@@ -261,12 +259,11 @@ class Navigation extends Component {
                   color="white"
                   width="auto"
                   height={navigationIsFixed ? '38px' : '65px'}
-                  src={this.getNavigationLogoSrc(navigationIsFixed, type)}
+                  src={this.getNavigationLogoSrc(navigationIsFixed)}
                 />
               </Link>
             </NavigationLogoWrapper>
-
-            {type !== 'signUp' && (
+            {!!items && (
               <Box
                 width="auto"
                 px={[0, '30px']}
@@ -326,11 +323,7 @@ class Navigation extends Component {
               </Box>
             )}
             <Box width="auto" mt={['auto', 0]} ml="auto" px={[0, '30px']}>
-              <NavigationCta
-                navigationType={type}
-                navigationCta={cta}
-                translations={translations}
-              />
+              <NavigationButtons navigationButtons={navigationButtons} />
             </Box>
           </NavigationInner>
         </NavigationStyled>

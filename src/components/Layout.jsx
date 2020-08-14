@@ -36,21 +36,12 @@ class Layout extends Component {
         description,
         image = 'common/component/head/facebook-600x600',
       },
-      navigationType = 'blue',
       noindex,
       preFooter,
+      headerBackgroundColor = 'blue',
       headerItems = [],
       footerColumns = [],
-      cta = {
-        network: {
-          text: 'Placeholder',
-          href: '/',
-        },
-        default: {
-          text: 'Placeholder',
-          href: '/',
-        },
-      },
+      navigationButtons = [],
       footerSocials = [],
       footerCopyrights = [],
       footerCta = {
@@ -64,7 +55,7 @@ class Layout extends Component {
         },
       },
       translations,
-      homePath
+      homePath,
     } = this.props
     const url = typeof window !== 'undefined' ? window.location.href : ''
     return (
@@ -119,11 +110,10 @@ class Layout extends Component {
         >
           <main>
             <Navigation
-              type={navigationType}
-              cta={cta}
+              navigationButtons={navigationButtons}
               items={headerItems}
-              translations={translations}
               homePath={homePath || '/'}
+              headerBackgroundColor={headerBackgroundColor}
             />
             {children}
             <Footer

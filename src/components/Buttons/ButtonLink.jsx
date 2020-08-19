@@ -7,23 +7,28 @@ import classNames from 'classnames/bind'
  */
 const ButtonLink = ({
   align,
+  id,
   children,
   className,
   href,
   target,
   theme,
   size,
-}) => (
-  <Link
-    href={href}
-    target={target}
-    className={classNames('button', 'button--type-link', className)}
-  >
-    <Button align={align} size={size} theme={theme}>
-      {children}
-    </Button>
-  </Link>
-)
+}) => {
+  return (
+    <div id={id}>
+      <Link
+        href={href}
+        target={target}
+        className={classNames('button', 'button--type-link', className)}
+      >
+        <Button align={align} size={size} theme={theme}>
+          {children}
+        </Button>
+      </Link>
+    </div>
+  )
+}
 ButtonLink.displayName = 'ButtonLink' // https://github.com/facebook/react/issues/4915#issuecomment-335803765
 
 export default ButtonLink

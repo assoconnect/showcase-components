@@ -40,6 +40,7 @@ const AdaptiveImage = ({
   visibleByDefault = false,
   inline,
   roundShape = false,
+  id,
   style,
 }) => (
   <ImageWrapper
@@ -49,6 +50,7 @@ const AdaptiveImage = ({
     className={classNames('image', className)}
     inline={inline}
     style={style}
+    id={id}
   >
     <LazyLoadComponent threshold={400} visibleByDefault={visibleByDefault}>
       <picture>

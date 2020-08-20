@@ -18,6 +18,22 @@ const AnimationImageInner = styled.div`
     width: auto;
     max-width: none !important;
     display: block;
+
+    @media screen and (max-width: ${UI.breakpoints.mobile}) {
+      height: calc(100vw - 60px) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+  .slick-slide &,
+  & picture {
+    @media screen and (max-width: ${UI.breakpoints.mobile}) {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
   }
   &:hover {
     .image--hover {
@@ -27,8 +43,15 @@ const AnimationImageInner = styled.div`
       opacity: 0;
     }
   }
+
+  @media screen and (max-width: ${UI.breakpoints.mobile}) {
+    height: calc(100vw - 60px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 `
-const ImageStyled = styled(props => <AdaptiveImage {...props} />)`
+const ImageStyled = styled((props) => <AdaptiveImage {...props} />)`
   height: calc(100vw / 3 - 30px * 2);
   max-height: calc(1500px / 3 - 30px * 2);
   max-width: none !important;
@@ -36,13 +59,17 @@ const ImageStyled = styled(props => <AdaptiveImage {...props} />)`
 
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     height: calc(100vw - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
-const ImageFun = styled(props => <ImageStyled {...props} />)`
+const ImageFun = styled((props) => <ImageStyled {...props} />)`
   position: absolute;
   top: 0;
   left: 0;
   transition: 0.5s;
+  width: 100%;
 `
 
 /**

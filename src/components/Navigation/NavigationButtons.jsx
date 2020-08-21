@@ -18,18 +18,19 @@ const NavigationButtonsWrapper = styled.div`
     margin-top: auto;
     height 190px;
   }
-`
-const NavigationButtonsStyled = styled(props => <ButtonLink {...props} />)`
-  display: inline-block;
-  margin: 0 10px;
-
-  &:first-child {
+  
+  & > div:first-child > a {
     margin-left: 0;
   }
 
-  &:last-child {
+  & > div:last-child > a{
     margin-right: 0;
   }
+  
+`
+const NavigationButtonsStyled = styled((props) => <ButtonLink {...props} />)`
+  display: inline-block;
+  margin: 0 10px;
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {

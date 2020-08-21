@@ -33,7 +33,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host=0.0.0.0",
     "start": "npm run develop",
     "compile": "./node_modules/.bin/babel src --ignore src/pages --plugins=@babel/plugin-proposal-class-properties --presets=@babel/preset-react,@babel/preset-env --out-dir lib"
   },

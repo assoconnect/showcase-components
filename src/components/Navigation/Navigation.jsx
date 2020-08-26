@@ -61,38 +61,36 @@ const navigationInnerFixedCss = css`
  * Style
  */
 const NavigationMargin = styled.div`
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    height: 59px;
-  }
   @media screen and (min-width: ${UI.breakpoints.mobile}) {
     height: 100px;
   }
+  height: 59px;
 `
 const NavigationStyled = styled.nav`
-  transition: background-color ease-out 0.2s;
-  background-color: ${UI.colors.blue};
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-  padding-left: 2.5rem;
-
+  @media screen and (min-width: ${UI.breakpoints.mobile}) {
+    transition: background-color ease-out 0.2s;
+    background-color: ${UI.colors.blue};
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding-left: 2.5rem;
+  }
+  
   /* White mode */
   ${({ headerBackgroundColor }) =>
     headerBackgroundColor === 'white' && navigationWhiteCss};
   /* Scroll Fixed (only desktop mode) */
   ${({ navigationIsFixed }) => navigationIsFixed && navigationFixedCss};
-  /* Mobile mode */
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    padding-left: 0;
-    transition: all ease-out 0.2s;
-    ${({ navigationMobileIsOpened }) =>
-      !navigationMobileIsOpened && 'left:-100%'};
-    position: fixed;
-    bottom: 0;
-    ${navigationWhiteCss};
-  }
+  
+  padding-left: 0;
+  transition: all ease-out 0.2s;
+  ${({ navigationMobileIsOpened }) =>
+    !navigationMobileIsOpened && 'left:-100%'};
+  position: fixed;
+  bottom: 0;
+  ${navigationWhiteCss};
 `
 const NavigationInner = styled(props => <Flex {...props} />)`
   /* Specific style for all features */
@@ -115,21 +113,20 @@ const NavigationInner = styled(props => <Flex {...props} />)`
       height: 85px;
       margin-bottom: 15px;
     }
+    /* Scroll fixed (only desktop mode) */
+  
+    ${({ navigationIsFixed }) => navigationIsFixed && navigationInnerFixedCss};
   }
-  /* Mobile mode */
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    height: calc(100% - 60px);
-    margin-top: 60px;
-    overflow-y: scroll;
-  }
-  /* Scroll fixed (only desktop mode) */
-  ${({ navigationIsFixed }) => navigationIsFixed && navigationInnerFixedCss};
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  overflow-y: scroll;
 `
 const NavigationLogoWrapper = styled(props => <Box {...props} />)`
   /* Mobile mode */
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    display: none;
+  @media screen and (min-width: ${UI.breakpoints.mobile}) {
+    display: inherit;
   }
+    display: none;
 `
 const NavigationLogo = styled(props => <Svg {...props} />)`
   display: block;
@@ -142,12 +139,8 @@ const NavigationChildTitle = styled.div`
   font-weight: ${UI.fonts.weight.bold};
   color: ${UI.colors.darkGrey};
   font-size: 14px;
-
-  /* Mobile mode */
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    width: 270px;
-    margin: 25px auto 0;
-  }
+  width: 270px;
+  margin: 25px auto 0;
 `
 
 /**

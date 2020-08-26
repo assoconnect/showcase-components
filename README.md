@@ -33,8 +33,6 @@ Note for Windows users: create the `showcase` folder in WSL2 (Option 1 of https:
 
 1. Run the command to start a Docker container according to your language
 ```
-docker build -t showcase:latest -f common/Dockerfile ./common
-
 #fr_FR at http://localhost:8001
 cd fr-fr && docker-compose up --build --remove-orphans
 

@@ -35,6 +35,11 @@ export { default as ButtonLink } from './Buttons/ButtonLink'
 export { default as ButtonText } from './Buttons/ButtonText'
 
 /**
+ * Embed
+ */
+export { default as Outgrow } from './Embed/Outgrow'
+
+/**
  * Headers
  */
 export { default as HeaderHome } from './Headers/HeaderHome/HeaderHome'

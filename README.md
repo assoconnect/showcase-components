@@ -23,9 +23,9 @@ https://docs.docker.com/docker-for-windows/wsl/
 1. [Visual Studio Code](https://code.visualstudio.com/)
 2. [Smart Git](https://www.syntevo.com/smartgit/)
 3. Clone the following repositories in a `showcase` folder on your computer in `\\wsl$\Ubuntu-20.04\home\[your username]`
-- [showcase/common](https://gitlab.com/assoconnect/showcase)
-- [showcase/en-us](https://gitlab.com/assoconnect/showcase-en-us)
-- [showcase/fr-fr](https://gitlab.com/assoconnect/showcase-fr-fr)
+- [showcase/components](https://github.com/assoconnect/showcase-components)
+- [showcase/en-us](https://github.com/assoconnect/showcase-en-us)
+- [showcase/fr-fr](https://github.com/assoconnect/showcase-fr-fr)
 
 Note for Windows users: create the `showcase` folder in WSL2 (Option 1 of https://www.tenforums.com/tutorials/127857-access-wsl-linux-files-windows-10-a.html)
 

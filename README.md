@@ -31,6 +31,15 @@ Note for Windows users: create the `showcase` folder in WSL2 (Option 1 of https:
 
 ## 📦 **Docker**
 
+### Use a launcher script
+
+To facilitate docker image update and start, we created a script to do it for you.
+The script is OS-dedicated. If you don't have a script for your OS, ask tech-team to create one.
+
+Launch it using following command : `sudo bash launcher-YOUR_OS_HERE.sh` e.g `sudo bash launcher-ubuntu.sh`  
+
+### Traditional usage
+
 1. Run the command to start a Docker container according to your language
 ```
 #fr_FR at http://localhost:8001

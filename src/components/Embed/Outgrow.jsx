@@ -9,9 +9,9 @@ const Outgrow = ({ id, title }) => {
     script.async = true
     document.body.appendChild(script)
     script.onload = () => {
-      initIframe(id)
+      window.initIframe(id)
     }
-  }, [])
+  }, [id])
   return (
     <div
       className="op-interactive"

@@ -18,6 +18,7 @@ export { default as Svg } from './Svg'
 export { default as Team } from './Team'
 export { default as TextBox } from './TextBox'
 export { default as Video } from './Video'
+export { default as VideoImage } from './Video/VideoImage'
 export { default as VideoPlaceholder } from './Video/VideoPlaceholder'
 
 /**
@@ -43,11 +44,11 @@ export { default as Outgrow } from './Embed/Outgrow'
  * Headers
  */
 export { default as HeaderHome } from './Headers/HeaderHome/HeaderHome'
-export { default as HeaderHomeAnimation } from './Headers/HeaderHome/HeaderHomeAnimation'
 export { default as Header } from './Headers/Header'
 export { default as HeaderBig } from './Headers/HeaderBig'
 export { default as HeaderPicture } from './Headers/HeaderPicture'
 export { default as HeaderSmall } from './Headers/HeaderSmall'
+export { default as HeaderVideo } from './Headers/HeaderVideo'
 
 /**
  * Inputs

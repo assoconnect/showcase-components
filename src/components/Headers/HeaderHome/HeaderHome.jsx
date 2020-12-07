@@ -1,63 +1,85 @@
-import React from 'react'
 import {
-  Header,
+  BigTitle,
   Box,
+  Header,
+  InputButton,
   Space,
   Subtitle,
-  BigTitle,
   Svg,
-  InputButton,
-  HeaderHomeAnimation,
+  Video,
 } from '../../'
+
+import React, { useState } from 'react'
+import VideoImage from '../../Video/VideoImage'
 
 /**
  * Component
  */
 const HeaderHome = ({
+  image,
   buttonHref,
-  cards = [],
-  srcYado = '',
   subTitle = '',
   title = '',
   videoId,
   translations,
   hubspotId,
-}) => (
-  <Header
-    image="components/headers/header-home/wave-blue.svg"
-    videoId={videoId}
-    translations={translations}
-  >
-    <Box mt={['-2rem', '-4.375rem']} align="left" width={1 / 2}>
-      <Svg
-        src="common/logo/assoconnect"
-        width="125px"
-        color="white"
-        className="hidden-desktop"
-        visibleByDefault
-      />
-      <Subtitle align="left" color="white">
-        {subTitle}
-      </Subtitle>
-      <Space size="small" />
-      <BigTitle align="left" tag="h1">
-        {title}
-      </BigTitle>
-      <Space size="medium" />
-      <InputButton
+}) => {
+  const [wistiaPopoverVisible, setWistiaPopoverVisible] = useState(false)
+
+  /**
+   * Handle click events on VideoButtonWrapper component.
+   */
+  const handleVideoButtonWrapperClick = () => {
+    // necessary to force rerendering of the <Video> component, Wistia "popoverhide" event being unreliable in the context of React
+    setWistiaPopoverVisible(false)
+    setTimeout(() => {
+      setWistiaPopoverVisible(true)
+    }, 100)
+  }
+  return (
+    <>
+      <Header
+        image="components/headers/header-home/wave-blue.svg"
         translations={translations}
-        href={buttonHref}
-        hubspotId={hubspotId}
-      />
-    </Box>
-    <Box width={1 / 2} overflowRight>
-      <HeaderHomeAnimation
-        srcYado={srcYado}
-        cards={cards}
-        yado={{ image: 'yado', alt: '' }}
-      />
-    </Box>
-  </Header>
-)
+      >
+        <Box mt={['-2rem', '-4.375rem']} align="left" width={0.4}>
+          <Svg
+            src="common/logo/assoconnect"
+            width="125px"
+            color="white"
+            className="hidden-desktop"
+            visibleByDefault
+          />
+          <Subtitle align="left" color="white">
+            {subTitle}
+          </Subtitle>
+          <Space size="small" />
+          <BigTitle align="left" tag="h1">
+            {title}
+          </BigTitle>
+          <Space size="medium" />
+          <InputButton
+            translations={translations}
+            href={buttonHref}
+            hubspotId={hubspotId}
+          />
+        </Box>
+        <Box width={0.6}>
+          <VideoImage image={image} onClick={handleVideoButtonWrapperClick} />
+        </Box>
+      </Header>
+      {wistiaPopoverVisible && (
+        <Video
+          videoId={videoId}
+          wistiaParameters={[
+            'popover=true',
+            'popoverShowOnLoad=true',
+            'popoverAnimateThumbnail=true',
+          ]}
+        />
+      )}
+    </>
+  )
+}
 
 export default HeaderHome

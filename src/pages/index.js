@@ -1,35 +1,25 @@
-import React from 'react'
-import { LazyLoadComponent } from 'react-lazy-load-image-component'
 import {
+  AdaptiveImage,
   AnimationBubbles,
   AnimationTyping,
   BigTitle,
-  ButtonLink,
-  Space,
   Box,
-  Link,
-  SliderFeature,
-  SliderFeatureSlide,
+  ButtonLink,
   HeaderHome,
-  AdaptiveImage,
   Layout,
+  Link,
   MiddleTitle,
   Section,
-  Subtitle,
+  SliderFeature,
+  SliderFeatureSlide,
   SliderTestimony,
   SliderTestimonySlide,
+  Space,
+  Subtitle,
 } from '../components'
 
-const headerHomeCards = [
-  { title: 'Membres', image: 'members' },
-  { title: 'Comptabilité', image: 'accounting' },
-  { title: 'Adhésions', image: 'membership' },
-  { title: 'Dons', image: 'donations' },
-  { title: 'Site internet', image: 'website' },
-  { title: 'Emailing', image: 'emailing' },
-  { title: 'Billetterie', image: 'ticketing' },
-  { title: 'Boutique', image: 'deal' },
-]
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
+import React from 'react'
 
 const IndexPage = () => (
   <Layout
@@ -42,8 +32,10 @@ const IndexPage = () => (
     }}
   >
     <HeaderHome
-      cards={headerHomeCards}
-      srcYado="pages/index/yado_homepage_dashboard_fr"
+      image={{
+        src: 'pages/index/header_home',
+        alt: 'Gestion des membres pour association',
+      }}
       subTitle={
         <>
           Changez le monde,

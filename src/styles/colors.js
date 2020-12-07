@@ -6,6 +6,7 @@ export default {
   extraDarkBlue: '#00174d',
 
   turquoise: '#00C1A2',
+  darkTurquoise: '#00AA8E',
 
   yellow: '#F6C131',
   red: '#F36052',

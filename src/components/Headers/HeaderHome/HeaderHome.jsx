@@ -42,7 +42,7 @@ const HeaderHome = ({
         image="components/headers/header-home/wave-blue.svg"
         translations={translations}
       >
-        <Box mt={['-2rem', '-4.375rem']} align="left" width={0.4}>
+        <Box mt={['-2rem', '-4.375rem']} align="left" width={0.46}>
           <Svg
             src="common/logo/assoconnect"
             width="125px"
@@ -64,7 +64,7 @@ const HeaderHome = ({
             hubspotId={hubspotId}
           />
         </Box>
-        <Box width={0.6}>
+        <Box width={0.54}>
           <VideoImage image={image} onClick={handleVideoButtonWrapperClick} />
         </Box>
       </Header>

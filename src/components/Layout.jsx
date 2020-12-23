@@ -5,7 +5,7 @@ import { UI, Navigation } from '.'
 import Footer from './Footer'
 import { ThemeProvider } from 'styled-components'
 
-const getUrlWithoutParams = (url) => url.split("?")[0];
+const getUrlWithoutParams = url => url.split('?')[0]
 
 /**
  * Component
@@ -60,7 +60,11 @@ class Layout extends Component {
       translations,
       homePath,
     } = this.props
-    const url = canonical || (typeof window !== 'undefined' ? getUrlWithoutParams(window.location.href) : '')
+    const url =
+      canonical ||
+      (typeof window !== 'undefined'
+        ? getUrlWithoutParams(window.location.href)
+        : '')
     return (
       <>
         <Helmet defer={false}>
@@ -117,6 +121,7 @@ class Layout extends Component {
               items={headerItems}
               homePath={homePath || '/'}
               headerBackgroundColor={headerBackgroundColor}
+              translations={translations}
             />
             {children}
             <Footer

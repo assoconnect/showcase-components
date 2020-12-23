@@ -8,9 +8,9 @@ import {
   Svg,
   Video,
 } from '../../'
-
 import React, { useState } from 'react'
 import VideoImage from '../../Video/VideoImage'
+import { formatMessage } from '../../../utils/translations'
 
 /**
  * Component
@@ -44,7 +44,7 @@ const HeaderHome = ({
       >
         <Box mt={['-2rem', '-4.375rem']} align="left" width={0.46}>
           <Svg
-            src="common/logo/assoconnect"
+            src={`common/logo/${formatMessage('site_name', translations)}`}
             width="125px"
             color="white"
             className="hidden-desktop"

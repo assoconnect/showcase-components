@@ -5,6 +5,7 @@ import NavigationChild from './NavigationChild'
 import NavigationButtons from './NavigationButtons'
 import NavigationItem from './NavigationItem'
 import NavigationToggle from './NavigationToggle'
+import { formatMessage } from '../../utils/translations'
 
 /**
  * Helpers css
@@ -213,9 +214,10 @@ class Navigation extends Component {
   }
 
   getNavigationLogoSrc = navigationIsFixed => {
+    const { translations } = this.props
     return navigationIsFixed
-      ? 'common/logo/assoconnect-simple'
-      : 'common/logo/assoconnect'
+      ? `common/logo/${formatMessage('site_name', translations)}-simple`
+      : `common/logo/${formatMessage('site_name', translations)}`
   }
 
   /**
@@ -227,6 +229,7 @@ class Navigation extends Component {
       homePath,
       items,
       navigationButtons,
+      translations,
     } = this.props
     const {
       navigationChildIconLoad,
@@ -240,6 +243,7 @@ class Navigation extends Component {
           navigationIsFixed={navigationIsFixed}
           navigationToggleBurgerFunction={this.handleNavigationToggleBurger}
           navigationMobileIsOpened={navigationMobileIsOpened}
+          translations={translations}
         />
         <NavigationStyled
           headerBackgroundColor={headerBackgroundColor}

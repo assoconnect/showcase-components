@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Box, Flex, UI, Svg, Link } from '..'
+import { formatMessage } from '../../utils/translations'
 
 /**
  * Style
@@ -97,6 +98,7 @@ const NavigationToggle = ({
   navigationType,
   navigationMobileIsOpened,
   navigationIsFixed,
+  translations,
 }) => (
   <NavigationToggleStyled
     navigationMobileIsOpened={navigationMobileIsOpened}
@@ -109,7 +111,7 @@ const NavigationToggle = ({
         <NavigationToggleLogo
           height="40px"
           color="blue"
-          src="common/logo/assoconnect-simple"
+          src={`common/logo/${formatMessage('site_name', translations)}-simple`}
         />
       </Link>
     </Box>

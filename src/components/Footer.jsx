@@ -246,7 +246,7 @@ const Footer = ({
           color="white"
           width="7.059rem"
           height="auto"
-          src="common/logo/assoconnect"
+          src={`common/logo/${formatMessage('site_name', translations)}`}
         />
         <Space size="medium" className="hidden-desktop" />
         <FooterSocialWrapper>
@@ -263,7 +263,7 @@ const Footer = ({
             window.location.href = event.target.value
           }}
         >
-          <FooterLanguageSwitchOption value="https://www.assoconnect.org/en-us/">
+          <FooterLanguageSwitchOption value="https://www.springly.org/en-us/">
             English (USA)
           </FooterLanguageSwitchOption>
           <FooterLanguageSwitchOption value="https://www.assoconnect.com/">

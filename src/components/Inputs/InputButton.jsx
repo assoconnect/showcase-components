@@ -127,9 +127,15 @@ const InputButton = ({
       window.dataLayer.push({
         'email-passed': emailValue,
       })
-      window.location.href = `${href}${
-        window.location.search.length ? `${window.location.search}&` : '?'
-      }email=${emailValue}`
+      if (window.location.search.length || href.indexOf('?') !== -1) {
+        if (window.location.search.length) {
+          window.location.href = `${href}${window.location.search}&email=${emailValue}`
+        } else {
+          window.location.href = `${href}&email=${emailValue}`
+        }
+      } else {
+        window.location.href = `${href}?email=${emailValue}`
+      }
     }, 400)
   }
 

@@ -19,24 +19,24 @@ const NavigationButtonsWrapper = styled.div`
     height 190px;
   }
   
-  & > div:first-child > a {
-    margin-left: 0;
-  }
-
-  & > div:last-child > a{
-    margin-right: 0;
+  @media screen and (min-width: ${UI.breakpoints.mobile}) {
+    & > div:first-child > a {
+      margin-left: 0;
+    }
+    & > div:last-child > a{
+      margin-right: 0;
+    }
   }
   
 `
-const NavigationButtonsStyled = styled((props) => <ButtonLink {...props} />)`
+const NavigationButtonsStyled = styled(props => <ButtonLink {...props} />)`
   display: inline-block;
   margin: 0 10px;
-  
+
   & .button--size-small {
     padding-top: 0.375rem;
     padding-bottom: 0.375rem;
   }
-
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
@@ -46,8 +46,8 @@ const NavigationButtonsStyled = styled((props) => <ButtonLink {...props} />)`
       font-size: 1.16rem;
 
       &.button--theme-line-white {
-        color: ${UI.colors.white};
-        border-color: ${UI.colors.white};
+        color: ${UI.colors.white} !important;
+        border-color: ${UI.colors.white} !important;
       }
     }
   }

@@ -263,7 +263,7 @@ const Footer = ({
             window.location.href = event.target.value
           }}
         >
-          <FooterLanguageSwitchOption value="https://www.assoconnect.org/en-us/">
+          <FooterLanguageSwitchOption value="https://www.springly.org/en-us/">
             English (USA)
           </FooterLanguageSwitchOption>
           <FooterLanguageSwitchOption value="https://www.assoconnect.com/">

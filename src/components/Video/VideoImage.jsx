@@ -52,21 +52,23 @@ const Button = styled.div`
 /**
  * Component
  */
-const VideoImage = ({ image, onClick }) => (
+const VideoImage = ({ image, onClick, videoId }) => (
   <VideoImageWrapper onClick={onClick}>
     <AdaptiveImage src={image.src} alt={image.alt} />
-    <PlayButtonWrapper>
-      <Button
-        animationVideoButton={animationVideoButton}
-        className="playButton"
-      >
-        <Svg
-          src="components/video-button/simple-play"
-          width="96px"
-          color="white"
-        />
-      </Button>
-    </PlayButtonWrapper>
+    {videoId && (
+      <PlayButtonWrapper>
+        <Button
+          animationVideoButton={animationVideoButton}
+          className="playButton"
+        >
+          <Svg
+            src="components/video-button/simple-play"
+            width="96px"
+            color="white"
+          />
+        </Button>
+      </PlayButtonWrapper>
+    )}
   </VideoImageWrapper>
 )
 

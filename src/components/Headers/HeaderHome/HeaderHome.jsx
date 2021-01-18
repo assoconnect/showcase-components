@@ -64,11 +64,13 @@ const HeaderHome = ({
             hubspotId={hubspotId}
           />
         </Box>
-        <Box width={0.54}>
-          <VideoImage image={image} onClick={handleVideoButtonWrapperClick} />
-        </Box>
+        {videoId && (
+          <Box width={0.54}>
+            <VideoImage image={image} onClick={handleVideoButtonWrapperClick} />
+          </Box>
+        )}
       </Header>
-      {wistiaPopoverVisible && (
+      {videoId && wistiaPopoverVisible && (
         <Video
           videoId={videoId}
           wistiaParameters={[

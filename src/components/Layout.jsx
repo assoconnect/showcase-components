@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { UI, Navigation } from '.'
 import Footer from './Footer'
 import { ThemeProvider } from 'styled-components'
+import { formatMessage } from '../utils/translations'
 
 const getUrlWithoutParams = url => url.split('?')[0]
 
@@ -92,7 +93,10 @@ class Layout extends Component {
 
           <title>{title}</title>
           <meta property="og:title" content={title} />
-          <meta property="og:site_name" content="AssoConnect" />
+          <meta
+            property="og:site_name"
+            content={formatMessage('site_name_human', translations)}
+          />
 
           <meta name="description" content={description} />
           <meta property="og:description" content={description} />

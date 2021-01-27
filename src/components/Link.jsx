@@ -25,9 +25,10 @@ const AStyled = styled.a`
 `
 
 /**
- * Returns the rel noopener and noreferre if target === _blank
+ * Returns the rel noopener and noreferrer if target === _blank
  */
-const getNoopener = target => (target === '_blank' ? 'noopener noreferrer' : '')
+const getNoopenerNoreferrer = target =>
+  target === '_blank' ? 'noopener noreferrer' : ''
 
 /**
  * Component
@@ -62,10 +63,10 @@ const Link = ({
     if (nofollow) {
       rel.push('nofollow')
     }
-    // Noopener noreferre To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
-    const noopener = getNoopener(target)
-    if (noopener) {
-      rel.push(noopener)
+    // Noopener noreferrer To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
+    const noopenerNoreferrer = getNoopenerNoreferrer(target)
+    if (noopenerNoreferrer) {
+      rel.push(noopenerNoreferrer)
     }
     // Add the tag only if it contains information to optimize the seo
     if (rel.length) {
@@ -93,10 +94,10 @@ const Link = ({
     }
     // Target default value for the external link
     target = target || '_blank'
-    // Noopener noreferre To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
-    const noopener = getNoopener(target)
-    if (noopener) {
-      rel.push(noopener)
+    // Noopener noreferrer To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
+    const noopenerNoreferrer = getNoopenerNoreferrer(target)
+    if (noopenerNoreferrer) {
+      rel.push(noopenerNoreferrer)
     }
     // Add the tag only if it contains information to optimize the seo
     if (rel.length) {

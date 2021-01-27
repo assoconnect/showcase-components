@@ -5,23 +5,27 @@ import classNames from 'classnames/bind'
 import styled, { css } from 'styled-components'
 
 /**
- * Component Styled
+ * Style
  */
-const linkStyled = css`
+const commonStyle = css`
   text-decoration: underline;
 `
-const Gatsbytyled = styled(({ isStyled, ...props }) => (
+const GatsbyLinkStyled = styled(({ isStyled, ...props }) => (
   <GatsbyLink {...props} />
 ))`
-  ${({ isStyled }) => isStyled && linkStyled};
+  ${({ isStyled }) => isStyled && commonStyle};
 `
-const ScrollStyled = styled(({ isStyled, ...props }) => (
+const ScrollLinkStyled = styled(({ isStyled, ...props }) => (
   <ScrollLink {...props} />
 ))`
-  ${({ isStyled }) => isStyled && linkStyled};
+  ${({ isStyled }) => isStyled && commonStyle};
 `
-const AStyled = styled.a`
-  ${({ isStyled }) => isStyled && linkStyled};
+const LinkStyled = styled.a`
+  ${({ isStyled }) => isStyled && commonStyle};
+`
+const ObfuscatedLinkStyled = styled.span`
+  cursor: pointer;
+  ${({ isStyled }) => isStyled && commonStyle};
 `
 
 /**
@@ -44,7 +48,7 @@ const Link = ({
   // Anchor link
   if (href && href.indexOf('#') === 0) {
     return (
-      <ScrollStyled
+      <ScrollLinkStyled
         to={href.substring(1)}
         smooth={true}
         offset={-60}
@@ -52,11 +56,11 @@ const Link = ({
         isStyled={isStyled}
       >
         {children}
-      </ScrollStyled>
+      </ScrollLinkStyled>
     )
   }
   // Internal link
-  else if (href && href.indexOf('/') === 0) {
+  else if (href && href.indexOf('/') !== -1) {
     const rel = []
     const props = {}
     // Follow by default, add nofollow if property nofollow === true
@@ -73,15 +77,41 @@ const Link = ({
       props.rel = rel.join(' ')
     }
     return (
-      <Gatsbytyled
+      <GatsbyLinkStyled
         to={href}
-        className={classNames('link', 'link--internal', className)}
+        className={classNames('link', className)}
         target={target}
         isStyled={isStyled}
         {...props}
       >
         {children}
-      </Gatsbytyled>
+      </GatsbyLinkStyled>
+    )
+  }
+  // Obfuscate link
+  else if (
+    href.match(
+      /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/
+    ) !== null
+  ) {
+    return (
+      <ObfuscatedLinkStyled
+        onClick={() => {
+          const hrefDecoded = atob(href)
+          // New tab
+          if (target || hrefDecoded.indexOf('http') !== -1) {
+            window.open(hrefDecoded, target || '_blank')
+          }
+          // Current tab
+          else {
+            window.location.href = hrefDecoded
+          }
+        }}
+        className={classNames('link', className)}
+        isStyled={isStyled}
+      >
+        {children}
+      </ObfuscatedLinkStyled>
     )
   }
   // External link
@@ -104,15 +134,15 @@ const Link = ({
       props.rel = rel.join(' ')
     }
     return (
-      <AStyled
+      <LinkStyled
         href={href}
-        className={classNames('link', 'link--external', className)}
+        className={classNames('link', className)}
         isStyled={isStyled}
         target={target}
         {...props}
       >
         {children}
-      </AStyled>
+      </LinkStyled>
     )
   }
 }

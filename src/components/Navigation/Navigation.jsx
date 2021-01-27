@@ -298,6 +298,7 @@ class Navigation extends Component {
                                 key={k}
                                 loadIcon={navigationChildIconLoad}
                                 text={navigationChild.text}
+                                nofollow={navigationChild.nofollow}
                               />
                             ))}
                           </Box>
@@ -310,6 +311,7 @@ class Navigation extends Component {
                               className="navigation__child--all-features"
                               href={navigationItem.footer.href}
                               loadIcon={navigationChildIconLoad}
+                              nofollow={navigationItem.footer.nofollow}
                             />
                           </Box>
                         )}

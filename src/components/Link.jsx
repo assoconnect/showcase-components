@@ -25,6 +25,11 @@ const AStyled = styled.a`
 `
 
 /**
+ * Returns the rel noopener and noreferre if target === _blank
+ */
+const getNoopener = target => (target === '_blank' ? 'noopener noreferrer' : '')
+
+/**
  * Component
  */
 const Link = ({
@@ -35,6 +40,7 @@ const Link = ({
   isStyled = true,
   target = null,
 }) => {
+  // Anchor link
   if (href && href.indexOf('#') === 0) {
     return (
       <ScrollStyled
@@ -47,60 +53,66 @@ const Link = ({
         {children}
       </ScrollStyled>
     )
-  } else if (href && href.indexOf('/') === 0) {
+  }
+  // Internal link
+  else if (href && href.indexOf('/') === 0) {
+    const rel = []
+    const props = {}
+    // Follow by default, add nofollow if property nofollow === true
+    if (nofollow) {
+      rel.push('nofollow')
+    }
+    // Noopener noreferre To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
+    const noopener = getNoopener(target)
+    if (noopener) {
+      rel.push(noopener)
+    }
+    // Add the tag only if it contains information to optimize the seo
+    if (rel.length) {
+      props.rel = rel.join(' ')
+    }
     return (
       <Gatsbytyled
         to={href}
         className={classNames('link', 'link--internal', className)}
-        rel={nofollow && 'nofollow'}
         target={target}
         isStyled={isStyled}
+        {...props}
       >
         {children}
       </Gatsbytyled>
     )
-  } else if (
-    href &&
-    (href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0)
-  ) {
+  }
+  // External link
+  else {
+    const rel = []
+    const props = {}
+    // Nofollow by default and overwrite if property nofollow === false (fix: https://gitlab.com/assoconnect/assoconnect/-/issues/18675)
+    if (nofollow !== false) {
+      rel.push('nofollow')
+    }
+    // Target default value for the external link
+    target = target || '_blank'
+    // Noopener noreferre To avoid the warning "Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener..."
+    const noopener = getNoopener(target)
+    if (noopener) {
+      rel.push(noopener)
+    }
+    // Add the tag only if it contains information to optimize the seo
+    if (rel.length) {
+      props.rel = rel.join(' ')
+    }
     return (
       <AStyled
         href={href}
-        rel="noopener noreferrer nofollow"
         className={classNames('link', 'link--external', className)}
-        target={target}
         isStyled={isStyled}
+        target={target}
+        {...props}
       >
         {children}
       </AStyled>
     )
-  } else {
-    // Duplicate code to avoid the "warning  Using target="_blank" without rel="noopener noreferrer" is a security risk: see https://mathiasbynens.github.io/rel-noopener  react/jsx-no-target-blank" error that appears when rel = {``} is used instead of rel = ""
-    if (nofollow || nofollow === null) {
-      return (
-        <AStyled
-          href={href}
-          target={target || '_blank'}
-          rel="noopener noreferrer nofollow"
-          className={classNames('link', 'link--external', className)}
-          isStyled={isStyled}
-        >
-          {children}
-        </AStyled>
-      )
-    } else {
-      return (
-        <AStyled
-          href={href}
-          target={target || '_blank'}
-          rel="noopener noreferrer"
-          className={classNames('link', 'link--external', className)}
-          isStyled={isStyled}
-        >
-          {children}
-        </AStyled>
-      )
-    }
   }
 }
 

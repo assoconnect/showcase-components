@@ -103,7 +103,12 @@ class VideoPlaceholder extends Component {
   }
 
   render() {
-    const { videoId, videoTitle = '', autoplay = true } = this.props
+    const {
+      videoId,
+      videoTitle = '',
+      autoplay = true,
+      placeholderSrc = 'components/video/video-placeholder',
+    } = this.props
     const { videoVisible } = this.state
     const titleParts = this.getTitleParts(videoTitle)
     return (
@@ -112,7 +117,7 @@ class VideoPlaceholder extends Component {
           <VideoPlaceholderWrapper
             onClick={this.handleVideoPlaceholderWrapperClick}
           >
-            <BackgroundImage src={`components/video/video-placeholder`} />
+            <BackgroundImage src={placeholderSrc} />
             <PlayButton src="components/video-placeholder/play-button" />
             {titleParts && <TitleStart>{titleParts[0].join(' ')}</TitleStart>}
             {titleParts && titleParts.length >= 2 && (

@@ -282,6 +282,7 @@ class Navigation extends Component {
                         navigationMobileIsOpened={navigationMobileIsOpened}
                         text={navigationItem.text}
                         href={navigationItem.href}
+                        nofollow={navigationItem.nofollow}
                       >
                         {navigationItem.boxes.map((box, j) => (
                           <Box key={j} width="auto" px={[0, '20px']}>
@@ -322,6 +323,7 @@ class Navigation extends Component {
                         navigationMobileIsOpened={navigationMobileIsOpened}
                         text={navigationItem.text}
                         href={navigationItem.href}
+                        nofollow={navigationItem.nofollow}
                       />
                     )}
                   </React.Fragment>

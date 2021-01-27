@@ -147,6 +147,7 @@ class NavigationItem extends Component {
       color,
       width,
       navigationMobileIsOpened,
+      nofollow,
     } = this.props
     return (
       <NavigationItemStyled color={color}>
@@ -155,7 +156,7 @@ class NavigationItem extends Component {
           onClick={this.toggle}
         >
           {href ? (
-            <Link href={href} isStyled={false}>
+            <Link href={href} isStyled={false} nofollow={nofollow}>
               {text}
             </Link>
           ) : (

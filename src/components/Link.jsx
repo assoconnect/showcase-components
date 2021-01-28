@@ -10,20 +10,22 @@ import styled, { css } from 'styled-components'
 const commonStyle = css`
   text-decoration: underline;
 `
-const GatsbyLinkStyled = styled(({ isStyled, ...props }) => (
-  <GatsbyLink {...props} />
+const GatsbyLinkStyled = styled(({ isStyled, ...rest }) => (
+  <GatsbyLink {...rest} />
 ))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
-const ScrollLinkStyled = styled(({ isStyled, ...props }) => (
-  <ScrollLink {...props} />
+const ScrollLinkStyled = styled(({ isStyled, ...rest }) => (
+  <ScrollLink {...rest} />
 ))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
-const LinkStyled = styled.a`
+const LinkStyled = styled(({ isStyled, ...rest }) => <a {...rest} />)`
   ${({ isStyled }) => isStyled && commonStyle};
 `
-const ObfuscatedLinkStyled = styled.span`
+const ObfuscatedLinkStyled = styled(({ isStyled, ...rest }) => (
+  <span {...rest} />
+))`
   cursor: pointer;
   ${({ isStyled }) => isStyled && commonStyle};
 `
@@ -60,7 +62,7 @@ const Link = ({
     )
   }
   // Internal link
-  else if (href && href.indexOf('/') !== -1) {
+  else if (href && href.indexOf('/') === 0) {
     const rel = []
     const props = {}
     // Follow by default, add nofollow if property nofollow === true
@@ -94,10 +96,10 @@ const Link = ({
       /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/
     ) !== null
   ) {
+    const hrefDecoded = atob(href)
     return (
       <ObfuscatedLinkStyled
         onClick={() => {
-          const hrefDecoded = atob(href)
           // New tab
           if (target || hrefDecoded.indexOf('http') !== -1) {
             window.open(hrefDecoded, target || '_blank')

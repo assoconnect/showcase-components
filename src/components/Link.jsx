@@ -3,6 +3,7 @@ import { Link as GatsbyLink } from 'gatsby'
 import { Link as ScrollLink } from 'react-scroll'
 import classNames from 'classnames/bind'
 import styled, { css } from 'styled-components'
+import atob from 'atob'
 
 /**
  * Style

@@ -6,6 +6,7 @@
   "main": "lib/components/index.js",
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
+    "atob": "^2.1.2",
     "babel-plugin-styled-components": "^1.10.0",
     "classnames": "^2.2.6",
     "formik": "^1.4.3",

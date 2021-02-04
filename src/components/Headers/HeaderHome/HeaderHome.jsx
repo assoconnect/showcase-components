@@ -42,7 +42,7 @@ const HeaderHome = ({
         image="components/headers/header-home/wave-blue.svg"
         translations={translations}
       >
-        <Box mt={['-2rem', '-4.375rem']} align="left" width={0.46}>
+        <Box mt={['-1.6rem', '-4.375rem']} align="left" width={0.46}>
           <Svg
             src={`common/logo/${formatMessage('site_name', translations)}`}
             width="125px"

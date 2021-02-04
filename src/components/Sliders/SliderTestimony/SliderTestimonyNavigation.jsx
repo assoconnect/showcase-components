@@ -27,7 +27,7 @@ const SliderTestimonyNavigationProfilePicture = styled(props => (
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     width: 3.125rem;
     height: 3.125rem;
-    margin: 15px 0;
+    margin: 15px 0 !important;
     transition: 0.3s;
 
     .slick-current & {

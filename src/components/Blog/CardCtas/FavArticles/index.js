@@ -40,7 +40,7 @@ const Name = styled.div`
   }
 `
 
-const Newsletter = props => {
+const FavArticlesAside = props => {
   return (
     <WrapperBordered>
       <TitleBordered>
@@ -64,4 +64,4 @@ const Newsletter = props => {
   )
 }
 
-export default Newsletter
+export default FavArticlesAside

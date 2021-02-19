@@ -11,14 +11,8 @@ import {
 } from './styled'
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 
-/* export const SvgTest = styled(props => <Svg {...props} />)``
- */
 const CardArticle = ({ width, mock }) => {
   const thumb = mock.feature_image.url
-  const cover = thumb.replace(
-    'Article%20thumbnails/',
-    'Cover%20photos%20articles/'
-  )
   let textLength = mock.body.length
   let result
   if (textLength > 0) {
@@ -51,7 +45,7 @@ const CardArticle = ({ width, mock }) => {
                 src={mock.author.avatar}
                 alt={`Springly author ${mock.author.name}`}
               ></AuthorAvatar>
-              <AuthorName color={'#838383'}>{mock.author.full_name}</AuthorName>
+              <AuthorName color="#838383">{mock.author.full_name}</AuthorName>
             </AuthorWrap>
           </CardArticleFooter>
         </FrontMatterBlock>

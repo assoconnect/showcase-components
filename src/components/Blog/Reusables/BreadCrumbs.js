@@ -1,4 +1,4 @@
-import React, { Children, createElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 import { UI } from '../..'
@@ -32,7 +32,7 @@ const BreadCrumbs = props => {
   return (
     <BreadCrumbsWrap>
       <BreadCrumbsItem>
-        <BreadCrumbsLink color={'#939393'} to={props.homeUrl}>
+        <BreadCrumbsLink color="#939393" to={props.homeUrl}>
           Blog
         </BreadCrumbsLink>
       </BreadCrumbsItem>

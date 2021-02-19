@@ -14,10 +14,6 @@ export const PagerRule = styled.span`
   text-align: center;
 `
 
-export const PagerText = styled.span`
-  /*   padding: 15px;
- */
-`
 export const ArrowBlue = styled(props => (
   <Svg src="components/blog/icons/blog-arrow-blue" width="15px" {...props} />
 ))`
@@ -54,9 +50,6 @@ export const PagerLink = styled(GatsbyLink)`
   &.active {
     color: white !important;
   }
-  /*   > div {
-    display: inline-flex !important;
-  } */
 `
 
 export const PagerNextPrev = styled.li`
@@ -122,7 +115,7 @@ const Pager = ({ pageContext }) => {
               transform="rotate(180deg)"
               margin="auto 10px auto auto"
             ></ArrowWhite>
-            <PagerText>Previous</PagerText>
+            Previous
           </PagerLink>
         )}
       </PagerNextPrev>
@@ -134,14 +127,14 @@ const Pager = ({ pageContext }) => {
             to={`/en-us/blog/${i === 0 ? '' : i + 1}`}
             className={pageNumber === i && 'active'}
           >
-            <PagerText>{i + 1}</PagerText>
+            {i + 1}
           </PagerLink>
         </PagerNum>
       ))}
       <PagerNextPrev>
         {nextPagePath && (
           <PagerLink to={`/${nextPagePath}`}>
-            <PagerText>Next</PagerText>{' '}
+            Next{' '}
             <ArrowBlue
               alt="arrow pager"
               margin="auto auto auto 10px"

@@ -33,7 +33,6 @@ const CardArticleFeatured = ({ mock }) => {
                 src="components/blog/icons/blog-reading-time-white"
                 alt="reading time icon"
                 width="20px"
-                alt="reading time icon"
               />
               <ReadingTime featured>{result} min read</ReadingTime>
             </Meta>

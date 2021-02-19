@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { UI, Flex, Box, PricingCard } from '../..'
-import { Link as GatsbyLink } from 'gatsby'
+import { UI } from '../..'
 
 export const WrapperBorderedScroller = styled.div`
   position: relative;

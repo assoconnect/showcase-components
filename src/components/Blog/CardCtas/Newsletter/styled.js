@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { UI, Flex, Box, PricingCard } from '../../..'
-import { Link as GatsbyLink } from 'gatsby'
+import { UI } from '../../..'
 
 export const Wrapper = styled.article`
   font-family: ${UI.fonts.family.roboto};
@@ -21,7 +20,6 @@ export const Wrapper = styled.article`
     width: 100%;
   }
 `
-
 export const StyledHeader = styled.div`
   display: flex;
 `

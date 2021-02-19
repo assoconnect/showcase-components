@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI, Flex, Box, PricingCard } from '../../..'
+import { UI } from '../../..'
 
 export const TagStyled = styled.span`
   display: inline-block;

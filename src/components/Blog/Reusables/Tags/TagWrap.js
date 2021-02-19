@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI, Flex, Box, PricingCard } from '../../..'
 
 const TagWrapStyled = styled.div`
   margin-bottom: 20px;

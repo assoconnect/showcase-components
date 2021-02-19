@@ -1,4 +1,4 @@
-import React, { Children, createElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { UI, Space, CardCtaButtonWrap, CardCtaButton } from '../../..'
 
@@ -17,9 +17,7 @@ const Title = styled.span`
   color: #316bf2;
   font-family: ${UI.fonts.family.baloo};
 `
-const StyledImage = styled(props => (
-  <img src="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/components/blog/images/app-screen.png" />
-))`
+const StyledImage = styled.img`
   flex: 0 0 calc(100% - 70px);
   height: auto;
 `
@@ -32,10 +30,13 @@ const FreeTrial = props => {
         <Space size="small" />
         <Title>{props.maintitle}</Title>
         <Space size="small" />
-        <StyledImage alt="tool screen"></StyledImage>
+        <StyledImage
+          src="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/components/blog/images/app-screen.png"
+          alt="tool screen"
+        ></StyledImage>
         <Space size="small" />
         <CardCtaButtonWrap>
-          <CardCtaButton href={props.url} color={'#fff'} bgcolor={'#f6c131'}>
+          <CardCtaButton href={props.url} color="#fff" bgcolor="#f6c131">
             TRY NOW
           </CardCtaButton>
         </CardCtaButtonWrap>

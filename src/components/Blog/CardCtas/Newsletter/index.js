@@ -1,8 +1,7 @@
-import React, { Children, createElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Svg, Space, SubscribeNews } from '../../..'
 import { Wrapper, StyledHeader, Title, IconWrap, SubNews } from './styled.js'
-import { formatMessage } from '../../../../utils/translations'
 
 const SvgStyled = styled(props => <Svg {...props} />)``
 const Newsletter = ({ hubspotId, mobile, title, subtitle, translations }) => {

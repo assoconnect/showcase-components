@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI } from '../../..'
 
 const ArticleCoverWrap = styled.div`
   display: flex;

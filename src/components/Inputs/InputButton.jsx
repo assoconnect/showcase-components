@@ -7,6 +7,74 @@ import * as yup from 'yup'
 import colors from '../../styles/colors'
 import { formatMessage } from '../../utils/translations'
 
+/* Blog  */
+const InputButtonWrapperBlog = styled.div`
+  max-width: 100%;
+  position: relative;
+  width: auto;
+  flex-direction: column;
+  > div {
+    text-align: center;
+  }
+`
+const InputButtonStyledBlog = styled(InputBasic)`
+  padding-right: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  border-bottom: solid 1px #fff;
+  background: 0;
+  .input {
+    width: 100%;
+    color: white;
+  }
+  .outline & {
+    border: 1px solid ${colors.yellow};
+  }
+  .input::placeholder {
+    color: white !important;
+  }
+  padding: 0.588rem;
+`
+const InputButtonSendBlog = styled(Button)`
+  vertical-align: middle;
+  margin: 1.765rem auto auto auto;
+  transition: background-color 0.3s;
+  outline: none;
+  text-transform: uppercase;
+  border-radius: 21.5px;
+  border: none;
+  color: #316bf2;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  .button {
+    height: 43px;
+    width: 154px;
+    background-color: #ffffff;
+    padding: 0.647rem 1.1rem;
+    transition: 0.3s;
+    color: #316bf2;
+    border: 1px solid ${colors.white};
+
+    .outline & {
+      border: 1px solid ${colors.white};
+    }
+    &:hover {
+      background-color: transparent;
+      border-color: ${colors.white};
+      color: ${colors.white};
+    }
+  }
+`
+const ErrorMessageStyledBlog = styled.div`
+  font-family: ${UI.fonts.family.roboto};
+  font-weight: ${UI.fonts.weight.bold};
+  color: #f4674a;
+  margin-bottom: 5px;
+`
+
+
 /**
  * Style
  */
@@ -119,7 +187,7 @@ const InputButton = ({
   className,
   translations,
   href = 'https://app.assoconnect.com/sign-up',
-  hubspotId,
+  hubspotId, newsletter
 }) => {
   const goToSignup = emailValue => {
     setTimeout(() => {
@@ -192,6 +260,27 @@ const InputButton = ({
       >
         {() => (
           <FormStyled className={className}>
+            {newsletter ? <InputButtonContainer>
+              <ErrorMessage name="email" component={ErrorMessageStyledBlog} />
+              <InputButtonWrapperBlog className="button animation--start-hover">
+                <InputButtonStyledBlog
+                  name="email"
+                  type="email"
+                  placeholder={formatMessage(
+                    'inputbutton_placeholder_blog',
+                    translations
+                  )}
+                />
+                <InputButtonSendBlog
+                  type="submit"
+                  theme="yellow"
+                  size="big"
+                  animationOff
+                >
+                  {formatMessage('inputbuttonNewsletter_text', translations)}
+                </InputButtonSendBlog>
+              </InputButtonWrapperBlog>
+            </InputButtonContainer> :
             <InputButtonContainer>
               <ErrorMessage name="email" component={ErrorMessageStyled} />
               <InputButtonWrapper className="button animation--start-hover">
@@ -213,7 +302,7 @@ const InputButton = ({
                   {formatMessage('inputbutton_text', translations)}
                 </InputButtonButton>
               </InputButtonWrapper>
-            </InputButtonContainer>
+            </InputButtonContainer> }
           </FormStyled>
         )}
       </Formik>

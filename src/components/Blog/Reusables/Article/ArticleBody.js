@@ -69,6 +69,42 @@ const ArticleBodyStyled = styled.div`
     margin: 30px 0;
     display: block;
   }
+  button {
+    all: inherit;
+    margin: 20px auto;
+    background: rgb(53, 117, 255) !important;
+    color: rgb(255, 255, 255) !important;
+    -webkit-font-smoothing: antialiased !important;
+    cursor: pointer !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -o-user-select: none !important;
+    user-select: none !important;
+    display: inline-block !important;
+    font-weight: normal !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    -moz-transition: all 0.4s ease !important;
+    -webkit-transition: all 0.4s ease !important;
+    -o-transition: all 0.4s ease !important;
+    background: rgb(49, 107, 242) !important;
+    border-radius: 6px !important;
+    border-width: 0px !important;
+    color: white !important;
+    font-family: sans-serif !important;
+    height: auto !important;
+    transition: all 0.4s ease !important;
+    padding: 6px 18px !important;
+    text-shadow: none !important;
+    width: auto !important;
+    font-size: 24px !important;
+    line-height: 1.5em !important;
+    box-sizing: content-box !important;
+    vertical-align: middle;
+  }
+  button > a {
+    color: white;
+  }
 `
 
 const ArticleBody = ({ children }) => {

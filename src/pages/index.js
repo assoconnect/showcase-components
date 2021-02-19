@@ -18,9 +18,9 @@ import {
   Space,
   Subtitle,
   ArticleMain,
+  Newsletter,
 } from '../components'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
-import SubscribeNews from '../components/Blog/CardCtas/Newsletter/SubscribeNews'
 import {
   ListItem,
   MiniImage,
@@ -67,11 +67,15 @@ const IndexPage = () => (
         <Name>hgfhfg</Name>
       </ListItem>{' '}
     </div>
+    <Newsletter
+      buttonHref="https://app.assoconnect.com/sign-up?lang=en_US"
+      title="The Holy Grail of Nonprofit Tips ✨"
+      subtitle="Get all of the information you need to efficiently manage your nonprofit with our monthly newsletter."
+    ></Newsletter>
     <Space size="big" />
     <Space size="big" />
     <Section wave={{ direction: 'down' }}>
       <ArticleMain></ArticleMain>
-      <SubscribeNews></SubscribeNews>
       <Box width={1}>
         <MiddleTitle>Gagnez du temps au quotidien</MiddleTitle>
         <Subtitle>50 outils pour gérer facilement votre association</Subtitle>

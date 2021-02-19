@@ -111,7 +111,6 @@ export { default as CardArticleFeatured } from './Blog/CardArticles/CardArticleF
 export { default as FavArticlesAside } from './Blog/CardCtas/FavArticles'
 export { default as FreeTrial } from './Blog/CardCtas/FreeTrial'
 export { default as Newsletter } from './Blog/CardCtas/Newsletter'
-export { default as SubscribeNews } from './Blog/CardCtas/Newsletter/SubscribeNews'
 export { default as BreadCrumbs } from './Blog/Reusables/BreadCrumbs'
 export { default as Pager } from './Blog/Reusables/Pager'
 export { default as Progress } from './Blog/Reusables/Progress'

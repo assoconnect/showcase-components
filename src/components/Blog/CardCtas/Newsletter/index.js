@@ -1,10 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Svg, Space, SubscribeNews } from '../../..'
+import { Svg, Space, InputButton } from '../../..'
 import { Wrapper, StyledHeader, Title, IconWrap, SubNews } from './styled.js'
 
 const SvgStyled = styled(props => <Svg {...props} />)``
-const Newsletter = ({ hubspotId, mobile, title, subtitle, translations }) => {
+const Newsletter = ({
+  hubspotId,
+  mobile,
+  title,
+  subtitle,
+  buttonHref,
+  translations,
+}) => {
   return (
     <Wrapper mobile={mobile}>
       <StyledHeader>
@@ -20,10 +27,12 @@ const Newsletter = ({ hubspotId, mobile, title, subtitle, translations }) => {
       <SubNews>{subtitle}</SubNews>
 
       <Space size="small"></Space>
-      <SubscribeNews
+      <InputButton
+        newsletter
         translations={translations}
+        href={buttonHref}
         hubspotId={hubspotId}
-      ></SubscribeNews>
+      ></InputButton>
     </Wrapper>
   )
 }

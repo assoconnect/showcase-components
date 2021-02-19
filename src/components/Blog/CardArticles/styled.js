@@ -66,7 +66,6 @@ export const StyledLink = styled(GatsbyLink)`
 
 export const FrontMatterBlock = styled.div`
   padding: ${props => (props.featured ? '25px' : '25px 25px 100px')};
-
   height: 100%;
 `
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI } from '../../..'
 
 const AuthorAvatarStyled = styled.img`
   width: ${props => (props.big ? '50px' : '30px')};

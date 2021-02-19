@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI } from '../../..'
 
 export const HeaderShadowStyled = styled.div`
   background: linear-gradient(to bottom, rgb(0 0 0 / 3%), #ffffff 10px);

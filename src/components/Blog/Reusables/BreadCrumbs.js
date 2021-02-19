@@ -1,4 +1,4 @@
-import React, { Children, createElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 import { UI } from '../..'

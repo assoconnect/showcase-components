@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UI } from '../../..'
 
 const AuthorNameStyled = styled.div`
   padding: 0 10px;

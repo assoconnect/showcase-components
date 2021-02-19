@@ -19,6 +19,7 @@
     "react-calendly": "^1.3.0",
     "react-display-name": "^0.2.4",
     "react-helmet": "^5.2.0",
+    "react-hubspot-form": "^1.3.7",
     "react-is-scrolling": "^1.0.1",
     "react-lazy-load-image-component": "^1.3.2",
     "react-retina-image": "^2.0.5",

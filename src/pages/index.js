@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   AdaptiveImage,
   AnimationBubbles,
@@ -16,11 +17,17 @@ import {
   SliderTestimonySlide,
   Space,
   Subtitle,
+  Newsletter,
+  ArticleMain,
+  TagWrap,
 } from '../components'
-
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
-import React from 'react'
-
+import SubscribeNews from '../components/Blog/CardCtas/Newsletter/SubscribeNews'
+import {
+  ListItem,
+  MiniImage,
+  Name,
+} from '../components/Blog/CardCtas/FavArticles'
 const IndexPage = () => (
   <Layout
     preFooter
@@ -55,8 +62,21 @@ const IndexPage = () => (
       videoId="6yurbg1g3b"
     />
     <Space size="big" />
+    <Space size="big" />{' '}
+    <div style={{ background: 'red', maxWidth: ' 300px' }}>
+      <ListItem to={`/en-us/blog/`}>
+        {/*       <TagWrap>dddsdssss</TagWrap>
+      <TagWrap minHeight="33px">dsqdsqdsqdsq</TagWrap> */}
+
+        <MiniImage image="https://f.hubspotusercontent40.net/hubfs/3038993/1.%20AssoConnect/2.%20FR/3.%20Images/4.%20Blog/5.%20Cover%20articles/Blog_Cover-article_creer-facture-association.png"></MiniImage>
+        <Name>hgfhfg</Name>
+      </ListItem>{' '}
+    </div>
+    <Space size="big" />
     <Space size="big" />
     <Section wave={{ direction: 'down' }}>
+      <ArticleMain></ArticleMain>
+      <SubscribeNews></SubscribeNews>
       <Box width={1}>
         <MiddleTitle>Gagnez du temps au quotidien</MiddleTitle>
         <Subtitle>50 outils pour gérer facilement votre association</Subtitle>
@@ -115,8 +135,14 @@ const IndexPage = () => (
         <Space size="big" className="hidden-mobile" />
         <Space size="big" className="hidden-mobile" />
       </Box>
-    </Section>
-
+    </Section>{' '}
+    <Space size="big" /> <Space size="big" />
+    <Space size="big" /> <Space size="big" />
+    <Space size="big" />
+    <div style={{ background: 'black', width: '500px', margin: 'auto' }}> </div>
+    <Space size="big" /> <Space size="big" />
+    <Space size="big" /> <Space size="big" />
+    <Space size="big" />
     <Section wave={{ color: 'blue', direction: 'up' }}>
       <Box width={1 / 2} overflowLeft>
         <AdaptiveImage src="pages/index/dashboard" alt="logiciel association" />

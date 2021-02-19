@@ -21,7 +21,9 @@ const ScrollLinkStyled = styled(({ isStyled, ...rest }) => (
 ))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
-const LinkStyled = styled(({ isStyled, ...rest }) => <a {...rest} />)`
+const LinkStyled = styled(({ isStyled, children, ...rest }) => (
+  <a {...rest}>{children}</a>
+))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
 const ObfuscatedLinkStyled = styled(({ isStyled, ...rest }) => (

@@ -273,6 +273,7 @@ class Navigation extends Component {
                 px={[0, '30px']}
                 mb={['40px', '-4px']}
                 onMouseOver={this.handleNavigationItemsMouseOver}
+                onFocus={this.handleNavigationItemsMouseOver}
               >
                 {items.map((navigationItem, i) => (
                   <React.Fragment key={i}>

@@ -59,10 +59,7 @@ class Layout extends Component {
     } = this.props
     const metaImage = image
       ? image
-      : `common/component/head/${formatMessage(
-          'site_name',
-          translations
-        )}-600x600`
+      : `components/head/${formatMessage('site_name', translations)}-600x600`
     const url =
       canonical ||
       (typeof window !== 'undefined'

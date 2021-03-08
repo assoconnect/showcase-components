@@ -35,11 +35,7 @@ class Layout extends Component {
       hreflangs = [],
       canonical,
       children,
-      meta: {
-        title = 'AssoConnect',
-        description,
-        image = 'common/component/head/facebook-600x600',
-      },
+      meta: { title = 'AssoConnect', description, image },
       noindex,
       preFooter,
       headerBackgroundColor = 'blue',
@@ -61,6 +57,12 @@ class Layout extends Component {
       translations,
       homePath,
     } = this.props
+    const metaImage = image
+      ? image
+      : `common/component/head/${formatMessage(
+          'site_name',
+          translations
+        )}-600x600`
     const url =
       canonical ||
       (typeof window !== 'undefined'
@@ -103,7 +105,7 @@ class Layout extends Component {
 
           <meta
             property="og:image"
-            content={`${process.env.GATSBY_CDN_HOST}/${image}.png`}
+            content={`${process.env.GATSBY_CDN_HOST}/${metaImage}.png`}
           />
           <meta property="og:image:width" content="500" />
           <meta property="og:image:height" content="261" />

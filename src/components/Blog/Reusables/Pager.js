@@ -106,7 +106,7 @@ const Pager = ({ pageContext }) => {
     <PagerWrap>
       <PagerNextPrev>
         {previousPagePath && (
-          <PagerLink to={`/${previousPagePath}`}>
+          <PagerLink to={`/${previousPagePath}/`}>
             <ArrowBlue
               alt="arrow pager"
               transform="rotate(180deg)"
@@ -135,7 +135,7 @@ const Pager = ({ pageContext }) => {
       ))}
       <PagerNextPrev>
         {nextPagePath && (
-          <PagerLink to={`/${nextPagePath}`}>
+          <PagerLink to={`/${nextPagePath}/`}>
             Next{' '}
             <ArrowBlue
               alt="arrow pager"

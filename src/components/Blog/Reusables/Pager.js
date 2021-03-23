@@ -40,7 +40,9 @@ export const ArrowWhite = styled(props => (
   }
 `
 
-export const PagerLink = styled(GatsbyLink)`
+export const PagerLink = styled(({ circle, ...rest }) => (
+  <GatsbyLink {...rest} />
+))`
   padding: 5px 8px !important;
   color: #316bf2;
   text-decoration: none;

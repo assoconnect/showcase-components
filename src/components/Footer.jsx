@@ -275,8 +275,8 @@ const Footer = ({
           {columns.map((footerColumn, i) => (
             <ul key={i}>
               <FooterTitle>{footerColumn.title}</FooterTitle>
-              {footerColumn.items.map((field, i) => (
-                <li key={i}>
+              {footerColumn.items.map((field, j) => (
+                <li key={`${i}-${j}`}>
                   <FooterLink
                     href={field.href}
                     nofollow={field.nofollow}
@@ -301,12 +301,12 @@ const Footer = ({
         <FooterCopyright>
           {formatMessage('footer_copyright', translations)}
           {copyrights.map((copyright, i) => (
-            <>
+            <span key={i}>
               <span>{` • `}</span>
               <FooterLink href={copyright.href} isStyled={false}>
                 {copyright.text}
               </FooterLink>
-            </>
+            </span>
           ))}
         </FooterCopyright>
       </FooterInner>

@@ -69,17 +69,12 @@ const FavArticlesAside = props => {
         articles
       </TitleBordered>
       <div>
-        {props.favlist.map((edge, i) => {
-          return (
-            <ListItem key={i} to={`/en-us/blog/${edge.node.slug}/`}>
-              <MiniImage
-                key={i}
-                image={edge.node.feature_image.url}
-              ></MiniImage>
-              <Name key={i}>{edge.node.title}</Name>
-            </ListItem>
-          )
-        })}
+        {props.favlist.map((edge, i) => (
+          <ListItem key={i} to={`/en-us/blog/${edge.node.slug}/`}>
+            <MiniImage image={edge.node.feature_image.url}></MiniImage>
+            <Name>{edge.node.title}</Name>
+          </ListItem>
+        ))}
       </div>
     </WrapperBordered>
   )

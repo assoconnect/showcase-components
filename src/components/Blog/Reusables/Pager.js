@@ -122,7 +122,7 @@ const Pager = ({ pageContext }) => {
         )}
       </PagerNextPrev>
       {Array.from({ length: numberOfPages }, (_, i) => (
-        <PagerNum className={pageNumber === i && 'active'}>
+        <PagerNum key={i} className={pageNumber === i && 'active'}>
           <PagerLink
             circle
             key={`pagination-number${i + 1}`}

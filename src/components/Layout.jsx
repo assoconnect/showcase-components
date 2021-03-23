@@ -68,8 +68,9 @@ class Layout extends Component {
     return (
       <>
         <Helmet defer={false}>
-          {hreflangs.map(hreflang => (
+          {hreflangs.map((hreflang, i) => (
             <link
+              key={i}
               rel="alternate"
               href={hreflang.href}
               hreflang={hreflang.lang}

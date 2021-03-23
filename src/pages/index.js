@@ -62,7 +62,7 @@ const IndexPage = () => (
     <Space size="big" />
     <Space size="big" />{' '}
     <div style={{ background: 'red', maxWidth: ' 300px' }}>
-      <ListItem to="²/en-us/blog/">
+      <ListItem to="/en-us/blog/">
         <MiniImage image="https://f.hubspotusercontent40.net/hubfs/3038993/1.%20AssoConnect/2.%20FR/3.%20Images/4.%20Blog/5.%20Cover%20articles/Blog_Cover-article_creer-facture-association.png"></MiniImage>
         <Name>hgfhfg</Name>
       </ListItem>{' '}

@@ -19,7 +19,7 @@ const CardArticleFeatured = ({ mock }) => {
   }
   return (
     <Wrapper image={mock.feature_image.url} featured>
-      <StyledLink to={`/en-us/blog/${mock.slug}`}>
+      <StyledLink to={`/en-us/blog/${mock.slug}/`}>
         <FrontMatter>
           <FrontMatterBlock featured>
             <TagWrap minHeight="33px">

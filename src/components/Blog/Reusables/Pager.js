@@ -124,7 +124,7 @@ const Pager = ({ pageContext }) => {
           <PagerLink
             circle
             key={`pagination-number${i + 1}`}
-            to={`/en-us/blog/${i === 0 ? '' : i + 1}`}
+            to={`/en-us/blog/page/${i === 0 ? '' : i + 1}/`}
             className={pageNumber === i && 'active'}
           >
             {i + 1}

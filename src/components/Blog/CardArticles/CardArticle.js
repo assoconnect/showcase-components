@@ -21,7 +21,7 @@ const CardArticle = ({ width, mock }) => {
 
   return (
     <Wrapper width={width}>
-      <StyledLink to={`/en-us/blog/${mock.slug}`}>
+      <StyledLink to={`/en-us/blog/${mock.slug}/`}>
         <Thumbnail image={thumb} />
         <FrontMatterBlock>
           <TagWrap>

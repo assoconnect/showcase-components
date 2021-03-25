@@ -109,7 +109,7 @@ class Layout extends Component {
           <meta property="og:image:height" content="261" />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,700,900&display=swap"
             rel="stylesheet"
           />
         </Helmet>

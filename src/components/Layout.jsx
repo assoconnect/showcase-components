@@ -30,6 +30,7 @@ class Layout extends Component {
   getMetaImage = () => {
     const {
       meta: { image },
+      translations,
     } = this.props
     if (!image) {
       return `components/head/${formatMessage(

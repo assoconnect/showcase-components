@@ -116,7 +116,7 @@ class Layout extends Component {
           <meta name="description" content={description} />
           <meta property="og:description" content={description} />
 
-          <meta property="og:image" content={getMetaImage()} />
+          <meta property="og:image" content={this.getMetaImage()} />
           <meta property="og:image:width" content="500" />
           <meta property="og:image:height" content="261" />
 

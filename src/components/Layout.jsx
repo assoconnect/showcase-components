@@ -57,14 +57,26 @@ class Layout extends Component {
       translations,
       homePath,
     } = this.props
-    const metaImage = image
-      ? image
-      : `components/head/${formatMessage('site_name', translations)}-600x600`
+
+    getMetaImage = () => {
+      if (!image) {
+        return `components/head/${formatMessage(
+          'site_name',
+          translations
+        )}-600x600`
+      }
+      if (image.search('http') !== -1) {
+        return image
+      }
+      return `${process.env.GATSBY_CDN_HOST}/${metaImage}.png`
+    }
+
     const url =
       canonical ||
       (typeof window !== 'undefined'
         ? getUrlWithoutParams(window.location.href)
         : '')
+
     return (
       <>
         <Helmet defer={false}>
@@ -101,10 +113,7 @@ class Layout extends Component {
           <meta name="description" content={description} />
           <meta property="og:description" content={description} />
 
-          <meta
-            property="og:image"
-            content={`${process.env.GATSBY_CDN_HOST}/${metaImage}.png`}
-          />
+          <meta property="og:image" content={getMetaImage()} />
           <meta property="og:image:width" content="500" />
           <meta property="og:image:height" content="261" />
 

@@ -118,8 +118,8 @@ class Layout extends Component {
           <meta property="og:description" content={description} />
 
           <meta property="og:image" content={this.getMetaImage()} />
-          <meta property="og:image:width" content="500" />
-          <meta property="og:image:height" content="261" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="628" />
 
           <link
             href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,700,900&display=swap"

@@ -27,6 +27,22 @@ class Layout extends Component {
     }
   }
 
+  getMetaImage = () => {
+    const {
+      meta: { image },
+    } = this.props
+    if (!image) {
+      return `components/head/${formatMessage(
+        'site_name',
+        translations
+      )}-600x600`
+    }
+    if (image.search('http') !== -1) {
+      return image
+    }
+    return `${process.env.GATSBY_CDN_HOST}/${image}.png`
+  }
+
   /**
    * Output
    */
@@ -35,7 +51,7 @@ class Layout extends Component {
       hreflangs = [],
       canonical,
       children,
-      meta: { title = 'AssoConnect', description, image },
+      meta: { title = 'AssoConnect', description },
       noindex,
       preFooter,
       headerBackgroundColor = 'blue',
@@ -57,19 +73,6 @@ class Layout extends Component {
       translations,
       homePath,
     } = this.props
-
-    getMetaImage = () => {
-      if (!image) {
-        return `components/head/${formatMessage(
-          'site_name',
-          translations
-        )}-600x600`
-      }
-      if (image.search('http') !== -1) {
-        return image
-      }
-      return `${process.env.GATSBY_CDN_HOST}/${metaImage}.png`
-    }
 
     const url =
       canonical ||

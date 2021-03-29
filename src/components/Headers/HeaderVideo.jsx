@@ -61,7 +61,7 @@ const HeaderVideo = ({
             {title}
           </BigTitle>
           <HeaderSpace size="medium" />
-          <Subtitle align="left" color="white">
+          <Subtitle align="left" color="white" tag="div">
             {subTitle}
           </Subtitle>
           <HeaderSpace size="medium" />
@@ -79,7 +79,11 @@ const HeaderVideo = ({
           <HeaderSpace size="medium" className="hidden-desktop" />
         </Box>
         <Box width={1 / 2}>
-          <VideoImage image={image} onClick={handleVideoButtonWrapperClick} videoId={videoId} />
+          <VideoImage
+            image={image}
+            onClick={handleVideoButtonWrapperClick}
+            videoId={videoId}
+          />
         </Box>
       </Header>
       {wistiaPopoverVisible && (

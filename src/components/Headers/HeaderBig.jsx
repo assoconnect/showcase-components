@@ -63,7 +63,7 @@ const HeaderBig = ({
         {title}
       </BigTitle>
       <HeaderSpace size="medium" />
-      <Subtitle align="left" color="white">
+      <Subtitle align="left" color="white" tag="div">
         {subTitle}
       </Subtitle>
       <HeaderSpace size="medium" />

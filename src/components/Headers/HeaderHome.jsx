@@ -2,15 +2,15 @@ import {
   BigTitle,
   Box,
   Header,
+  Subtitle,
   InputButton,
   Space,
-  Subtitle,
   Svg,
   Video,
-} from '../../'
+} from '../'
 import React, { useState } from 'react'
-import VideoImage from '../../Video/VideoImage'
-import { formatMessage } from '../../../utils/translations'
+import VideoImage from '../Video/VideoImage'
+import { formatMessage } from '../../utils/translations'
 
 /**
  * Component
@@ -50,7 +50,7 @@ const HeaderHome = ({
             className="hidden-desktop"
             visibleByDefault
           />
-          <Subtitle align="left" color="white">
+          <Subtitle align="left" color="white" tag="div">
             {subTitle}
           </Subtitle>
           <Space size="small" />

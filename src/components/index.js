@@ -44,7 +44,7 @@ export { default as Outgrow } from './Embed/Outgrow'
 /**
  * Headers
  */
-export { default as HeaderHome } from './Headers/HeaderHome/HeaderHome'
+export { default as HeaderHome } from './Headers/HeaderHome'
 export { default as Header } from './Headers/Header'
 export { default as HeaderBig } from './Headers/HeaderBig'
 export { default as HeaderPicture } from './Headers/HeaderPicture'

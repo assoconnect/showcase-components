@@ -54,7 +54,7 @@ const HeaderSmall = ({
           {title}
         </BigTitle>
         {subTitle && (
-          <Subtitle color="white" align="left">
+          <Subtitle color="white" align="left" tag="div">
             {subTitle}
           </Subtitle>
         )}

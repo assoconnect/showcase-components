@@ -33,7 +33,7 @@ class Layout extends Component {
       translations,
     } = this.props
     if (!image) {
-      return `components/head/${formatMessage(
+      return `${process.env.GATSBY_CDN_HOST}/components/head/${formatMessage(
         'site_name',
         translations
       )}-600x600`

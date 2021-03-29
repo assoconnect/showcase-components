@@ -10,14 +10,14 @@ const BreadCrumbsWrap = styled.ol`
   flex-wrap: wrap;
   font-family: ${UI.fonts.family.roboto};
   flex-direction: row;
+  @media screen and (max-width: ${UI.breakpoints.mobile}) {
+    display: none !important;
+  }
 `
 
 const BreadCrumbsItem = styled.li`
   margin: 15px 0;
   padding: 0 5px 0 10px;
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    margin: 5px 0;
-  }
 `
 const BreadCrumbsLink = styled(GatsbyLink)`
   margin: 15px 0;

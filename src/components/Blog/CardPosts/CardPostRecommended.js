@@ -1,5 +1,5 @@
 import React from 'react'
-import { UI, CardPost } from './styled'
+import { UI, CardPost } from '../..'
 import styled from 'styled-components'
 
 const Section = styled.section`

@@ -10,18 +10,19 @@ import {
   CardPostFooter,
 } from './styled'
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
+import btoa from 'btoa'
 
-const CardPost = ({ width, mock }) => {
+const CardPost = ({ width, mock, obfuscated }) => {
+  const link = `/en-us/blog/${mock.slug}/`
   const thumb = mock.feature_image.url
   let textLength = mock.body.length
   let result
   if (textLength > 0) {
     result = Math.ceil(textLength / 3700)
   }
-
   return (
     <Wrapper width={width}>
-      <StyledLink to={`/en-us/blog/${mock.slug}/`}>
+      <StyledLink to={obfuscated ? btoa(link) : link}>
         <Thumbnail image={thumb} />
         <FrontMatterBlock>
           <TagWrap>

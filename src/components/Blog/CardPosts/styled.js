@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { UI } from '../..'
-import { Link as GatsbyLink } from 'gatsby'
+import { UI, Link } from '../..'
 
 export const Wrapper = styled.article`
   background-color: ${props => (props.featured ? 'inherit' : '#fff')};
@@ -53,7 +52,7 @@ export const FrontMatter = styled.div`
     transition: 0.3s ease;
   }
 `
-export const StyledLink = styled(GatsbyLink)`
+export const StyledLink = styled(Link)`
   text-decoration: none !important;
   display: block;
   &:hover,

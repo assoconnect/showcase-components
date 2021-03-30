@@ -32,7 +32,11 @@ const BlogPageTitleLast = styled.div`
   text-align: center;
 `
 
-const CardPostRecommended = ({ recommendedPosts, recommendedSlugs }) => {
+const CardPostRecommended = ({
+  recommendedPosts,
+  recommendedSlugs,
+  recommendedSlugsObfuscation,
+}) => {
   // Sort recommendedPosts
   recommendedPosts.sort(
     (a, b) =>
@@ -44,7 +48,12 @@ const CardPostRecommended = ({ recommendedPosts, recommendedSlugs }) => {
       <BlogPageTitleLast>Recommended articles</BlogPageTitleLast>
       <Wrapper>
         {recommendedPosts.map((post, i) => (
-          <CardPost key={i} width={1 / 3} mock={post.node}></CardPost>
+          <CardPost
+            key={i}
+            width={1 / 3}
+            mock={post.node}
+            obfuscated={recommendedSlugsObfuscation.includes(post.node.slug)}
+          ></CardPost>
         ))}
       </Wrapper>
     </Section>

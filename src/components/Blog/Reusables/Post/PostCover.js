@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ArticleCoverWrap = styled.div`
+const PostCoverWrap = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -9,7 +9,7 @@ const ArticleCoverWrap = styled.div`
   margin-bottom: 19px;
 `
 
-const ArticleCoverStyled = styled.img`
+const PostCoverStyled = styled.img`
   display: block;
   flex: 1 1 0;
   width: 100%;
@@ -17,14 +17,14 @@ const ArticleCoverStyled = styled.img`
   object-fit: cover;
   border-radius: 10px;
 `
-const ArticleCover = ({ children, image, alt }) => {
+const PostCover = ({ children, image, alt }) => {
   return (
-    <ArticleCoverWrap>
-      <ArticleCoverStyled src={image} alt={alt}>
+    <PostCoverWrap>
+      <PostCoverStyled src={image} alt={alt}>
         {children}
-      </ArticleCoverStyled>
-    </ArticleCoverWrap>
+      </PostCoverStyled>
+    </PostCoverWrap>
   )
 }
 
-export default ArticleCover
+export default PostCover

@@ -7,11 +7,11 @@ import {
   Meta,
   Thumbnail,
   ReadingTime,
-  CardArticleFooter,
+  CardPostFooter,
 } from './styled'
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 
-const CardArticle = ({ width, mock }) => {
+const CardPost = ({ width, mock }) => {
   const thumb = mock.feature_image.url
   let textLength = mock.body.length
   let result
@@ -26,11 +26,11 @@ const CardArticle = ({ width, mock }) => {
         <FrontMatterBlock>
           <TagWrap>
             {mock.topics.map((mock, i) => {
-              return <Tag key={`Tag${i}`}>{mock.name}</Tag>
+              return <Tag key={i}>{mock.name}</Tag>
             })}
           </TagWrap>
           <Title>{mock.meta.title}</Title>
-          <CardArticleFooter>
+          <CardPostFooter>
             <Meta>
               <Svg
                 src="components/blog/icons/blog-reading-time-dark"
@@ -47,11 +47,11 @@ const CardArticle = ({ width, mock }) => {
               ></AuthorAvatar>
               <AuthorName color="#838383">{mock.author.full_name}</AuthorName>
             </AuthorWrap>
-          </CardArticleFooter>
+          </CardPostFooter>
         </FrontMatterBlock>
       </StyledLink>
     </Wrapper>
   )
 }
 
-export default CardArticle
+export default CardPost

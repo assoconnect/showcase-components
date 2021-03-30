@@ -125,7 +125,6 @@ const Pager = ({ pageContext }) => {
         <PagerNum key={i} className={pageNumber === i && 'active'}>
           <PagerLink
             circle
-            key={`pagination-number${i + 1}`}
             to={`/en-us/blog/${i === 0 ? '' : `page/${i + 1}/`}`}
             className={pageNumber === i && 'active'}
           >

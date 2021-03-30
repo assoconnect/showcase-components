@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { UI } from '../../..'
 
-const ArticleBodyStyled = styled.div`
+const PostBodyStyled = styled.div`
   font-family: ${UI.fonts.family.roboto};
   color: #646464;
   font-size: 19px;
@@ -107,8 +107,8 @@ const ArticleBodyStyled = styled.div`
   }
 `
 
-const ArticleBody = ({ children }) => {
-  return <ArticleBodyStyled> {children}</ArticleBodyStyled>
+const PostBody = ({ children }) => {
+  return <PostBodyStyled> {children}</PostBodyStyled>
 }
 
-export default ArticleBody
+export default PostBody

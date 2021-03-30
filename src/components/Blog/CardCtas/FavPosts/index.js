@@ -60,7 +60,7 @@ export const HeartIcon = styled(props => (
   margin-right: 8px;
 `
 
-const FavArticlesAside = props => {
+const FavPostsAside = props => {
   return (
     <WrapperBordered>
       <TitleBordered>
@@ -80,4 +80,4 @@ const FavArticlesAside = props => {
   )
 }
 
-export default FavArticlesAside
+export default FavPostsAside

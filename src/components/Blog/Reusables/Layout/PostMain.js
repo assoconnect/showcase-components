@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { UI } from '../../..'
 
-const ArticleMainStyled = styled.div`
+const PostMainStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 66.666667%;
@@ -15,8 +15,8 @@ const ArticleMainStyled = styled.div`
     width: 100%;
   }
 `
-const ArticleMain = ({ children }) => {
-  return <ArticleMainStyled>{children}</ArticleMainStyled>
+const PostMain = ({ children }) => {
+  return <PostMainStyled>{children}</PostMainStyled>
 }
 
-export default ArticleMain
+export default PostMain

@@ -11,7 +11,7 @@ import {
 
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 
-const CardArticleFeatured = ({ mock }) => {
+const CardPostFeatured = ({ mock }) => {
   let textLength = mock.body.length
   let result
   if (textLength > 0) {
@@ -23,9 +23,9 @@ const CardArticleFeatured = ({ mock }) => {
         <FrontMatter>
           <FrontMatterBlock featured>
             <TagWrap minHeight="33px">
-              {mock.topics.map((mock, i) => {
-                return <Tag key={`Tag article featured ${i}`}>{mock.name}</Tag>
-              })}
+              {mock.topics.map((mock, i) => (
+                <Tag key={i}>{mock.name}</Tag>
+              ))}
             </TagWrap>
             <Title featured>{mock.meta.title}</Title>
             <Meta featured>
@@ -51,4 +51,4 @@ const CardArticleFeatured = ({ mock }) => {
   )
 }
 
-export default CardArticleFeatured
+export default CardPostFeatured

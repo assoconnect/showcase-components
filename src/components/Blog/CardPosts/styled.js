@@ -90,7 +90,7 @@ export const Meta = styled.div`
     margin-right: 5px;
   }
 `
-export const CardArticleFooter = styled.div`
+export const CardPostFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

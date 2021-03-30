@@ -38,9 +38,7 @@ const BreadCrumbs = props => {
       </BreadCrumbsItem>
       <BreadCrumbsItem>{'>'}</BreadCrumbsItem>
       <BreadCrumbsItem>
-        <BreadCrumbsLink href={props.articleUrl}>
-          {props.articleName}
-        </BreadCrumbsLink>
+        <BreadCrumbsLink href={props.postUrl}>{props.postName}</BreadCrumbsLink>
       </BreadCrumbsItem>
     </BreadCrumbsWrap>
   )

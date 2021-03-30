@@ -9,7 +9,7 @@ import {
   BigTitle,
   Subtitle,
   InputButton,
-  ButtonLink,
+  ButtonLink, Text,
 } from '../'
 
 /**
@@ -44,6 +44,7 @@ const Yado = styled(props => <AdaptiveImage {...props} />)`
 const HeaderBig = ({
   title,
   subTitle,
+  killerArgument = null,
   image,
   wave,
   yado,
@@ -68,7 +69,15 @@ const HeaderBig = ({
       </Subtitle>
       <HeaderSpace size="medium" />
       {field ? (
-        <InputButton className={classNameForm} translations={translations} />
+        <>
+          <InputButton className={classNameForm} translations={translations} />
+          {killerArgument && (
+            <>
+              <Space size="small" />
+              <Text color="white">{killerArgument}</Text>
+            </>
+          )}
+        </>
       ) : (
         <ButtonLink href={button.href} button={{ size: 'big' }}>
           {button.children}

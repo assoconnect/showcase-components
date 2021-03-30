@@ -26,13 +26,13 @@ const Newsletter = ({
       </StyledHeader>
       <SubNews>{subtitle}</SubNews>
 
-      <Space size="small"></Space>
+      <Space size="small" />
       <InputButton
         newsletter
         translations={translations}
         href={buttonHref}
         hubspotId={hubspotId}
-      ></InputButton>
+      />
     </Wrapper>
   )
 }

@@ -6,6 +6,7 @@ import {
   InputButton,
   Space,
   Subtitle,
+  Text,
   UI,
   Video,
   VideoImage,
@@ -29,6 +30,7 @@ const HeaderSpace = styled(props => <Space {...props} />)`
 const HeaderVideo = ({
   title,
   subTitle,
+  killerArgument = null,
   image,
   wave,
   videoId,
@@ -66,10 +68,18 @@ const HeaderVideo = ({
           </Subtitle>
           <HeaderSpace size="medium" />
           {field ? (
-            <InputButton
-              className={classNameForm}
-              translations={translations}
-            />
+            <>
+              <InputButton
+                className={classNameForm}
+                translations={translations}
+              />
+              {killerArgument && (
+                <>
+                  <Space size="small" />
+                  <Text color="white">{killerArgument}</Text>
+                </>
+              )}
+            </>
           ) : (
             <ButtonLink href={button.href} button={{ size: 'big' }}>
               {button.children}

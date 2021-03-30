@@ -17,7 +17,7 @@ import {
   SliderTestimonySlide,
   Space,
   Subtitle,
-  ArticleMain,
+  PostMain,
   Newsletter,
 } from '../components'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
@@ -75,7 +75,7 @@ const IndexPage = () => (
     <Space size="big" />
     <Space size="big" />
     <Section wave={{ direction: 'down' }}>
-      <ArticleMain></ArticleMain>
+      <PostMain />
       <Box width={1}>
         <MiddleTitle>Gagnez du temps au quotidien</MiddleTitle>
         <Subtitle>50 outils pour gérer facilement votre association</Subtitle>

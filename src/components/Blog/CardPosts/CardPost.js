@@ -1,13 +1,13 @@
 import React from 'react'
 import {
   Wrapper,
+  StyledLink,
   FrontMatterBlock,
   Title,
   Meta,
   Thumbnail,
   ReadingTime,
   CardPostFooter,
-  Link,
 } from './styled'
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 import btoa from 'btoa'
@@ -22,7 +22,7 @@ const CardPost = ({ width, mock, obfuscated }) => {
   }
   return (
     <Wrapper width={width}>
-      <Link href={obfuscated ? btoa(link) : link}>
+      <StyledLink href={obfuscated ? btoa(link) : link}>
         <Thumbnail image={thumb} />
         <FrontMatterBlock>
           <TagWrap>
@@ -50,7 +50,7 @@ const CardPost = ({ width, mock, obfuscated }) => {
             </AuthorWrap>
           </CardPostFooter>
         </FrontMatterBlock>
-      </Link>
+      </StyledLink>
     </Wrapper>
   )
 }

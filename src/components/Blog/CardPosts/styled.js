@@ -1,5 +1,6 @@
+import React from 'react'
 import styled from 'styled-components'
-import { UI } from '../..'
+import { UI, Link } from '../..'
 
 export const Wrapper = styled.article`
   background-color: ${props => (props.featured ? 'inherit' : '#fff')};
@@ -52,6 +53,17 @@ export const FrontMatter = styled.div`
     transition: 0.3s ease;
   }
 `
+export const StyledLink = styled(props => <Link {...props} />)`
+  text-decoration: none !important;
+  display: block;
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none !important;
+  }
+`
+
 export const FrontMatterBlock = styled.div`
   padding: ${props => (props.featured ? '25px' : '25px 25px 100px')};
   height: 100%;

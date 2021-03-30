@@ -108,6 +108,7 @@ export { default as Text } from './Texts/Text'
  */
 export { default as CardPost } from './Blog/CardPosts/CardPost'
 export { default as CardPostFeatured } from './Blog/CardPosts/CardPostFeatured'
+export { default as CardPostRecommended } from './Blog/CardPosts/CardPostRecommended'
 export { default as FavPostsAside } from './Blog/CardCtas/FavPosts'
 export { default as FreeTrial } from './Blog/CardCtas/FreeTrial'
 export { default as Newsletter } from './Blog/CardCtas/Newsletter'

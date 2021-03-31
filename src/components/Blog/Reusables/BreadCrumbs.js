@@ -14,7 +14,7 @@ const BreadCrumbsWrap = styled.ol`
 
 const BreadCrumbsItem = styled.li`
   margin: 15px 0;
-  padding: 0 5px 0 10px;
+  padding: 0 0 0 15px;
 `
 const BreadCrumbsLink = styled(GatsbyLink)`
   margin: 15px 0;

@@ -23,6 +23,9 @@ export const WrapperBordered = styled.div`
   &.sticky {
     width: 100%;
   }
+  img {
+    max-width: 100% !important;
+  }
 `
 
 export const TitleBordered = styled.div`

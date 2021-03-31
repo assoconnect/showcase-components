@@ -6,6 +6,7 @@ import {
   InputButton,
   Space,
   Svg,
+  Text,
   Video,
 } from '../'
 import React, { useState } from 'react'
@@ -18,6 +19,7 @@ import { formatMessage } from '../../utils/translations'
 const HeaderHome = ({
   image,
   buttonHref,
+  killerArgument = null,
   subTitle = '',
   title = '',
   videoId,
@@ -63,6 +65,12 @@ const HeaderHome = ({
             href={buttonHref}
             hubspotId={hubspotId}
           />
+          {killerArgument && (
+            <>
+              <Space size="small" />
+              <Text color="white">{killerArgument}</Text>
+            </>
+          )}
         </Box>
         <Box width={0.54}>
           <VideoImage

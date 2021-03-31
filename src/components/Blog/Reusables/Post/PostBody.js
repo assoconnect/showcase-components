@@ -106,10 +106,11 @@ const PostBodyStyled = styled.div`
     color: white;
   }
   blockquote {
-    background: #fff2cc !important;
-    font-weight: 600 !important;
-    border: none !important;
-    padding: 20px !important;
+    background: #fff2cc;
+    font-weight: 600;
+    border: none;
+    padding: 20px;
+    margin: 0 0 1rem;
   }
   blockquote p {
     margin: 0 !important;

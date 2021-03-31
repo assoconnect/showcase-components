@@ -1,45 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
-import { UI, Space, CardCtaButtonWrap, CardCtaButton } from '../../..'
-
+import { Space } from '../../..'
 import {
   WrapperBorderedScroller,
   WrapperBordered,
   TitleBordered,
 } from '../styled.js'
 
-const Title = styled.span`
-  flex: 0 0 calc(100% - 70px);
-  text-align: center;
-  font-size: 28px;
-  line-height: 37px;
-  font-weight: 900;
-  color: #316bf2;
-  font-family: ${UI.fonts.family.baloo};
-`
-const StyledImage = styled.img`
-  flex: 0 0 calc(100% - 70px);
-  height: auto;
-`
-
-const FreeTrial = props => {
+const FreeTrial = ({ cardtitle, children }) => {
   return (
     <WrapperBorderedScroller>
       <WrapperBordered grey sticky className="sticky">
-        <TitleBordered grey>{props.cardtitle}</TitleBordered>
+        <TitleBordered grey>{cardtitle}</TitleBordered>
         <Space size="small" />
-        <Title>{props.maintitle}</Title>
-        <Space size="small" />
-        <StyledImage
-          src="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/components/blog/images/app-screen.png"
-          alt="tool screen"
-        ></StyledImage>
-        <Space size="small" />
-        <CardCtaButtonWrap>
-          <CardCtaButton href={props.url} color="#fff" bgcolor="#f6c131">
-            TRY NOW
-          </CardCtaButton>
-        </CardCtaButtonWrap>
+        {children}
         <Space size="small" />
       </WrapperBordered>
     </WrapperBorderedScroller>

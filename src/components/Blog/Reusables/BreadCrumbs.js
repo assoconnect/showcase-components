@@ -10,9 +10,6 @@ const BreadCrumbsWrap = styled.ol`
   flex-wrap: wrap;
   font-family: ${UI.fonts.family.roboto};
   flex-direction: row;
-  @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    display: none !important;
-  }
 `
 
 const BreadCrumbsItem = styled.li`

@@ -105,6 +105,15 @@ const PostBodyStyled = styled.div`
   button > a {
     color: white;
   }
+  blockquote {
+    background: #fff2cc !important;
+    font-weight: 600 !important;
+    border: none !important;
+    padding: 20px !important;
+  }
+  blockquote p {
+    margin: 0 !important;
+  }
 `
 
 const PostBody = ({ children }) => {

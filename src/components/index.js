@@ -112,7 +112,6 @@ export { default as CardPostRecommended } from './Blog/CardPosts/CardPostRecomme
 export { default as FavPostsAside } from './Blog/CardCtas/FavPosts'
 export { default as FreeTrial } from './Blog/CardCtas/FreeTrial'
 export { default as Newsletter } from './Blog/CardCtas/Newsletter'
-export { default as BreadCrumbs } from './Blog/Reusables/BreadCrumbs'
 export { default as Pager } from './Blog/Reusables/Pager'
 export { default as Progress } from './Blog/Reusables/Progress'
 export { default as PostCover } from './Blog/Reusables/Post/PostCover'

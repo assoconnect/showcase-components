@@ -1,5 +1,4 @@
 import React from 'react'
-import { Space } from '../../..'
 import {
   WrapperBorderedScroller,
   WrapperBordered,
@@ -11,9 +10,7 @@ const FreeTrial = ({ cardtitle, children }) => {
     <WrapperBorderedScroller>
       <WrapperBordered grey sticky className="sticky">
         <TitleBordered grey>{cardtitle}</TitleBordered>
-        <Space size="small" />
         {children}
-        <Space size="small" />
       </WrapperBordered>
     </WrapperBorderedScroller>
   )

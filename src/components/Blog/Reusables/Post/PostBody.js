@@ -14,7 +14,31 @@ const PostBodyStyled = styled.div`
   > div:nth-first-child {
     max-width: 90vw;
   }
-  h2 {
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 900;
+    color: #9b9b9b;
+  }
+  h2,
+  .h2 {
     font-size: 31px;
     line-height: 40px;
     font-weight: 900;
@@ -29,6 +53,12 @@ const PostBodyStyled = styled.div`
   h4 {
     font-size: 23px;
     line-height: 27px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+  h5 {
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 500;
     color: #4a4a4a;
   }

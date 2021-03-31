@@ -73,6 +73,7 @@ class Layout extends Component {
       },
       translations,
       homePath,
+      lang = 'fr',
     } = this.props
 
     const url =
@@ -101,7 +102,7 @@ class Layout extends Component {
           {noindex && <meta name="robots" content="noindex,nofollow" />}
           {noindex && <meta name="googlebot" content="noindex,nofollow" />}
 
-          <html lang="fr" />
+          <html lang={lang} />
           <meta charSet="utf-8" />
           <meta property="og:locale" content="fr_FR" />
 

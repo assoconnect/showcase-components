@@ -8,6 +8,7 @@
     "@rebass/grid": "^6.0.0-7",
     "atob": "^2.1.2",
     "babel-plugin-styled-components": "^1.10.0",
+    "btoa": "^1.2.1",
     "classnames": "^2.2.6",
     "formik": "^1.4.3",
     "gatsby": "^2.0.95",

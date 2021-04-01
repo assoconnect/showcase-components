@@ -74,6 +74,7 @@ class Layout extends Component {
       translations,
       homePath,
       lang = 'fr',
+      richSnippets,
     } = this.props
 
     const url =
@@ -126,6 +127,9 @@ class Layout extends Component {
             href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,500,600,700,900&display=swap"
             rel="stylesheet"
           />
+          {richSnippets && (
+            <script type="application/ld+json">{richSnippets}</script>
+          )}
         </Helmet>
         <UI.GlobalStyle />
         <ThemeProvider

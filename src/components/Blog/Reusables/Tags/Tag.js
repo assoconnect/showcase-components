@@ -15,8 +15,8 @@ export const TagStyled = styled.span`
   line-height: 14px;
   font-family: ${UI.fonts.family.roboto};
 `
-const Tag = ({ children }) => {
-  return <TagStyled>{children}</TagStyled>
+const Tag = ({ children, ...rest }) => {
+  return <TagStyled {...rest}>{children}</TagStyled>
 }
 
 export default Tag

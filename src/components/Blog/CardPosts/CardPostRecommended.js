@@ -47,12 +47,12 @@ const CardPostRecommended = ({
     <Section>
       <BlogPageTitleLast>Recommended articles</BlogPageTitleLast>
       <Wrapper>
-        {recommendedPosts.map((post, i) => (
+        {recommendedPosts.map(({ node: post }, i) => (
           <CardPost
             key={i}
             width={1 / 3}
-            mock={post.node}
-            obfuscated={recommendedSlugsObfuscation.includes(post.node.slug)}
+            post={post}
+            obfuscated={recommendedSlugsObfuscation.includes(post.slug)}
           ></CardPost>
         ))}
       </Wrapper>

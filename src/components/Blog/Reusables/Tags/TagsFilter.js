@@ -79,7 +79,7 @@ const TagsFilter = ({ topics, translations }) => {
           <TagStyled>{formatMessage('tagsfilter_all', translations)}</TagStyled>
         </TagLink>
         {Object.entries(topics).map(([slug, name], i) => (
-          <TagLink key={i} href={`/en-us/blog/tag/${slug}`}>
+          <TagLink key={i} href={`/en-us/blog/tag/${slug}/`}>
             <TagStyled>{name}</TagStyled>
           </TagLink>
         ))}

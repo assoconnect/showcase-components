@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { UI, Text, Tag, Flex, Link } from '../../..'
 import { Box } from '@rebass/grid'
+import { formatMessage } from '../../../../utils/translations'
 
 const TagWrapper = styled(props => <Flex {...props} />)`
   margin-top: 10px;
@@ -54,7 +55,7 @@ const TagBox = styled(({ isVisible, ...rest }) => <Box {...rest} />)`
   }
 `
 
-const TagsFilter = ({ topics }) => {
+const TagsFilter = ({ topics, translations }) => {
   const [isVisible, setIsVisible] = useState(false)
 
   return (
@@ -69,7 +70,9 @@ const TagsFilter = ({ topics }) => {
           setIsVisible(!isVisible)
         }}
       >
-        <TextStyled>Filtrer par catégorie</TextStyled>
+        <TextStyled>
+          {formatMessage('tagsfilter_text', translations)}
+        </TextStyled>
       </TextBox>
       <TagBox width="auto" isVisible={isVisible}>
         {Object.entries(topics).map(([slug, name], i) => (

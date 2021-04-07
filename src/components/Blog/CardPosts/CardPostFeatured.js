@@ -11,38 +11,42 @@ import {
 
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 
-const CardPostFeatured = ({ mock }) => {
-  let textLength = mock.body.length
-  let result
-  if (textLength > 0) {
-    result = Math.ceil(textLength / 3700)
+const CardPostFeatured = ({
+  post: {
+    slug,
+    feature_image: { url: imageUrl },
+    body,
+    meta: { title },
+    topics,
+    author,
+  },
+}) => {
+  let result = 0
+  if (body.length > 0) {
+    result = Math.ceil(body.length / 3700)
   }
   return (
-    <Wrapper image={mock.feature_image.url} featured>
-      <StyledLink href={`/en-us/blog/${mock.slug}/`}>
+    <Wrapper image={imageUrl} featured>
+      <StyledLink href={`/en-us/blog/${slug}/`}>
         <FrontMatter>
           <FrontMatterBlock featured>
             <TagWrap minHeight="33px">
-              {mock.topics.map((mock, i) => (
-                <Tag key={i}>{mock.name}</Tag>
+              {topics.map(({ name }, i) => (
+                <Tag key={i}>{name}</Tag>
               ))}
             </TagWrap>
-            <Title featured>{mock.meta.title}</Title>
+            <Title featured>{title}</Title>
             <Meta featured>
               <Svg
                 src="components/blog/icons/blog-reading-time-white"
-                alt="reading time icon"
+                alt="Reading time icon"
                 width="20px"
               />
               <ReadingTime featured>{result} min read</ReadingTime>
             </Meta>
             <AuthorWrap>
-              <AuthorAvatar
-                big
-                src={mock.author.avatar}
-                alt={`Springly author ${mock.author.name}`}
-              ></AuthorAvatar>
-              <AuthorName>{mock.author.full_name}</AuthorName>
+              <AuthorAvatar big src={author.avatar}></AuthorAvatar>
+              <AuthorName>{author.full_name}</AuthorName>
             </AuthorWrap>
           </FrontMatterBlock>
         </FrontMatter>

@@ -60,24 +60,22 @@ export const HeartIcon = styled(props => (
   margin-right: 8px;
 `
 
-const FavPostsAside = props => {
-  return (
-    <WrapperBordered>
-      <TitleBordered>
-        Most
-        <HeartIcon />
-        articles
-      </TitleBordered>
-      <div>
-        {props.favlist.map((edge, i) => (
-          <ListItem key={i} to={`/en-us/blog/${edge.node.slug}/`}>
-            <MiniImage image={edge.node.feature_image.url}></MiniImage>
-            <Name>{edge.node.title}</Name>
-          </ListItem>
-        ))}
-      </div>
-    </WrapperBordered>
-  )
-}
+const FavPostsAside = ({ posts }) => (
+  <WrapperBordered>
+    <TitleBordered>
+      Most
+      <HeartIcon />
+      articles
+    </TitleBordered>
+    <div>
+      {posts.map(({ node: { slug, feature_image, title } }, i) => (
+        <ListItem key={i} to={`/en-us/blog/${slug}/`}>
+          <MiniImage image={feature_image.url}></MiniImage>
+          <Name>{title}</Name>
+        </ListItem>
+      ))}
+    </div>
+  </WrapperBordered>
+)
 
 export default FavPostsAside

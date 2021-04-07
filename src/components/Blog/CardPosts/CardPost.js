@@ -12,41 +12,47 @@ import {
 import { Svg, AuthorWrap, AuthorAvatar, AuthorName, TagWrap, Tag } from '../..'
 import btoa from 'btoa'
 
-const CardPost = ({ width, mock, obfuscated }) => {
-  const link = `/en-us/blog/${mock.slug}/`
-  const thumb = mock.feature_image.url
-  let textLength = mock.body.length
-  let result
-  if (textLength > 0) {
-    result = Math.ceil(textLength / 3700)
+const CardPost = ({
+  width,
+  post: {
+    slug,
+    feature_image: { url: imageUrl },
+    body,
+    meta: { title },
+    topics,
+    author,
+  },
+  obfuscated,
+}) => {
+  const link = `/en-us/blog/${slug}/`
+  let result = 0
+  if (body.length > 0) {
+    result = Math.ceil(body.length / 3700)
   }
   return (
     <Wrapper width={width}>
       <StyledLink href={obfuscated ? btoa(link) : link}>
-        <Thumbnail image={thumb} />
+        <Thumbnail image={imageUrl} />
         <FrontMatterBlock>
           <TagWrap>
-            {mock.topics.map((mock, i) => {
-              return <Tag key={i}>{mock.name}</Tag>
-            })}
+            {topics.map(({ name }, i) => (
+              <Tag key={i}>{name}</Tag>
+            ))}
           </TagWrap>
-          <Title>{mock.meta.title}</Title>
+          <Title>{title}</Title>
           <CardPostFooter>
             <Meta>
               <Svg
                 src="components/blog/icons/blog-reading-time-dark"
-                alt="reading time icon"
+                alt="Reading time icon"
                 width="20px"
                 style={{ marginRight: '7px', verticalAlign: 'middle' }}
               />
               <ReadingTime>{result} min read</ReadingTime>
             </Meta>
             <AuthorWrap flip>
-              <AuthorAvatar
-                src={mock.author.avatar}
-                alt={`Springly author ${mock.author.name}`}
-              ></AuthorAvatar>
-              <AuthorName color="#838383">{mock.author.full_name}</AuthorName>
+              <AuthorAvatar src={author.avatar}></AuthorAvatar>
+              <AuthorName color="#838383">{author.full_name}</AuthorName>
             </AuthorWrap>
           </CardPostFooter>
         </FrontMatterBlock>

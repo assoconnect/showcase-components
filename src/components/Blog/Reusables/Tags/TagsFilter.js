@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { UI, Text, Tag, Flex, Link } from '../../..'
 import { Box } from '@rebass/grid'
 import { formatMessage } from '../../../../utils/translations'
+import btoa from 'btoa'
 
 const TagWrapper = styled(props => <Flex {...props} />)`
   margin-top: 10px;
@@ -77,11 +78,11 @@ const TagsFilter = ({ topics, translations }) => {
         </TextStyled>
       </TextBox>
       <TagBox width="auto" isVisible={isVisible}>
-        <TagLink href="/en-us/blog/">
+        <TagLink href={btoa('/en-us/blog/')}>
           <TagStyled>{formatMessage('tagsfilter_all', translations)}</TagStyled>
         </TagLink>
         {Object.entries(topics).map(([slug, name], i) => (
-          <TagLink key={i} href={`/en-us/blog/tag/${slug}/`}>
+          <TagLink key={i} href={btoa(`/en-us/blog/tag/${slug}/`)}>
             <TagStyled>{name}</TagStyled>
           </TagLink>
         ))}

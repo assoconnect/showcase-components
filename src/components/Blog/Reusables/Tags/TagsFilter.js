@@ -75,6 +75,9 @@ const TagsFilter = ({ topics, translations }) => {
         </TextStyled>
       </TextBox>
       <TagBox width="auto" isVisible={isVisible}>
+        <TagLink href="/en-us/blog/">
+          <TagStyled>{formatMessage('tagsfilter_all', translations)}</TagStyled>
+        </TagLink>
         {Object.entries(topics).map(([slug, name], i) => (
           <TagLink key={i} href={`/en-us/blog/tag/${slug}`}>
             <TagStyled>{name}</TagStyled>

@@ -36,7 +36,7 @@ const TagStyled = styled(props => <Tag {...props} />)`
 
 const TextStyled = styled(props => <Text {...props} />)`
   margin-bottom: 10px;
-  font-size: 18px !important;
+  font-size: 16px !important;
   color: #4a4a4a;
   font-weight: bold !important;
   margin-right: 20px;
@@ -52,6 +52,8 @@ const TextBox = styled(props => <Box {...props} />)`
 const TagBox = styled(({ isVisible, ...rest }) => <Box {...rest} />)`
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     ${({ isVisible }) => !isVisible && 'display: none;'}
+    width: 100%;
+    margin-top: 8px;
   }
 `
 

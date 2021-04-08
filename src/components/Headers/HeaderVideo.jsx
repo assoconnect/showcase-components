@@ -61,62 +61,62 @@ const HeaderVideo = ({
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-4x.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.webp`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-4x.webp`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile.png`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.png`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-4x.png`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}.png`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.png`}
         />
         <link
           rel="preload"
           as="image"
-          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.png`}
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-4x.png`}
         />
       </Helmet>{' '}
       <Header image={wave} translations={translations}>

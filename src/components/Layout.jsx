@@ -5,7 +5,6 @@ import { UI, Navigation } from '.'
 import Footer from './Footer'
 import { ThemeProvider } from 'styled-components'
 import { formatMessage } from '../utils/translations'
-import '../fonts/stylesheet.css'
 
 const getUrlWithoutParams = url => url.split('?')[0]
 

@@ -72,6 +72,127 @@ const GlobalStyle = createGlobalStyle`
       font-size: 17px;
     }
   }
+
+  /* Fonts: generate by https://transfonter.org/ */
+  @font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+      font-family: 'Caveat';
+      src: url('fonts/Caveat-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Italic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-MediumItalic.ttf') format('truetype');
+      font-weight: 500;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Caveat';
+      src: url('fonts/Caveat-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-BoldItalic.ttf') format('truetype');
+      font-weight: bold;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Caveat';
+      src: url('fonts/Caveat-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-BlackItalic.ttf') format('truetype');
+      font-weight: 900;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Black.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Caveat';
+      src: url('fonts/Caveat-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Roboto';
+      src: url('fonts/Roboto-ThinItalic.ttf') format('truetype');
+      font-weight: 100;
+      font-style: italic;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'Baloo';
+      src: url('fonts/Baloo-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
 `
 
 export default {

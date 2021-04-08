@@ -96,18 +96,6 @@ class Layout extends Component {
           ))}
           <link rel="canonical" href={url} />
 
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com/"
-            crossorigin
-          />
-          <link
-            rel="preconnect"
-            href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/"
-            crossorigin
-          />
-          <link rel="preconnect" href="https://cdn.polyfill.io/" crossorigin />
-
           <meta charSet="utf-8" />
           {noindex && <meta name="robots" content="noindex,nofollow" />}
           {noindex && <meta name="googlebot" content="noindex,nofollow" />}
@@ -132,8 +120,21 @@ class Layout extends Component {
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="628" />
 
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,500,700,900&display=swap"
+            rel="preconnect"
+            href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net"
+          />
+          <link rel="preconnect" href="https://cdn.polyfill.io" />
+
+          <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Baloo&family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Baloo&family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap"
             rel="stylesheet"
           />
 

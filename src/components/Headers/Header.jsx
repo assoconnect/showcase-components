@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Flex, UI } from '../'
 import classNames from 'classnames/bind'
 import VideoButton from '../Video/VideoButton'
+import { Helmet } from 'react-helmet'
 
 /**
  * Style
@@ -44,22 +45,31 @@ const Header = ({
   animationVideoButton = true,
   translations,
 }) => (
-  <HeaderStyled
-    style={{
-      ...style,
-      backgroundImage: `url('${process.env.GATSBY_CDN_HOST}/${image}')`,
-    }}
-    className={classNames(className, 'header')}
-  >
-    <HeaderContent alignItems="center">{children}</HeaderContent>
-    {videoId && (
-      <VideoButton
-        animationVideoButton={animationVideoButton}
-        videoId={videoId}
-        translations={translations}
+  <>
+    <Helmet>
+      <link
+        rel="preload"
+        as="image"
+        href={`${process.env.GATSBY_CDN_HOST}/${image}`}
       />
-    )}
-  </HeaderStyled>
+    </Helmet>
+    <HeaderStyled
+      style={{
+        ...style,
+        backgroundImage: `url('${process.env.GATSBY_CDN_HOST}/${image}')`,
+      }}
+      className={classNames(className, 'header')}
+    >
+      <HeaderContent alignItems="center">{children}</HeaderContent>
+      {videoId && (
+        <VideoButton
+          animationVideoButton={animationVideoButton}
+          videoId={videoId}
+          translations={translations}
+        />
+      )}
+    </HeaderStyled>
+  </>
 )
 
 export default Header

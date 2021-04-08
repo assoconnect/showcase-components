@@ -12,6 +12,7 @@ import {
 import React, { useState } from 'react'
 import VideoImage from '../Video/VideoImage'
 import { formatMessage } from '../../utils/translations'
+import { Helmet } from 'react-helmet'
 
 /**
  * Component
@@ -40,6 +41,68 @@ const HeaderHome = ({
   }
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.png`}
+        />
+      </Helmet>
       <Header
         image="components/headers/header-home/wave-blue.svg"
         translations={translations}

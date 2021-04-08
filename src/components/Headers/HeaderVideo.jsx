@@ -14,6 +14,7 @@ import {
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 /**
  * Style
@@ -56,6 +57,68 @@ const HeaderVideo = ({
   }
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.webp`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-2x.png`}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${src}-4x.png`}
+        />
+      </Helmet>{' '}
       <Header image={wave} translations={translations}>
         <Box align="left" width={1 / 2}>
           <Space size="big" className="hidden-desktop" />

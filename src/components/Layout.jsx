@@ -95,10 +95,22 @@ class Layout extends Component {
             />
           ))}
           <link rel="canonical" href={url} />
-          <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
-          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-          <link rel="dns-prefetch" href="https://showcase.azureedge.net" />
-          <link rel="dns-prefetch" href="https://cdn.polyfill.io" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com/"
+            crossorigin
+          />
+          <link
+            rel="dns-prefetch"
+            href=" https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/"
+            crossorigin
+          />
+          <link
+            rel="dns-prefetch"
+            href="https://cdn.polyfill.io/"
+            crossorigin
+          />
+
           <meta charSet="utf-8" />
           {noindex && <meta name="robots" content="noindex,nofollow" />}
           {noindex && <meta name="googlebot" content="noindex,nofollow" />}
@@ -122,6 +134,11 @@ class Layout extends Component {
           <meta property="og:image" content={this.getMetaImage()} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="628" />
+
+          <link
+            href="https://fonts.googleapis.com/css?family=Baloo|Caveat:400,700|Roboto:300,400,500,700,900&display=swap"
+            rel="stylesheet"
+          />
 
           {richSnippets && (
             <script type="application/ld+json">{richSnippets}</script>

@@ -95,21 +95,18 @@ class Layout extends Component {
             />
           ))}
           <link rel="canonical" href={url} />
+
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com/"
             crossorigin
           />
           <link
-            rel="dns-prefetch"
-            href=" https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/"
+            rel="preconnect"
+            href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net/"
             crossorigin
           />
-          <link
-            rel="dns-prefetch"
-            href="https://cdn.polyfill.io/"
-            crossorigin
-          />
+          <link rel="preconnect" href="https://cdn.polyfill.io/" crossorigin />
 
           <meta charSet="utf-8" />
           {noindex && <meta name="robots" content="noindex,nofollow" />}

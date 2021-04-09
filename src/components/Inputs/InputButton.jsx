@@ -240,7 +240,6 @@ const InputButton = ({
     return (
       <Formik
         initialValues={{ email: '' }}
-        validationSchema={validationSchema}
         validate={values => {
           if (!values.email) {
             return {

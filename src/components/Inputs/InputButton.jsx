@@ -3,7 +3,6 @@ import InputBasic from './InputBasic'
 import { Button, UI } from '../'
 import styled from 'styled-components'
 import { Formik, Form, ErrorMessage } from 'formik'
-import * as yup from 'yup'
 import colors from '../../styles/colors'
 import { formatMessage } from '../../utils/translations'
 
@@ -73,7 +72,6 @@ const ErrorMessageStyledBlog = styled.div`
   color: #f4674a;
   margin-bottom: 5px;
 `
-
 
 /**
  * Style
@@ -187,7 +185,8 @@ const InputButton = ({
   className,
   translations,
   href = 'https://app.assoconnect.com/sign-up',
-  hubspotId, newsletter
+  hubspotId,
+  newsletter,
 }) => {
   const goToSignup = emailValue => {
     setTimeout(() => {
@@ -237,72 +236,85 @@ const InputButton = ({
     }
   }
 
-  /** Validation schema */
-  const validationSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required(formatMessage('inputbutton_validation_required', translations))
-      .matches(
-        /^([a-z0-9!#$%&'*+/=?^_`{|}~.(),:;<>@[\\\]-]+)$/i,
-        formatMessage('inputbutton_validation_matches', translations)
-      )
-      .email(formatMessage('inputbutton_validation_email', translations)),
-  })
-
   if (typeof window !== 'undefined') {
     return (
       <Formik
         initialValues={{ email: '' }}
         validationSchema={validationSchema}
+        validate={values => {
+          if (!values.email) {
+            return {
+              email: formatMessage(
+                'inputbutton_validation_required',
+                translations
+              ),
+            }
+          }
+          if (
+            values.email.match(
+              /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            ) === null
+          ) {
+            return {
+              email: formatMessage(
+                'inputbutton_validation_email',
+                translations
+              ),
+            }
+          }
+        }}
         onSubmit={values => {
           fetchHubspot(values.email)
         }}
       >
         {() => (
           <FormStyled className={className}>
-            {newsletter ? <InputButtonContainer>
-              <ErrorMessage name="email" component={ErrorMessageStyledBlog} />
-              <InputButtonWrapperBlog className="button animation--start-hover">
-                <InputButtonStyledBlog
-                  name="email"
-                  type="email"
-                  placeholder={formatMessage(
-                    'inputbutton_placeholder_blog',
-                    translations
-                  )}
-                />
-                <InputButtonSendBlog
-                  type="submit"
-                  theme="yellow"
-                  size="big"
-                  animationOff
-                >
-                  {formatMessage('inputbuttonNewsletter_text', translations)}
-                </InputButtonSendBlog>
-              </InputButtonWrapperBlog>
-            </InputButtonContainer> :
-            <InputButtonContainer>
-              <ErrorMessage name="email" component={ErrorMessageStyled} />
-              <InputButtonWrapper className="button animation--start-hover">
-                <InputButtonStyled
-                  name="email"
-                  type="email"
-                  placeholder={formatMessage(
-                    'inputbutton_placeholder',
-                    translations
-                  )}
-                  icon="common/icon/unicolor/paperplane"
-                />
-                <InputButtonButton
-                  type="submit"
-                  theme="yellow"
-                  size="big"
-                  animationOff
-                >
-                  {formatMessage('inputbutton_text', translations)}
-                </InputButtonButton>
-              </InputButtonWrapper>
-            </InputButtonContainer> }
+            {newsletter ? (
+              <InputButtonContainer>
+                <ErrorMessage name="email" component={ErrorMessageStyledBlog} />
+                <InputButtonWrapperBlog className="button animation--start-hover">
+                  <InputButtonStyledBlog
+                    name="email"
+                    type="email"
+                    placeholder={formatMessage(
+                      'inputbutton_placeholder_blog',
+                      translations
+                    )}
+                  />
+                  <InputButtonSendBlog
+                    type="submit"
+                    theme="yellow"
+                    size="big"
+                    animationOff
+                  >
+                    {formatMessage('inputbuttonNewsletter_text', translations)}
+                  </InputButtonSendBlog>
+                </InputButtonWrapperBlog>
+              </InputButtonContainer>
+            ) : (
+              <InputButtonContainer>
+                <ErrorMessage name="email" component={ErrorMessageStyled} />
+                <InputButtonWrapper className="button animation--start-hover">
+                  <InputButtonStyled
+                    name="email"
+                    type="email"
+                    placeholder={formatMessage(
+                      'inputbutton_placeholder',
+                      translations
+                    )}
+                    icon="common/icon/unicolor/paperplane"
+                  />
+                  <InputButtonButton
+                    type="submit"
+                    theme="yellow"
+                    size="big"
+                    animationOff
+                  >
+                    {formatMessage('inputbutton_text', translations)}
+                  </InputButtonButton>
+                </InputButtonWrapper>
+              </InputButtonContainer>
+            )}
           </FormStyled>
         )}
       </Formik>

@@ -40,7 +40,7 @@
     "develop": "gatsby develop --host=0.0.0.0",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "compile": "./node_modules/.bin/babel src --ignore src/pages --plugins=@babel/plugin-proposal-class-properties --presets=@babel/preset-react,@babel/preset-env --out-dir lib",
+    "compile": "rm -fr lib && ./node_modules/.bin/babel src --ignore src/pages --out-dir lib",
     "update": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
@@ -49,6 +49,7 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
+    "babel-preset-minify": "^0.5.1",
     "prettier": "^1.19.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

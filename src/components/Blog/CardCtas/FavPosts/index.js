@@ -1,11 +1,10 @@
 import React from 'react'
-
 import styled from 'styled-components'
-import { UI, Svg } from '../../..'
+import { UI, Svg, Link } from '../../..'
 import { WrapperBordered, TitleBordered } from '../styled.js'
-import { Link as GatsbyLink } from 'gatsby'
+import btoa from 'btoa'
 
-export const ListItem = styled(GatsbyLink)`
+export const ListItem = styled(props => <Link {...props} />)`
   display: flex;
   margin-bottom: 40px;
   align-items: center !important;
@@ -60,22 +59,37 @@ export const HeartIcon = styled(props => (
   margin-right: 8px;
 `
 
-const FavPostsAside = ({ posts }) => (
-  <WrapperBordered>
-    <TitleBordered>
-      Most
-      <HeartIcon />
-      articles
-    </TitleBordered>
-    <div>
-      {posts.map(({ node: { slug, feature_image, title } }, i) => (
-        <ListItem key={i} to={`/en-us/blog/${slug}/`}>
-          <MiniImage image={feature_image.url}></MiniImage>
-          <Name>{title}</Name>
-        </ListItem>
-      ))}
-    </div>
-  </WrapperBordered>
-)
+const FavPostsAside = ({
+  favoritesPosts,
+  favoritesSlugs,
+  favoritesSlugsObfuscation,
+}) => {
+  // Sort favoritesPosts
+  favoritesPosts.sort(
+    (a, b) =>
+      favoritesSlugs.indexOf(a.node.slug) - favoritesSlugs.indexOf(b.node.slug)
+  )
+  const link = `/en-us/blog/${slug}/`
+  return (
+    <WrapperBordered>
+      <TitleBordered>
+        Most
+        <HeartIcon />
+        articles
+      </TitleBordered>
+      <div>
+        {posts.map(({ node: { slug, feature_image, title } }, i) => (
+          <ListItem
+            key={i}
+            href={favoritesSlugsObfuscation.includes(slug) ? btoa(link) : link}
+          >
+            <MiniImage image={feature_image.url}></MiniImage>
+            <Name>{title}</Name>
+          </ListItem>
+        ))}
+      </div>
+    </WrapperBordered>
+  )
+}
 
 export default FavPostsAside

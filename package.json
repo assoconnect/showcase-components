@@ -17,6 +17,7 @@
     "react-scroll": "^1.8.2",
     "react-svg": "^10.0.26",
     "react-slick": "0.23.1",
+    "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.12"
   },
   "keywords": [],
@@ -40,7 +41,6 @@
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-styled-components": "^3.10.0",
     "prop-types": "^15.7.2",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.1",
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",

@@ -69,7 +69,6 @@ const FavPostsAside = ({
     (a, b) =>
       favoritesSlugs.indexOf(a.node.slug) - favoritesSlugs.indexOf(b.node.slug)
   )
-  const link = `/en-us/blog/${slug}/`
   return (
     <WrapperBordered>
       <TitleBordered>
@@ -78,15 +77,20 @@ const FavPostsAside = ({
         articles
       </TitleBordered>
       <div>
-        {posts.map(({ node: { slug, feature_image, title } }, i) => (
-          <ListItem
-            key={i}
-            href={favoritesSlugsObfuscation.includes(slug) ? btoa(link) : link}
-          >
-            <MiniImage image={feature_image.url}></MiniImage>
-            <Name>{title}</Name>
-          </ListItem>
-        ))}
+        {posts.map(({ node: { slug, feature_image, title } }, i) => {
+          const link = `/en-us/blog/${slug}/`
+          return (
+            <ListItem
+              key={i}
+              href={
+                favoritesSlugsObfuscation.includes(slug) ? btoa(link) : link
+              }
+            >
+              <MiniImage image={feature_image.url}></MiniImage>
+              <Name>{title}</Name>
+            </ListItem>
+          )
+        })}
       </div>
     </WrapperBordered>
   )

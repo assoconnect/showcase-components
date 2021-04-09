@@ -77,7 +77,7 @@ const FavPostsAside = ({
         articles
       </TitleBordered>
       <div>
-        {posts.map(({ node: { slug, feature_image, title } }, i) => {
+        {favoritesPosts.map(({ node: { slug, feature_image, title } }, i) => {
           const link = `/en-us/blog/${slug}/`
           return (
             <ListItem

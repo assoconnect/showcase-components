@@ -6,13 +6,13 @@ import {
   InputButton,
   Space,
   Svg,
-  Text,
   Video,
 } from '../'
 import React, { useState } from 'react'
 import VideoImage from '../Video/VideoImage'
 import { formatMessage } from '../../utils/translations'
 import { Helmet } from 'react-helmet'
+import { KillerArgument } from './Header'
 
 /**
  * Component
@@ -60,7 +60,12 @@ const HeaderHome = ({
         image="components/headers/header-home/wave-blue.svg"
         translations={translations}
       >
-        <Box mt={['-1.6rem', '-4.375rem']} align="left" width={0.46}>
+        <Box
+          mt={['-1.6rem', '-4.375rem']}
+          mb={killerArgument ? ['6rem', '0'] : ['0rem']}
+          align="left"
+          width={0.46}
+        >
           <Svg
             src={`common/logo/${formatMessage('site_name', translations)}`}
             width="125px"
@@ -81,12 +86,7 @@ const HeaderHome = ({
             href={buttonHref}
             hubspotId={hubspotId}
           />
-          {killerArgument && (
-            <>
-              <Space size="small" />
-              <Text color="white">{killerArgument}</Text>
-            </>
-          )}
+          {killerArgument && <KillerArgument>{killerArgument}</KillerArgument>}
         </Box>
         <Box width={0.54}>
           <VideoImage

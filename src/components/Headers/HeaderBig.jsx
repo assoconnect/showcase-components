@@ -11,8 +11,8 @@ import {
   Subtitle,
   InputButton,
   ButtonLink,
-  Text,
 } from '../'
+import { KillerArgument } from './Header'
 
 /**
  * Style
@@ -87,24 +87,13 @@ const HeaderBig = ({
         </Subtitle>
         <HeaderSpace size="medium" />
         {field ? (
-          <>
-            <InputButton
-              className={classNameForm}
-              translations={translations}
-            />
-            {killerArgument && (
-              <>
-                <Space size="small" />
-                <Text color="white">{killerArgument}</Text>
-              </>
-            )}
-          </>
+          <InputButton className={classNameForm} translations={translations} />
         ) : (
           <ButtonLink href={button.href} button={{ size: 'big' }}>
             {button.children}
           </ButtonLink>
         )}
-
+        {killerArgument && <KillerArgument>{killerArgument}</KillerArgument>}
         <HeaderSpace size="medium" className="hidden-desktop" />
       </Box>
       <Box width={1 / 2} overflowRight>

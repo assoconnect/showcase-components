@@ -51,7 +51,7 @@ const AnimationImageInner = styled.div`
     justify-content: center !important;
   }
 `
-const ImageStyled = styled((props) => <AdaptiveImage {...props} />)`
+const ImageStyled = styled(props => <AdaptiveImage {...props} />)`
   height: calc(100vw / 3 - 30px * 2);
   max-height: calc(1500px / 3 - 30px * 2);
   max-width: none !important;
@@ -64,7 +64,7 @@ const ImageStyled = styled((props) => <AdaptiveImage {...props} />)`
     justify-content: center;
   }
 `
-const ImageFun = styled((props) => <ImageStyled {...props} />)`
+const ImageFun = styled(props => <ImageStyled {...props} />)`
   position: absolute;
   top: 0;
   left: 0;

@@ -6,7 +6,6 @@ import {
   InputButton,
   Space,
   Subtitle,
-  Text,
   UI,
   Video,
   VideoImage,
@@ -15,6 +14,7 @@ import {
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
+import { KillerArgument } from './Header'
 
 /**
  * Style
@@ -84,24 +84,16 @@ const HeaderVideo = ({
           </Subtitle>
           <HeaderSpace size="medium" />
           {field ? (
-            <>
-              <InputButton
-                className={classNameForm}
-                translations={translations}
-              />
-              {killerArgument && (
-                <>
-                  <Space size="small" />
-                  <Text color="white">{killerArgument}</Text>
-                </>
-              )}
-            </>
+            <InputButton
+              className={classNameForm}
+              translations={translations}
+            />
           ) : (
             <ButtonLink href={button.href} button={{ size: 'big' }}>
               {button.children}
             </ButtonLink>
           )}
-
+          {killerArgument && <KillerArgument>{killerArgument}</KillerArgument>}
           <HeaderSpace size="medium" className="hidden-desktop" />
         </Box>
         <Box width={1 / 2}>

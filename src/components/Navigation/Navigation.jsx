@@ -150,6 +150,10 @@ const NavigationChildTitle = styled.div`
     margin: 25px auto 0;
   }
 `
+// Fix https://gitlab.com/assoconnect/assoconnect/-/issues/18784
+const NavigationItemWrapper = styled(props => <Box {...props} />)`
+  white-space: nowrap;
+`
 
 /**
  * Component
@@ -268,7 +272,7 @@ class Navigation extends Component {
               </Link>
             </NavigationLogoWrapper>
             {!!items && (
-              <Box
+              <NavigationItemWrapper
                 width="auto"
                 px={[0, '30px']}
                 mb={['40px', '-4px']}
@@ -329,7 +333,7 @@ class Navigation extends Component {
                     )}
                   </React.Fragment>
                 ))}
-              </Box>
+              </NavigationItemWrapper>
             )}
             <Box width="auto" mt={['auto', 0]} ml="auto" px={[0, '30px']}>
               <NavigationButtons navigationButtons={navigationButtons} />

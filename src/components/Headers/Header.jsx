@@ -34,6 +34,7 @@ const HeaderContent = styled(props => <Flex {...props} />)`
 `
 const KillerArgumentText = styled(props => <div {...props} />)`
   font-family: ${UI.fonts.family.roboto};
+  font-weight: 200;
   color: ${UI.colors.white};
   text-align: left;
   @media screen and (max-width: ${UI.breakpoints.mobile}) {

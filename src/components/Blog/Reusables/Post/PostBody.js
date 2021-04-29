@@ -140,6 +140,7 @@ const PostBodyStyled = styled.div`
     border: none !important;
     padding: 38px 100px !important;
     position: relative !important;
+    margin: 0 0 1rem;
   }
   blockquote:before {
     content: '';

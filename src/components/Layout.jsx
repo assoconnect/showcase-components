@@ -146,10 +146,6 @@ class Layout extends Component {
         {tagManagerId && (
           <>
             <Helmet defer={true}>
-              <script
-                defer
-                src={`https://www.googletagmanager.com/gtm.js?id=${tagManagerId}`}
-              ></script>
               <script>
                 {`
                   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

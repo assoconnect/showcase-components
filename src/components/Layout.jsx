@@ -75,6 +75,7 @@ class Layout extends Component {
       homePath,
       lang = 'fr',
       richSnippets,
+      tagManagerId,
     } = this.props
 
     const url =
@@ -142,6 +143,23 @@ class Layout extends Component {
             <script type="application/ld+json">{richSnippets}</script>
           )}
         </Helmet>
+        {tagManagerId && (
+          <Helmet>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`}
+            ></script>
+            <script>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', ${tagManagerId});
+              `}
+            </script>
+          </Helmet>
+        )}
+
         <UI.GlobalStyle />
         <ThemeProvider
           theme={{

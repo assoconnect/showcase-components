@@ -63,6 +63,9 @@ const Svg = ({
             console.error(`"${src}" failed to load.`)
             return <span className="error">{src} not found.</span>
           }}
+          loading={() => (
+            <div style={{ height: heightCalc, width: widthCalc }}></div>
+          )}
         />
       </SvgWrapper>
     </LazyLoadComponent>

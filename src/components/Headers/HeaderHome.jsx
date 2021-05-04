@@ -54,6 +54,7 @@ const HeaderHome = ({
           as="image"
           href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
           imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
+          media="(min-width: 500px)"
         />
       </Helmet>
       <Header

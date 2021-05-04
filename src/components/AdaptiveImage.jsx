@@ -61,6 +61,7 @@ const AdaptiveImage = ({
         />
         <source
           type="image/webp"
+          media="(min-width: 500px)"
           srcSet={
             `${process.env.GATSBY_CDN_HOST}/${src}.webp` +
             (maxDpi >= 2
@@ -73,6 +74,7 @@ const AdaptiveImage = ({
           srcSet={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.png, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png 2x`}
         />
         <source
+        media="(min-width: 500px)"
           srcSet={
             `${process.env.GATSBY_CDN_HOST}/${src}.png` +
             (maxDpi >= 2

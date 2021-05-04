@@ -65,14 +65,14 @@ const HeaderBig = ({
         rel="preload"
         as="image"
         href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile.webp`}
-        imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.webp x2, ${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-4x.webp 4x`}
+        imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.webp x2`}
         media="(max-width: 500px)"
       />
       <link
         rel="preload"
         as="image"
         href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
-        imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2, ${process.env.GATSBY_CDN_HOST}/${image.src}-4x.webp 4x`}
+        imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
       />
     </Helmet>
     <Header image={wave} videoId={videoId} translations={translations}>

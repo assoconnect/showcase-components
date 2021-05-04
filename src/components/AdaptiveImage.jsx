@@ -57,12 +57,7 @@ const AdaptiveImage = ({
         <source
           type="image/webp"
           media="(max-width: 500px)"
-          srcSet={
-            `${process.env.GATSBY_CDN_HOST}/${src}-mobile.webp, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.webp 2x` +
-            (maxDpi >= 2
-              ? `, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.webp 4x`
-              : '')
-          }
+          srcSet={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.webp, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.webp 2x`}
         />
         <source
           type="image/webp"
@@ -70,29 +65,18 @@ const AdaptiveImage = ({
             `${process.env.GATSBY_CDN_HOST}/${src}.webp` +
             (maxDpi >= 2
               ? `, ${process.env.GATSBY_CDN_HOST}/${src}-2x.webp 2x`
-              : '') +
-            (maxDpi >= 4
-              ? `, ${process.env.GATSBY_CDN_HOST}/${src}-4x.webp 4x`
               : '')
           }
         />
         <source
           media="(max-width: 500px)"
-          srcSet={
-            `${process.env.GATSBY_CDN_HOST}/${src}-mobile.png, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png 2x` +
-            (maxDpi >= 2
-              ? `, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-4x.png 4x`
-              : '')
-          }
+          srcSet={`${process.env.GATSBY_CDN_HOST}/${src}-mobile.png, ${process.env.GATSBY_CDN_HOST}/${src}-mobile-2x.png 2x`}
         />
         <source
           srcSet={
             `${process.env.GATSBY_CDN_HOST}/${src}.png` +
             (maxDpi >= 2
               ? `, ${process.env.GATSBY_CDN_HOST}/${src}-2x.png 2x`
-              : '') +
-            (maxDpi >= 4
-              ? `, ${process.env.GATSBY_CDN_HOST}/${src}-4x.png 4x`
               : '')
           }
         />

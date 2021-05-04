@@ -75,6 +75,8 @@ const HeaderSmall = ({
           <ImageStyled
             src={yado.src}
             alt={yado.alt}
+            width={yado.width}
+            height={yado.height}
             maxDpi={1}
             height="20.5rem"
             visibleByDefault

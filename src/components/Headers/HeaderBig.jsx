@@ -100,7 +100,13 @@ const HeaderBig = ({
       <Box width={1 / 2} overflowRight>
         {yado ? (
           <SpanStyled>
-            <AdaptiveImage src={image.src} alt={image.alt} visibleByDefault />
+            <AdaptiveImage
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              visibleByDefault
+            />
             <Yado
               src={`common/yado/${yado.image}`}
               alt={yado.alt}
@@ -108,7 +114,13 @@ const HeaderBig = ({
             />
           </SpanStyled>
         ) : (
-          <AdaptiveImage src={image.src} alt={image.alt} visibleByDefault />
+          <AdaptiveImage
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            visibleByDefault
+          />
         )}
       </Box>
     </Header>

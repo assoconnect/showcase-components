@@ -268,6 +268,7 @@ class Navigation extends Component {
                   width="auto"
                   height={navigationIsFixed ? '38px' : '65px'}
                   src={this.getNavigationLogoSrc(navigationIsFixed)}
+                  visibleByDefault
                 />
               </Link>
             </NavigationLogoWrapper>

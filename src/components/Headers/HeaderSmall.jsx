@@ -77,6 +77,7 @@ const HeaderSmall = ({
             alt={yado.alt}
             maxDpi={1}
             height="20.5rem"
+            visibleByDefault
           />
           <Space size="big" className="hidden-mobile" />
         </Box>

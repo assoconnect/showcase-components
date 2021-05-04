@@ -169,6 +169,7 @@ class NavigationItem extends Component {
               color="white"
               className="navigation__arrow"
               src="common/icon/unicolor/arrow"
+              visibleByDefault
             />
           )}
         </NavigationItemInner>

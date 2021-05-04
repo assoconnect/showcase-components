@@ -94,6 +94,7 @@ const HeaderHome = ({
             image={image}
             onClick={handleVideoButtonWrapperClick}
             videoId={videoId}
+            visibleByDefault
           />
         </Box>
       </Header>

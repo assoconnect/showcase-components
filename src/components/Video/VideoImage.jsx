@@ -52,9 +52,13 @@ const Button = styled.div`
 /**
  * Component
  */
-const VideoImage = ({ image, onClick, videoId }) => (
+const VideoImage = ({ image, onClick, videoId, visibleByDefault = false }) => (
   <VideoImageWrapper onClick={onClick}>
-    <AdaptiveImage src={image.src} alt={image.alt} />
+    <AdaptiveImage
+      src={image.src}
+      alt={image.alt}
+      visibleByDefault={visibleByDefault}
+    />
     {videoId && (
       <PlayButtonWrapper>
         <Button

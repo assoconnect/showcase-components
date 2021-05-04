@@ -149,7 +149,7 @@ class Layout extends Component {
               <script
                 async
                 defer
-                src={`https://www.googletagmanager.com/gtm.js?id=${tagManagerId})`}
+                src={`https://www.googletagmanager.com/gtm.js?id=${tagManagerId}`}
               ></script>
               <script>
                 {`

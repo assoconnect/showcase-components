@@ -146,6 +146,11 @@ class Layout extends Component {
         {tagManagerId && (
           <>
             <Helmet defer={true}>
+              <script
+                async
+                defer
+                src={`https://www.googletagmanager.com/gtm.js?id=${tagManagerId})`}
+              ></script>
               <script>
                 {`
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -157,12 +162,14 @@ class Layout extends Component {
               </script>
             </Helmet>
             <noscript>
-              <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${tagManagerId}`}
-                height="0"
-                width="0"
-                style="display:none;visibility:hidden"
-              ></iframe>
+              {`
+                <iframe
+                  src="https://www.googletagmanager.com/ns.html?id=${tagManagerId}"
+                  height="0"
+                  width="0"
+                  style="display:none;visibility:hidden"
+                ></iframe>
+              `}
             </noscript>
           </>
         )}

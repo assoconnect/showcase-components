@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Svg, UI, Link } from '..'
 import classNames from 'classnames/bind'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 /**
  * Style
@@ -65,29 +66,34 @@ const NavigationChild = ({
   nofollow,
   text,
 }) => (
-  <NavigationChildStyled
-    className={classNames('animation--start-hover', className)}
-    href={href}
-    nofollow={nofollow}
-  >
-    {loadIcon && icon && (
-      <NavigationChildIcon
-        className={classNames('animation--effect-wobble', 'navigation__child')}
-        color="middleGrey"
-        src={icon}
-        width="24px"
-      />
-    )}
-    <NavigationChildText>{text}</NavigationChildText>
-    {arrow && (
-      <NavigationChildArrow
-        className="animation--effect-wobble"
-        src="common/icon/unicolor/small-arrow"
-        color="turquoise"
-        width="16px"
-      />
-    )}
-  </NavigationChildStyled>
+  <LazyLoadComponent>
+    <NavigationChildStyled
+      className={classNames('animation--start-hover', className)}
+      href={href}
+      nofollow={nofollow}
+    >
+      {loadIcon && icon && (
+        <NavigationChildIcon
+          className={classNames(
+            'animation--effect-wobble',
+            'navigation__child'
+          )}
+          color="middleGrey"
+          src={icon}
+          width="24px"
+        />
+      )}
+      <NavigationChildText>{text}</NavigationChildText>
+      {arrow && (
+        <NavigationChildArrow
+          className="animation--effect-wobble"
+          src="common/icon/unicolor/small-arrow"
+          color="turquoise"
+          width="16px"
+        />
+      )}
+    </NavigationChildStyled>
+  </LazyLoadComponent>
 )
 
 export default NavigationChild

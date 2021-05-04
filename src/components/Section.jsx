@@ -2,6 +2,7 @@ import React, { Children } from 'react'
 import { UI, Flex, Svg } from './'
 import styled from 'styled-components'
 import classNames from 'classnames/bind'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 /**
  * Style
@@ -54,9 +55,11 @@ const Section = ({
         py="2rem"
         justifyContent={justifyContent}
       >
-        {Children.map(children, child => {
-          return React.cloneElement(child, { wave: wave.color })
-        })}
+        <LazyLoadComponent>
+          {Children.map(children, child => {
+            return React.cloneElement(child, { wave: wave.color })
+          })}
+        </LazyLoadComponent>
       </Flex>
     </SectionStyled>
   )

@@ -13,6 +13,7 @@ import {
 import styled from 'styled-components'
 import AnimateHeight from 'react-animate-height'
 import { formatMessage } from '../utils/translations'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 /**
  * Style
@@ -208,7 +209,7 @@ const Footer = ({
   socials,
   translations,
 }) => (
-  <>
+  <LazyLoadComponent>
     {preFooter && (
       <Section wave={{ color: 'blue' }}>
         <Box width={1}>
@@ -311,7 +312,7 @@ const Footer = ({
         </FooterCopyright>
       </FooterInner>
     </FooterStyled>
-  </>
+  </LazyLoadComponent>
 )
 
 export default Footer

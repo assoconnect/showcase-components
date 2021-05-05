@@ -101,6 +101,8 @@ const InputButtonWrapper = styled.div`
 const InputButtonStyled = styled(InputBasic)`
   padding-right: 0;
   flex-grow: 3;
+  height: 41px;
+
   .input {
     width: 100%;
   }
@@ -109,7 +111,7 @@ const InputButtonStyled = styled(InputBasic)`
   }
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
-    padding: 0.588rem;
+    height: 44px;
   }
   /* Desktop mode */
   @media screen and (min-width: ${UI.breakpoints.mobile}) {
@@ -118,10 +120,12 @@ const InputButtonStyled = styled(InputBasic)`
 `
 const InputButtonButton = styled(Button)`
   vertical-align: middle;
+  height: 41px;
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     margin-top: 1.765rem;
+    height: auto;
   }
   .button {
     padding: 0.647rem 1.1rem;

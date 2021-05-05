@@ -37,7 +37,6 @@ export { default as ButtonText } from './Buttons/ButtonText'
 /**
  * Embed
  */
-export { default as Calendly } from './Embed/Calendly'
 export { default as Outgrow } from './Embed/Outgrow'
 
 /**

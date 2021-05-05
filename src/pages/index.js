@@ -19,6 +19,7 @@ import {
   Subtitle,
   PostMain,
   Newsletter,
+  Table,
 } from '../components'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
 const IndexPage = () => (
@@ -54,13 +55,207 @@ const IndexPage = () => (
       }
       videoId="6yurbg1g3b"
     />
-    <Newsletter
-      buttonHref="https://app.assoconnect.com/sign-up?lang=en_US"
-      title="The Holy Grail of Nonprofit Tips ✨"
-      subtitle="Get all of the information you need to efficiently manage your nonprofit with our monthly newsletter."
-    ></Newsletter>
+    <Section wave={{ direction: 'down' }}>
+      <Newsletter
+        buttonHref="https://app.assoconnect.com/sign-up?lang=en_US"
+        title="The Holy Grail of Nonprofit Tips ✨"
+        subtitle="Get all of the information you need to efficiently manage your nonprofit with our monthly newsletter."
+      ></Newsletter>
+    </Section>
     <Space size="big" />
     <Space size="big" />
+    <Section wave={{ direction: 'down' }}>
+      <Table
+        columns={[
+          {
+            title: '',
+            dataIndex: 'title',
+            className: 'rc-table-title',
+            width: 300,
+          },
+          {
+            title: 'Offre gratuite',
+            text: '0€',
+            dataIndex: 'jeunePousse',
+            width: 400,
+          },
+          {
+            title: 'Offre complète',
+            subTitle: 'A partir de 19€ / mois',
+            dataIndex: 'bonzai',
+            width: 400,
+          },
+        ]}
+        datas={[
+          {
+            title: 'Comptabilité',
+            jeunePousse: 'no',
+            children: [
+              { title: 'Saisie simplifiée', jeunePousse: 'no' },
+              { title: 'Comptabilisation automatique', jeunePousse: 'no' },
+              { title: 'Documents comptables', jeunePousse: 'no' },
+              { title: 'Remise de chèques', jeunePousse: 'no' },
+              { title: 'Rapprochement bancaire', jeunePousse: 'no' },
+              { title: 'Tableau de bord financier', jeunePousse: 'no' },
+              { title: 'Clôture comptable', jeunePousse: 'no' },
+              { title: 'Emission du FEC', jeunePousse: 'no' },
+              { title: 'Saisie comptable avancée', jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Gestion des membres',
+            children: [
+              'Base de membres centralisée',
+              'Historique des membres',
+              'Champs personnalisables',
+              { title: 'Filtres et recherche avancée', jeunePousse: 'no' },
+              { title: 'Groupes simples et dynamiques', jeunePousse: 'no' },
+              'Envoi de messages directs',
+              { title: 'Import et export massifs', jeunePousse: 'no' },
+              {
+                title: 'Gestion des personnes morales',
+                subTitle: 'Voir prix ci-dessous',
+                jeunePousse: 'no',
+              },
+            ],
+          },
+          {
+            title: 'Adhésions',
+            children: [
+              'Création rapide de campagne',
+              'Tarifs et moyens de paiement paramétrables',
+              'Paiements 100% sécurisés',
+              'Alimentation du CRM',
+              'Envoi automatique de reçus et factures',
+              {
+                title: 'Saisie automatique en comptabilité',
+                jeunePousse: 'no',
+              },
+              'Suivi des paiements',
+              { title: 'Tarifs réservés ou publics', jeunePousse: 'no' },
+              { title: 'Gestion des réductions', jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Dons',
+            children: [
+              'Dons ponctuels',
+              'Dons libres ou suggérés',
+              'Moyens de paiement paramétrables',
+              'Paiements 100% sécurisés',
+              "Collecte d'informations des donateurs",
+              {
+                title: 'Saisie automatique en comptabilité',
+                jeunePousse: 'no',
+              },
+              'Suivi des paiements',
+              'Page personnalisée',
+              'Emission et envoi des reçus fiscaux',
+              'Enrichissement du CRM',
+            ],
+          },
+          {
+            title: 'Site internet',
+            jeunePousse: 'no',
+            children: [
+              { title: 'Facile à créer et administrer', jeunePousse: 'no' },
+              { title: '7 modèles disponibles', jeunePousse: 'no' },
+              { title: 'Nombre illimité de pages', jeunePousse: 'no' },
+              {
+                title: 'Pages automatiques et personnalisées',
+                jeunePousse: 'no',
+              },
+              {
+                title: 'Aucune compétence informatique nécessaire',
+                jeunePousse: 'no',
+              },
+              {
+                title: 'Affichage sur mobile et tablette',
+                jeunePousse: 'no',
+              },
+              {
+                title: 'Optimisation référencement naturel',
+                jeunePousse: 'no',
+              },
+              { title: 'URL personnalisable', jeunePousse: 'no' },
+              { title: 'Intranet et accès réservés', jeunePousse: 'no' },
+              { title: 'Statistiques', jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Communication',
+            jeunePousse: 'no',
+            children: [
+              { title: "Module complet d'emailing", jeunePousse: 'no' },
+              { title: 'Lien avec la base de données', jeunePousse: 'no' },
+              { title: 'Champs personnalisables', jeunePousse: 'no' },
+              { title: 'Sondages', jeunePousse: 'no' },
+              { title: 'Galeries photos', jeunePousse: 'no' },
+              { title: 'Articles et Documents', jeunePousse: 'no' },
+              { title: 'Agenda intelligent', jeunePousse: 'no' },
+              { title: 'Annuaire', jeunePousse: 'no' },
+              { title: 'Lien avec les réseaux sociaux', jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Billetterie',
+            children: [
+              "Page dédiée à l'événement",
+              'Personnalisation des billets',
+              'Tarifs et moyens de paiement paramétrables',
+              { title: 'Evénement privé ou public', jeunePousse: 'no' },
+              'Suivi des inscriptions',
+              'Suivi des paiements',
+              "Scan des billets à l'entrée",
+              {
+                title: 'Saisie automatique en comptabilité',
+                jeunePousse: 'no',
+              },
+              'Reçus et factures automatiques',
+              { title: "Intégration à l'agenda", jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Boutique en ligne',
+            jeunePousse: 'no',
+            children: [
+              { title: 'Page dédiée', jeunePousse: 'no' },
+              {
+                title: 'Tarifs et moyens de paiement paramétrables',
+                jeunePousse: 'no',
+              },
+              { title: 'Suivi des stocks', jeunePousse: 'no' },
+              { title: 'Lien avec la comptabilité', jeunePousse: 'no' },
+              { title: 'Reçus et factures automatiques', jeunePousse: 'no' },
+              { title: 'Intégration au site internet', jeunePousse: 'no' },
+            ],
+          },
+          {
+            title: 'Outils collaboratifs',
+            children: [
+              "Nombre illimité d'administrateurs",
+              {
+                title: 'Répartition des rôles sur les modules',
+                jeunePousse: 'no',
+              },
+              { title: 'Autonomie des groupes avancés', jeunePousse: 'no' },
+              'Passations simplifiées',
+            ],
+          },
+          {
+            title: 'Logiciel en ligne',
+            children: [
+              'Données accessibles en permanence',
+              'Accès sécurisés',
+              'Sauvegardes automatiques',
+              'Confidentialité des données',
+              'Evolutions et améliorations incluses',
+              'Accessible sur tous les supports',
+            ],
+          },
+        ]}
+      />
+    </Section>
     <Section wave={{ direction: 'down' }}>
       <PostMain />
       <Box width={1}>

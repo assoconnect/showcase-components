@@ -238,9 +238,10 @@ const TablePrice = ({ columns, datas, crossColor = 'middleGrey' }) => (
       columns={transformColumns(columns)}
       data={transformData(datas, crossColor)}
     />
-    {columns.map((column, i) => {
-      if (column.dataIndex !== 'title')
-        return (
+    {// Mobile mode
+    columns.map(
+      (column, i) =>
+        column.dataIndex !== 'title' && (
           <div key={i}>
             <Space size="small" />
             <TableExpansionPanel
@@ -251,8 +252,7 @@ const TablePrice = ({ columns, datas, crossColor = 'middleGrey' }) => (
             />
           </div>
         )
-      else return false
-    })}
+    )}
   </>
 )
 

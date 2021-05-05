@@ -1303,7 +1303,7 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@rebass/grid@^6.0.0-7":
+"@rebass/grid@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@rebass/grid/-/grid-6.1.0.tgz#17827e13d9b461d86e3e5c6b47393b5aea857370"
   integrity sha512-0UbW75JgIB7b7moMYgl+rBsHAIt/Nt+/ntUrBqkdbalMuGH6q3qfLW5i79uE3rrY0iLlkcmY7w6mOo56FzCJsg==

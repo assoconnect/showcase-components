@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { UI, Navigation } from '.'
 import Footer from './Footer'
@@ -196,13 +195,6 @@ class Layout extends Component {
       </>
     )
   }
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-Layout.contextTypes = {
-  mixpanel: PropTypes.object.isRequired,
 }
 
 export default Layout

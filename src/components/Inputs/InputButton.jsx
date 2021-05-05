@@ -194,20 +194,20 @@ const InputButton = ({
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState(null)
 
-  const goToSignup = emailValue => {
+  const goToSignup = () => {
     setTimeout(() => {
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({
-        'email-passed': emailValue,
+        'email-passed': email,
       })
       if (window.location.search.length || href.indexOf('?') !== -1) {
         if (window.location.search.length) {
-          window.location.href = `${href}${window.location.search}&email=${emailValue}`
+          window.location.href = `${href}${window.location.search}&email=${email}`
         } else {
-          window.location.href = `${href}&email=${emailValue}`
+          window.location.href = `${href}&email=${email}`
         }
       } else {
-        window.location.href = `${href}?email=${emailValue}`
+        window.location.href = `${href}?email=${email}`
       }
     }, 400)
   }
@@ -235,21 +235,21 @@ const InputButton = ({
           console.error(error)
         })
         .finally(() => {
-          goToSignup(email)
+          goToSignup()
         })
     } else {
-      goToSignup(email)
+      goToSignup()
     }
   }
 
   const handleSubmit = event => {
+    event.preventDefault()
     setEmailError('')
     // Errors
     if (!email) {
       setEmailError(
         formatMessage('inputbutton_validation_required', translations)
       )
-      event.preventDefault()
       return
     }
     if (
@@ -258,7 +258,6 @@ const InputButton = ({
       ) === null
     ) {
       setEmailError(formatMessage('inputbutton_validation_email', translations))
-      event.preventDefault()
       return
     }
     // Submit

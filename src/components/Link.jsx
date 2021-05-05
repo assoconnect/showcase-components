@@ -55,7 +55,7 @@ const Link = ({
     return (
       <AnchorLinkStyled
         href={href}
-        offset={-60}
+        offset={60}
         className={classNames(className)}
         isStyled={isStyled}
       >

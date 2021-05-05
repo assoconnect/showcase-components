@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { UI, Svg } from '../'
-import { Field } from 'formik'
 import classNames from 'classnames/bind'
 
 /**
@@ -24,7 +23,7 @@ const InputBasicWrapper = styled.span`
       align-items: center;
     `};
 `
-const InputBasicStyled = styled(props => <Field {...props} />)`
+const InputBasicStyled = styled.input`
   border: 0.5px solid transparent;
   outline-style: none;
   padding: 0;
@@ -48,7 +47,7 @@ const InputBasicIco = styled(props => <Svg {...props} />)`
 /**
  * Component
  */
-const InputBasic = ({ className, placeholder, icon, name }) => (
+const InputBasic = ({ className, placeholder, icon, name, ...rest }) => (
   <InputBasicWrapper className={classNames(className)} icon={icon}>
     {icon && (
       <InputBasicIco
@@ -56,9 +55,15 @@ const InputBasic = ({ className, placeholder, icon, name }) => (
         src={icon}
         className="animation--effect-wobble"
         color="middleGrey"
+        visibleByDefault
       />
     )}
-    <InputBasicStyled className="input" placeholder={placeholder} name={name} />
+    <InputBasicStyled
+      className="input"
+      placeholder={placeholder}
+      name={name}
+      {...rest}
+    />
   </InputBasicWrapper>
 )
 

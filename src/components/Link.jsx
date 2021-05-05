@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
-import { Link as ScrollLink } from 'react-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import classNames from 'classnames/bind'
 import styled, { css } from 'styled-components'
 import atob from 'atob'
@@ -16,8 +16,8 @@ const GatsbyLinkStyled = styled(({ isStyled, ...rest }) => (
 ))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
-const ScrollLinkStyled = styled(({ isStyled, ...rest }) => (
-  <ScrollLink {...rest} />
+const AnchorLinkStyled = styled(({ isStyled, ...rest }) => (
+  <AnchorLink {...rest} />
 ))`
   ${({ isStyled }) => isStyled && commonStyle};
 `
@@ -53,15 +53,14 @@ const Link = ({
   // Anchor link
   if (href && href.indexOf('#') === 0) {
     return (
-      <ScrollLinkStyled
-        to={href.substring(1)}
-        smooth={true}
+      <AnchorLinkStyled
+        href={href}
         offset={-60}
         className={classNames(className)}
         isStyled={isStyled}
       >
         {children}
-      </ScrollLinkStyled>
+      </AnchorLinkStyled>
     )
   }
   // Internal link

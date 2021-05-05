@@ -126,7 +126,6 @@ class Layout extends Component {
             href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net"
           />
           <link rel="preconnect" href="https://cdn.polyfill.io" />
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
 
           <link
             rel="preload"

@@ -120,7 +120,6 @@ const InputButtonStyled = styled(InputBasic)`
 `
 const InputButtonButton = styled(Button)`
   vertical-align: middle;
-  height: 41px;
 
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
@@ -128,6 +127,7 @@ const InputButtonButton = styled(Button)`
     height: auto;
   }
   .button {
+    height: 41px;
     padding: 0.647rem 1.1rem;
     transition: 0.3s;
     .outline & {

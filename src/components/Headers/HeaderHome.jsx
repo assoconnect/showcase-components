@@ -7,9 +7,9 @@ import {
   Space,
   Svg,
   Video,
+  VideoImage
 } from '../'
 import React, { useState } from 'react'
-import VideoImage from '../Video/VideoImage'
 import { formatMessage } from '../../utils/translations'
 import { Helmet } from 'react-helmet'
 import { KillerArgument } from './Header'

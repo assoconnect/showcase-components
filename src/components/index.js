@@ -17,6 +17,7 @@ export { default as Svg } from './Svg'
 export { default as Team } from './Team'
 export { default as TextBox } from './TextBox'
 export { default as Video } from './Video'
+export { default as VideoButton } from './Video/VideoButton'
 export { default as VideoImage } from './Video/VideoImage'
 export { default as VideoPlaceholder } from './Video/VideoPlaceholder'
 

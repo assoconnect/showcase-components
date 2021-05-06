@@ -7,7 +7,7 @@ import {
   Space,
   Svg,
   Video,
-  VideoImage,
+  VideoImage
 } from '../'
 import React, { useState } from 'react'
 import { formatMessage } from '../../utils/translations'
@@ -41,24 +41,22 @@ const HeaderHome = ({
   }
   return (
     <>
-      {image.src && (
-        <Helmet>
-          <link
-            rel="preload"
-            as="image"
-            href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile.webp`}
-            imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.webp x2`}
-            media="(max-width: 500px)"
-          />
-          <link
-            rel="preload"
-            as="image"
-            href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
-            imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
-            media="(min-width: 500px)"
-          />
-        </Helmet>
-      )}
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile.webp`}
+          imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-mobile-2x.webp x2`}
+          media="(max-width: 500px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
+          imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
+          media="(min-width: 500px)"
+        />
+      </Helmet>
       <Header
         image="components/headers/header-home/wave-blue.svg"
         translations={translations}

@@ -6,6 +6,7 @@ import NavigationButtons from './NavigationButtons'
 import NavigationItem from './NavigationItem'
 import NavigationToggle from './NavigationToggle'
 import { formatMessage } from '../../utils/translations'
+import { Helmet } from 'react-helmet'
 
 /**
  * Helpers css
@@ -95,7 +96,7 @@ const NavigationStyled = styled.nav`
     ${navigationWhiteCss};
   }
 `
-const NavigationInner = styled(props => <Flex {...props} />)`
+const NavigationInner = styled((props) => <Flex {...props} />)`
   /* Specific style for all features */
   .navigation__child--all-features {
     color: ${UI.colors.darkGrey};
@@ -126,13 +127,13 @@ const NavigationInner = styled(props => <Flex {...props} />)`
   /* Scroll fixed (only desktop mode) */
   ${({ navigationIsFixed }) => navigationIsFixed && navigationInnerFixedCss};
 `
-const NavigationLogoWrapper = styled(props => <Box {...props} />)`
+const NavigationLogoWrapper = styled((props) => <Box {...props} />)`
   /* Mobile mode */
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     display: none;
   }
 `
-const NavigationLogo = styled(props => <Svg {...props} />)`
+const NavigationLogo = styled((props) => <Svg {...props} />)`
   display: block;
   text-align: center;
   ${({ navigationIsFixed }) => navigationIsFixed && `margin: auto;`}
@@ -151,7 +152,7 @@ const NavigationChildTitle = styled.div`
   }
 `
 // Fix https://gitlab.com/assoconnect/assoconnect/-/issues/18784
-const NavigationItemWrapper = styled(props => <Box {...props} />)`
+const NavigationItemWrapper = styled((props) => <Box {...props} />)`
   white-space: nowrap;
 `
 
@@ -217,7 +218,7 @@ class Navigation extends Component {
     })
   }
 
-  getNavigationLogoSrc = navigationIsFixed => {
+  getNavigationLogoSrc = (navigationIsFixed) => {
     const { translations } = this.props
     return navigationIsFixed
       ? `common/logo/${formatMessage('site_name', translations)}-simple`
@@ -242,6 +243,17 @@ class Navigation extends Component {
     } = this.state
     return (
       <>
+        <Helmet>
+          <link
+            rel="preload"
+            href={`${process.env.GATSBY_CDN_HOST}/common/logo/${formatMessage(
+              'site_name',
+              translations
+            )}.svg`}
+            as="image"
+            type="image/svg+xml"
+          />
+        </Helmet>
         <NavigationMargin />
         <NavigationToggle
           navigationIsFixed={navigationIsFixed}

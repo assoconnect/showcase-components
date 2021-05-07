@@ -31,8 +31,8 @@ const CardPost = ({
     result = Math.ceil(body.length / 3700)
   }
   return (
-    <LazyLoadComponent>
-      <Wrapper width={width}>
+    <Wrapper width={width}>
+      <LazyLoadComponent delayTime={800}>
         <StyledLink href={obfuscated ? btoa(link) : link}>
           <Thumbnail image={imageUrl} />
           <FrontMatterBlock>
@@ -59,8 +59,8 @@ const CardPost = ({
             </CardPostFooter>
           </FrontMatterBlock>
         </StyledLink>
-      </Wrapper>
-    </LazyLoadComponent>
+      </LazyLoadComponent>
+    </Wrapper>
   )
 }
 

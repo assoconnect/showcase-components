@@ -32,7 +32,7 @@ const CardPost = ({
   }
   return (
     <Wrapper width={width}>
-      <LazyLoadComponent delayTime={800}>
+      <LazyLoadComponent delayTime={1500}>
         <StyledLink href={obfuscated ? btoa(link) : link}>
           <Thumbnail image={imageUrl} />
           <FrontMatterBlock>

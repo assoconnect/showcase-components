@@ -125,6 +125,7 @@ class Layout extends Component {
             rel="preconnect"
             href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net"
           />
+          <link rel="preconnect" href="https://cloudfront.net" />
 
           <link
             rel="preload"

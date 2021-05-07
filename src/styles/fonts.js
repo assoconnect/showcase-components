@@ -1,6 +1,6 @@
 export default {
   family: {
-    baloo: 'Baloo, Roboto, Arial, sans-serif',
+    baloo: 'Baloo, Arial, sans-serif',
     roboto: 'Roboto, Arial, sans-serif',
     caveat: 'Caveat, Arial, sans-serif',
   },

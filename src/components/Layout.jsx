@@ -120,9 +120,21 @@ class Layout extends Component {
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="628" />
 
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="preconnect"
             href="https://web-assoconnect-frc-prod-cdn-endpoint-showcase.azureedge.net"
+          />
+
+          <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Baloo&family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Baloo&family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
           />
 
           {richSnippets && (

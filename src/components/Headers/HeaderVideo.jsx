@@ -19,7 +19,7 @@ import { KillerArgument } from './Header'
 /**
  * Style
  */
-const HeaderSpace = styled(props => <Space {...props} />)`
+const HeaderSpace = styled((props) => <Space {...props} />)`
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     padding-top: 1.25rem;
   }
@@ -72,7 +72,21 @@ const HeaderVideo = ({
           imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
           media="(min-width: 500px)"
         />
-      </Helmet>{' '}
+        <link
+          rel="preload"
+          href={`${process.env.GATSBY_CDN_HOST}/components/video-button/simple-play.svg`}
+          as="image"
+          type="image/svg+xml"
+        />
+        {field && (
+          <link
+            rel="preload"
+            href={`${process.env.GATSBY_CDN_HOST}/common/icon/unicolor/paperplane.svg`}
+            as="image"
+            type="image/svg+xml"
+          />
+        )}
+      </Helmet>
       <Header image={wave} translations={translations}>
         <Box align="left" width={1 / 2}>
           <Space size="big" className="hidden-desktop" />

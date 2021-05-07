@@ -17,7 +17,7 @@ import { KillerArgument } from './Header'
 /**
  * Style
  */
-const HeaderSpace = styled(props => <Space {...props} />)`
+const HeaderSpace = styled((props) => <Space {...props} />)`
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     padding-top: 1.25rem;
   }
@@ -27,7 +27,7 @@ const SpanStyled = styled.div`
   position: relative;
   width: 100%;
 `
-const Yado = styled(props => <AdaptiveImage {...props} />)`
+const Yado = styled((props) => <AdaptiveImage {...props} />)`
   position: absolute;
   bottom: 0;
   right: 2rem;
@@ -75,6 +75,32 @@ const HeaderBig = ({
         imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
         media="(min-width: 500px)"
       />
+      {yado && (
+        <>
+          <link
+            rel="preload"
+            as="image"
+            href={`${process.env.GATSBY_CDN_HOST}/common/yado/${yado.image}-mobile.webp`}
+            imagesrcset={`${process.env.GATSBY_CDN_HOST}/common/yado/${yado.image}-mobile-2x.webp x2`}
+            media="(max-width: 500px)"
+          />
+          <link
+            rel="preload"
+            as="image"
+            href={`${process.env.GATSBY_CDN_HOST}/common/yado/${yado.image}.webp`}
+            imagesrcset={`${process.env.GATSBY_CDN_HOST}/common/yado/${yado.image}-2x.webp x2`}
+            media="(min-width: 500px)"
+          />
+        </>
+      )}
+      {field && (
+        <link
+          rel="preload"
+          href={`${process.env.GATSBY_CDN_HOST}/common/icon/unicolor/paperplane.svg`}
+          as="image"
+          type="image/svg+xml"
+        />
+      )}
     </Helmet>
     <Header image={wave} videoId={videoId} translations={translations}>
       <Box align="left" width={1 / 2}>

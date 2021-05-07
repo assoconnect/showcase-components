@@ -7,7 +7,7 @@ import {
   Space,
   Svg,
   Video,
-  VideoImage
+  VideoImage,
 } from '../'
 import React, { useState } from 'react'
 import { formatMessage } from '../../utils/translations'
@@ -55,6 +55,27 @@ const HeaderHome = ({
           href={`${process.env.GATSBY_CDN_HOST}/${image.src}.webp`}
           imagesrcset={`${process.env.GATSBY_CDN_HOST}/${image.src}-2x.webp x2`}
           media="(min-width: 500px)"
+        />
+        <link
+          rel="preload"
+          href={`${process.env.GATSBY_CDN_HOST}/common/logo/${formatMessage(
+            'site_name',
+            translations
+          )}.svg`}
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href={`${process.env.GATSBY_CDN_HOST}/components/video-button/simple-play.svg`}
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href={`${process.env.GATSBY_CDN_HOST}/common/icon/unicolor/paperplane.svg`}
+          as="image"
+          type="image/svg+xml"
         />
       </Helmet>
       <Header

@@ -6,7 +6,6 @@ import NavigationButtons from './NavigationButtons'
 import NavigationItem from './NavigationItem'
 import NavigationToggle from './NavigationToggle'
 import { formatMessage } from '../../utils/translations'
-import { Helmet } from 'react-helmet'
 
 /**
  * Helpers css
@@ -243,17 +242,6 @@ class Navigation extends Component {
     } = this.state
     return (
       <>
-        <Helmet>
-          <link
-            rel="preload"
-            href={`${process.env.GATSBY_CDN_HOST}/common/logo/${formatMessage(
-              'site_name',
-              translations
-            )}.svg`}
-            as="image"
-            type="image/svg+xml"
-          />
-        </Helmet>
         <NavigationMargin />
         <NavigationToggle
           navigationIsFixed={navigationIsFixed}

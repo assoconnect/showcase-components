@@ -93,14 +93,6 @@ const HeaderBig = ({
           />
         </>
       )}
-      {field && (
-        <link
-          rel="preload"
-          href={`${process.env.GATSBY_CDN_HOST}/common/icon/unicolor/paperplane.svg`}
-          as="image"
-          type="image/svg+xml"
-        />
-      )}
     </Helmet>
     <Header image={wave} videoId={videoId} translations={translations}>
       <Box align="left" width={1 / 2}>

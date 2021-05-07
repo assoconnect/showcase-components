@@ -67,14 +67,6 @@ const Header = ({
         as="image"
         href={`${process.env.GATSBY_CDN_HOST}/${image}`}
       />
-      {videoId && (
-        <link
-          rel="preload"
-          href={`${process.env.GATSBY_CDN_HOST}/components/video-button/simple-play.svg`}
-          as="image"
-          type="image/svg+xml"
-        />
-      )}
     </Helmet>
     <HeaderStyled
       style={{

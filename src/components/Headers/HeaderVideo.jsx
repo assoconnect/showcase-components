@@ -38,12 +38,17 @@ const HeaderVideo = ({
   button = {
     href: '/creation-plateforme/',
     children: 'Je commence un essai',
+    target: null,
   },
   field,
   classNameForm,
   translations,
 }) => {
   const [wistiaPopoverVisible, setWistiaPopoverVisible] = useState(false)
+  const target = {}
+  if (button?.target) {
+    target.target = button?.target
+  }
 
   /**
    * Handle click events on VideoButtonWrapper component.
@@ -90,7 +95,7 @@ const HeaderVideo = ({
               translations={translations}
             />
           ) : (
-            <ButtonLink href={button.href} button={{ size: 'big' }}>
+            <ButtonLink href={button.href} button={{ size: 'big' }} {...target}>
               {button.children}
             </ButtonLink>
           )}

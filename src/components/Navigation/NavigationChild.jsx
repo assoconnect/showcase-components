@@ -7,7 +7,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component'
 /**
  * Style
  */
-const NavigationChildStyled = styled(props => <Link {...props} />)`
+const NavigationChildStyled = styled((props) => <Link {...props} />)`
   color: ${UI.colors.middleGrey};
   font-family: Roboto;
   font-size: 14px;
@@ -31,7 +31,7 @@ const NavigationChildStyled = styled(props => <Link {...props} />)`
     font-size: 16px;
   }
 `
-const NavigationChildIcon = styled(props => <Svg {...props} />)`
+const NavigationChildIcon = styled((props) => <Svg {...props} />)`
   vertical-align: middle;
   display: inline-block;
   margin-right: 20px;
@@ -48,7 +48,7 @@ const NavigationChildText = styled.div`
   vertical-align: middle;
   display: inline-block;
 `
-const NavigationChildArrow = styled(props => <Svg {...props} />)`
+const NavigationChildArrow = styled((props) => <Svg {...props} />)`
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
@@ -66,13 +66,13 @@ const NavigationChild = ({
   nofollow,
   text,
 }) => (
-  <LazyLoadComponent>
-    <NavigationChildStyled
-      className={classNames('animation--start-hover', className)}
-      href={href}
-      nofollow={nofollow}
-    >
-      {loadIcon && icon && (
+  <NavigationChildStyled
+    className={classNames('animation--start-hover', className)}
+    href={href}
+    nofollow={nofollow}
+  >
+    {loadIcon && icon && (
+      <LazyLoadComponent>
         <NavigationChildIcon
           className={classNames(
             'animation--effect-wobble',
@@ -82,18 +82,20 @@ const NavigationChild = ({
           src={icon}
           width="24px"
         />
-      )}
-      <NavigationChildText>{text}</NavigationChildText>
-      {arrow && (
+      </LazyLoadComponent>
+    )}
+    <NavigationChildText>{text}</NavigationChildText>
+    {arrow && (
+      <LazyLoadComponent>
         <NavigationChildArrow
           className="animation--effect-wobble"
           src="common/icon/unicolor/small-arrow"
           color="turquoise"
           width="16px"
         />
-      )}
-    </NavigationChildStyled>
-  </LazyLoadComponent>
+      </LazyLoadComponent>
+    )}
+  </NavigationChildStyled>
 )
 
 export default NavigationChild

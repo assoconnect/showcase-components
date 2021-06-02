@@ -36,7 +36,7 @@ const ObfuscatedLinkStyled = styled(({ isStyled, ...rest }) => (
 /**
  * Returns the rel noopener and noreferrer if target === _blank
  */
-const getNoopenerNoreferrer = target =>
+const getNoopenerNoreferrer = (target) =>
   target === '_blank' ? 'noopener noreferrer' : ''
 
 /**
@@ -49,12 +49,25 @@ const Link = ({
   nofollow = null,
   isStyled = true,
   target = null,
+  onClick,
 }) => {
+  const location = (href) => {
+    // New tab
+    if (target || href.indexOf('http') !== -1) {
+      window.open(href, target || '_blank')
+    }
+    // Current tab
+    else {
+      window.location.href = href
+    }
+  }
+
   // Anchor link
   if (href && href.indexOf('#') === 0) {
     return (
       <AnchorLinkStyled
         href={href}
+        onClick={onClick}
         offset={60}
         className={classNames(className)}
         isStyled={isStyled}
@@ -83,6 +96,7 @@ const Link = ({
     return (
       <GatsbyLinkStyled
         to={href}
+        onClick={onClick}
         className={classNames('link', className)}
         target={target}
         isStyled={isStyled}
@@ -102,13 +116,14 @@ const Link = ({
     return (
       <ObfuscatedLinkStyled
         onClick={() => {
-          // New tab
-          if (target || hrefDecoded.indexOf('http') !== -1) {
-            window.open(hrefDecoded, target || '_blank')
-          }
-          // Current tab
-          else {
-            window.location.href = hrefDecoded
+          // Based on Segment trackLink: https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track-link
+          if (onClick) {
+            onClick()
+            setTimeout(() => {
+              location(hrefDecoded)
+            }, 300)
+          } else {
+            location(hrefDecoded)
           }
         }}
         className={classNames('link', className)}
@@ -140,6 +155,15 @@ const Link = ({
     return (
       <LinkStyled
         href={href}
+        onClick={(event) => {
+          if (onClick) {
+            event.preventDefault()
+            onClick()
+            setTimeout(() => {
+              location(href)
+            }, 300)
+          }
+        }}
         className={classNames('link', className)}
         isStyled={isStyled}
         target={target}

@@ -14,6 +14,7 @@ const ButtonLink = ({
   target,
   theme,
   size,
+  onClick,
 }) => {
   return (
     <div id={id}>
@@ -21,6 +22,7 @@ const ButtonLink = ({
         href={href}
         target={target}
         className={classNames('button', 'button--type-link', className)}
+        onClick={onClick}
       >
         <Button align={align} size={size} theme={theme}>
           {children}

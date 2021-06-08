@@ -16,11 +16,11 @@ import { Helmet } from 'react-helmet'
 /**
  * Style
  */
-const HeaderStyled = styled((props) => <Section wave={false} {...props} />)`
+const HeaderStyled = styled(props => <Section wave={false} {...props} />)`
   background: ${UI.colors.blue};
   padding: 3rem 0;
 `
-const ImageStyled = styled((props) => <AdaptiveImage {...props} />)`
+const ImageStyled = styled(props => <AdaptiveImage {...props} />)`
   img {
     object-fit: contain;
   }

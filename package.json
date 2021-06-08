@@ -25,10 +25,10 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop --host=0.0.0.0",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
     "compile": "rm -fr lib && ./node_modules/.bin/babel src --ignore src/pages --out-dir lib",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "prettier:write": "prettier \"src/**/*.{js,jsx,ts,tsx}\" --write",
+    "start": "npm run develop",
     "update": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
@@ -55,6 +55,7 @@
   "prettier": {
     "singleQuote": true,
     "semi": false,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
   }
 }

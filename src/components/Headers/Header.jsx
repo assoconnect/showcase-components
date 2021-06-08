@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 /**
  * Style
  */
-const HeaderStyled = styled((props) => <Flex custom={false} {...props} />)`
+const HeaderStyled = styled(props => <Flex custom={false} {...props} />)`
   min-height: calc(100vh - 100px);
   margin-bottom: 10vw;
   position: relative;
@@ -28,10 +28,10 @@ const HeaderStyled = styled((props) => <Flex custom={false} {...props} />)`
     background-position: top left 19%;
   }
 `
-const HeaderContent = styled((props) => <Flex {...props} />)`
+const HeaderContent = styled(props => <Flex {...props} />)`
   min-height: calc(100vh - 100px);
 `
-const KillerArgumentText = styled((props) => <div {...props} />)`
+const KillerArgumentText = styled(props => <div {...props} />)`
   font-family: ${UI.fonts.family.roboto};
   font-weight: 200;
   color: ${UI.colors.white};

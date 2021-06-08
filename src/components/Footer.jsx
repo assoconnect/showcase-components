@@ -24,7 +24,7 @@ const FooterSocialWrapper = styled.div`
     justify-content: space-between;
   }
 `
-const FooterSocial = styled((props) => <Svg {...props} />)`
+const FooterSocial = styled(props => <Svg {...props} />)`
   margin: 2px 2.7px;
   display: inline-block;
 
@@ -37,7 +37,7 @@ const FooterSocial = styled((props) => <Svg {...props} />)`
     margin: 0;
   }
 `
-const FooterLogoAssoconnect = styled((props) => <Svg {...props} />)`
+const FooterLogoAssoconnect = styled(props => <Svg {...props} />)`
   margin: 2px;
   margin-bottom: 0.5rem;
   /* Mobile mode */
@@ -49,7 +49,7 @@ const FooterLogoAssoconnect = styled((props) => <Svg {...props} />)`
     margin-right: auto;
   }
 `
-const FooterInner = styled((props) => <Flex {...props} />)`
+const FooterInner = styled(props => <Flex {...props} />)`
   max-width: ${UI.widthBoxed}px;
   display: inline-block;
   width: 100%;
@@ -101,7 +101,7 @@ const FooterTitle = styled.li`
     cursor: pointer;
   }
 `
-const FooterWave = styled((props) => <Svg {...props} />)`
+const FooterWave = styled(props => <Svg {...props} />)`
   display: block;
   position: absolute;
   bottom: calc(100% - 1px);
@@ -109,7 +109,7 @@ const FooterWave = styled((props) => <Svg {...props} />)`
   z-index: -1;
   pointer-events: none;
 `
-const FooterLink = styled((props) => <Link {...props} />)`
+const FooterLink = styled(props => <Link {...props} />)`
   opacity: 0.5;
   transition: 0.3s;
 
@@ -117,7 +117,7 @@ const FooterLink = styled((props) => <Link {...props} />)`
     opacity: 1;
   }
 `
-const FooterArrow = styled((props) => (
+const FooterArrow = styled(props => (
   <Svg src="common/icon/unicolor/arrow" {...props} />
 ))`
   footer & {
@@ -134,7 +134,7 @@ const FooterList = styled.li`
     line-height: 48px;
   }
 `
-const FooterLanguageSwitch = styled((props) => <select {...props} />)`
+const FooterLanguageSwitch = styled(props => <select {...props} />)`
   border-radius: 4px;
   padding: 5px 20px 5px 5px;
   font-size: 14px;
@@ -143,7 +143,7 @@ const FooterLanguageSwitch = styled((props) => <select {...props} />)`
   color: #fff;
   margin: 14px 0 2px;
 `
-const FooterLanguageSwitchOption = styled((props) => <option {...props} />)`
+const FooterLanguageSwitchOption = styled(props => <option {...props} />)`
   color: #626262;
   background: #fff;
   transition: 0.3s ease;
@@ -259,7 +259,7 @@ const Footer = ({
 
         <FooterLanguageSwitch
           value={formatMessage('site_url', translations)}
-          onChange={(event) => {
+          onChange={event => {
             window.location.href = event.target.value
           }}
         >

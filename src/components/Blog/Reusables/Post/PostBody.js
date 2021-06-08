@@ -146,7 +146,8 @@ const PostBodyStyled = styled.div`
     content: '';
     position: absolute;
     left: 30px;
-    background-image: url('${process.env.GATSBY_CDN_HOST}/common/icon/multicolor/quote.png');
+    background-image: url('${process.env
+      .GATSBY_CDN_HOST}/common/icon/multicolor/quote.png');
     background-size: cover;
     width: 70px;
     height: 55px;

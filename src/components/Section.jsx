@@ -17,7 +17,7 @@ const SectionStyled = styled.section`
   padding: 3rem 0 calc(3rem + 8vw);
   z-index: 10;
 `
-const SectionWave = styled((props) => <Svg {...props} />)`
+const SectionWave = styled(props => <Svg {...props} />)`
   display: block;
   pointer-events: none;
   position: absolute;
@@ -54,7 +54,7 @@ const Section = ({
         py="2rem"
         justifyContent={justifyContent}
       >
-        {Children.map(children, (child) => {
+        {Children.map(children, child => {
           return React.cloneElement(child, { wave: wave.color })
         })}
       </Flex>

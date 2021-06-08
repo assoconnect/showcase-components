@@ -17,7 +17,7 @@ import { KillerArgument } from './Header'
 /**
  * Style
  */
-const HeaderSpace = styled((props) => <Space {...props} />)`
+const HeaderSpace = styled(props => <Space {...props} />)`
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     padding-top: 1.25rem;
   }
@@ -27,7 +27,7 @@ const SpanStyled = styled.div`
   position: relative;
   width: 100%;
 `
-const Yado = styled((props) => <AdaptiveImage {...props} />)`
+const Yado = styled(props => <AdaptiveImage {...props} />)`
   position: absolute;
   bottom: 0;
   right: 2rem;

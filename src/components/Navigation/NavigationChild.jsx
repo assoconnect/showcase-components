@@ -7,7 +7,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component'
 /**
  * Style
  */
-const NavigationChildStyled = styled((props) => <Link {...props} />)`
+const NavigationChildStyled = styled(props => <Link {...props} />)`
   color: ${UI.colors.middleGrey};
   font-family: Roboto;
   font-size: 14px;
@@ -31,7 +31,7 @@ const NavigationChildStyled = styled((props) => <Link {...props} />)`
     font-size: 16px;
   }
 `
-const NavigationChildIcon = styled((props) => <Svg {...props} />)`
+const NavigationChildIcon = styled(props => <Svg {...props} />)`
   vertical-align: middle;
   display: inline-block;
   margin-right: 20px;
@@ -48,7 +48,7 @@ const NavigationChildText = styled.div`
   vertical-align: middle;
   display: inline-block;
 `
-const NavigationChildArrow = styled((props) => <Svg {...props} />)`
+const NavigationChildArrow = styled(props => <Svg {...props} />)`
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;

@@ -61,7 +61,8 @@ const TableBodyCell = styled.td`
     display: block;
     width: 1rem;
     height: 1rem;
-    background-image: url('${process.env.GATSBY_CDN_HOST}/components/table/arrow.svg');
+    background-image: url('${process.env
+      .GATSBY_CDN_HOST}/components/table/arrow.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 8px;
@@ -238,21 +239,23 @@ const TablePrice = ({ columns, datas, crossColor = 'middleGrey' }) => (
       columns={transformColumns(columns)}
       data={transformData(datas, crossColor)}
     />
-    {// Mobile mode
-    columns.map(
-      (column, i) =>
-        column.dataIndex !== 'title' && (
-          <div key={i}>
-            <Space size="small" />
-            <TableExpansionPanel
-              column={column}
-              datas={datas}
-              key={i}
-              crossColor={crossColor}
-            />
-          </div>
-        )
-    )}
+    {
+      // Mobile mode
+      columns.map(
+        (column, i) =>
+          column.dataIndex !== 'title' && (
+            <div key={i}>
+              <Space size="small" />
+              <TableExpansionPanel
+                column={column}
+                datas={datas}
+                key={i}
+                crossColor={crossColor}
+              />
+            </div>
+          )
+      )
+    }
   </>
 )
 

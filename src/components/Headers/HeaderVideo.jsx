@@ -19,7 +19,7 @@ import { KillerArgument } from './Header'
 /**
  * Style
  */
-const HeaderSpace = styled((props) => <Space {...props} />)`
+const HeaderSpace = styled(props => <Space {...props} />)`
   @media screen and (max-width: ${UI.breakpoints.mobile}) {
     padding-top: 1.25rem;
   }

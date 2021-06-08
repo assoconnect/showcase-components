@@ -1,9 +1,10 @@
+import { createGlobalStyle } from 'styled-components'
+
 import animations from './animations'
 import breakpoints from './breakpoints'
 import colors from './colors'
 import fonts from './fonts'
 import shadows from './shadows'
-import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   /* Reset css */

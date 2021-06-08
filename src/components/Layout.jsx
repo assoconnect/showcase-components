@@ -5,7 +5,7 @@ import Footer from './Footer'
 import { ThemeProvider } from 'styled-components'
 import { formatMessage } from '../utils/translations'
 
-const getUrlWithoutParams = (url) => url.split('?')[0]
+const getUrlWithoutParams = url => url.split('?')[0]
 
 /**
  * Component

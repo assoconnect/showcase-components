@@ -36,7 +36,7 @@ const ObfuscatedLinkStyled = styled(({ isStyled, ...rest }) => (
 /**
  * Returns the rel noopener and noreferrer if target === _blank
  */
-const getNoopenerNoreferrer = (target) =>
+const getNoopenerNoreferrer = target =>
   target === '_blank' ? 'noopener noreferrer' : ''
 
 /**
@@ -51,7 +51,7 @@ const Link = ({
   target = null,
   onClick,
 }) => {
-  const location = (href) => {
+  const location = href => {
     // New tab
     if (target || href.indexOf('http') !== -1) {
       window.open(href, target || '_blank')
@@ -155,7 +155,7 @@ const Link = ({
     return (
       <LinkStyled
         href={href}
-        onClick={(event) => {
+        onClick={event => {
           if (onClick) {
             event.preventDefault()
             onClick()

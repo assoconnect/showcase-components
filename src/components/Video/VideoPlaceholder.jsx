@@ -6,15 +6,16 @@ import { chunk } from '../../utils/array'
 /**
  * Style
  */
-const VideoPlaceholderWrapper = styled.div`
+const VideoPlaceholderWrapper = styled(props => <div {...props} />)`
   margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: auto;
+  width: ${props => props.width};
+  height: ${props => props.height};
+  max-width: 100%;
   padding-top: 56.25%;
   background: #4174eb;
   background-size: cover;
@@ -108,6 +109,8 @@ class VideoPlaceholder extends Component {
       videoTitle = '',
       autoplay = true,
       placeholderSrc = 'components/video/video-placeholder',
+      width = '100%',
+      height = 'auto',
     } = this.props
     const { videoVisible } = this.state
     const titleParts = this.getTitleParts(videoTitle)
@@ -116,6 +119,8 @@ class VideoPlaceholder extends Component {
         {!videoVisible ? (
           <VideoPlaceholderWrapper
             onClick={this.handleVideoPlaceholderWrapperClick}
+            width={width}
+            height={height}
           >
             <BackgroundImage src={placeholderSrc} />
             <PlayButton src="components/video-placeholder/play-button" />

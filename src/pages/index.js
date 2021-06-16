@@ -6,7 +6,7 @@ import {
   BigTitle,
   Box,
   ButtonLink,
-  HeaderHome,
+  HeaderVideo,
   Layout,
   Link,
   MiddleTitle,
@@ -20,6 +20,8 @@ import {
   PostMain,
   Newsletter,
   Table,
+  VideoPlaceholder,
+  Video,
 } from '../components'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
 const IndexPage = () => (
@@ -32,29 +34,32 @@ const IndexPage = () => (
         'Le Logiciel Tout-en-Un des Associations ! Tous les Outils de Gestion de votre Association dans un Logiciel : Adhésions, Compta, Dons en Ligne, Site Web, Emails',
     }}
   >
-    <HeaderHome
-      image={{
-        src: 'pages/index/header_home',
-        alt: 'Gestion des membres pour association',
-      }}
-      subTitle={
-        <>
-          Changez le monde,
-          <br />
-          AssoConnect s'occupe du reste !
-        </>
-      }
+    <HeaderVideo
+      wave="components/headers/header-big/wave-asso.svg"
       title={
         <>
-          Le logiciel tout-en-un
-          <br />
-          pour gérer simplement
-          <br />
-          votre association
+          Le logiciel de gestion <br />
+          pour toutes les associations
         </>
       }
-      videoId="6yurbg1g3b"
+      subTitle={
+        <>
+          Notre <Link href="/">logiciel de gestion</Link> s'adapte à tous les
+          secteurs associatifs : sportive, caritative, culturelle, loisirs,
+          réseaux, omnisports, etc.
+        </>
+      }
+      image={{
+        src:
+          'pages/associations/culturelle/tableau-bord-association-culturelle',
+        alt: 'Tableau de bord Logiciel Gestion Association',
+        width: '670',
+        height: '500',
+      }}
+      videoId="7n612yo14o"
     />
+    <VideoPlaceholder videoId="6yurbg1g3b" />
+    <Video videoId="6yurbg1g3b" />
     <Section wave={{ direction: 'down' }}>
       <Newsletter
         buttonHref="https://app.assoconnect.com/sign-up?lang=en_US"

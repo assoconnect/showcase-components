@@ -11,7 +11,7 @@ import {
   VideoImage,
 } from '../'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { KillerArgument } from './Header'
@@ -49,8 +49,20 @@ const HeaderVideo = ({
   if (button?.target) {
     target.target = button?.target
   }
+  const headerAutoplay = new URLSearchParams(window.location.search).get(
+    'headerAutoplay'
+  )
 
   /**
+   * Auto play the video if a headerAutoplay variable exist in the url
+   */
+  useEffect(() => {
+    if (headerAutoplay) {
+      setWistiaPopoverVisible(true)
+    }
+  }, [headerAutoplay])
+
+  /**,
    * Handle click events on VideoButtonWrapper component.
    */
   const handleVideoButtonWrapperClick = () => {
@@ -60,6 +72,7 @@ const HeaderVideo = ({
       setWistiaPopoverVisible(true)
     }, 100)
   }
+
   return (
     <>
       <Helmet>

@@ -50,17 +50,21 @@ const HeaderVideo = ({
     target.target = button?.target
   }
 
+  let headerAutoplay
+  if (window) {
+    headerAutoplay = new URLSearchParams(window.location.search).get(
+      'headerAutoplay'
+    )
+  }
+
   /**
    * Auto play the video if a headerAutoplay variable exist in the url
    */
   useEffect(() => {
-    const headerAutoplay = new URLSearchParams(window?.location?.search).get(
-      'headerAutoplay'
-    )
     if (headerAutoplay) {
       setWistiaPopoverVisible(true)
     }
-  }, [window])
+  }, [headerAutoplay])
 
   /**,
    * Handle click events on VideoButtonWrapper component.

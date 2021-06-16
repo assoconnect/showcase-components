@@ -15,6 +15,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { KillerArgument } from './Header'
+import { globalHistory as history } from '@reach/router'
 
 /**
  * Style
@@ -50,12 +51,10 @@ const HeaderVideo = ({
     target.target = button?.target
   }
 
-  let headerAutoplay
-  if (window) {
-    headerAutoplay = new URLSearchParams(window.location.search).get(
-      'headerAutoplay'
-    )
-  }
+  const { location } = history
+  const headerAutoplay = new URLSearchParams(location.search).get(
+    'headerAutoplay'
+  )
 
   /**
    * Auto play the video if a headerAutoplay variable exist in the url

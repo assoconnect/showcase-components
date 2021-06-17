@@ -150,6 +150,15 @@ class Layout extends Component {
                 e.async = true; e.src = "//static.axept.io/sdk-slim.js";
                 t.parentNode.insertBefore(e, t);
               })(document, "script");
+              void 0 === window._axcb && (window._axcb = []);
+              // Loading trackers 
+              window._axcb.push(function(axeptio) {
+                axeptio.on("cookies:complete", function(choices) {
+                  console.log(choices);
+                  // Load RudderStack
+                  rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId"],i=0;i<methods.length;i++){var method=methods[i];rudderanalytics[method]=function(a){return function(){rudderanalytics.push([a].concat(Array.prototype.slice.call(arguments)))}}(method)}rudderanalytics.load(<?php echo_js(\Spark\Core::option('tracking.rudderstack.key')); ?>,<?php echo_js(\Spark\Core::option('tracking.rudderstack.host')); ?>),rudderanalytics.page();
+                })
+              })
             `}
           </script>
         </Helmet>

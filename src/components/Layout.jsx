@@ -75,7 +75,8 @@ class Layout extends Component {
       lang = 'fr',
       richSnippets,
       tagManagerId,
-      axeptio: { clientId, cookiesVersion },
+      rudderStack,
+      axeptio,
     } = this.props
 
     const url =
@@ -142,8 +143,8 @@ class Layout extends Component {
           <script>
             {`
               window.axeptioSettings = {
-                clientId: "${clientId}",
-                cookiesVersion: "${cookiesVersion}",
+                clientId: "${axeptio.clientId}",
+                cookiesVersion: "${axeptio.cookiesVersion}",
               };
               (function(d, s) {
                 var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
@@ -156,7 +157,7 @@ class Layout extends Component {
                 axeptio.on("cookies:complete", function(choices) {
                   console.log(choices);
                   // Load RudderStack
-                  rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId"],i=0;i<methods.length;i++){var method=methods[i];rudderanalytics[method]=function(a){return function(){rudderanalytics.push([a].concat(Array.prototype.slice.call(arguments)))}}(method)}rudderanalytics.load(<?php echo_js(\Spark\Core::option('tracking.rudderstack.key')); ?>,<?php echo_js(\Spark\Core::option('tracking.rudderstack.host')); ?>),rudderanalytics.page();
+                  rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId"],i=0;i<methods.length;i++){var method=methods[i];rudderanalytics[method]=function(a){return function(){rudderanalytics.push([a].concat(Array.prototype.slice.call(arguments)))}}(method)}rudderanalytics.load("${rudderStack.key}","${rudderStack.host}"),rudderanalytics.page();
                 })
               })
             `}

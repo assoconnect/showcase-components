@@ -156,9 +156,10 @@ class Layout extends Component {
               window._axcb.push(function(axeptio) {
                 axeptio.on("cookies:complete", function(choices) {
                   // Load RudderStack
-                  console.log(choices);
-                  console.log(choices.rudderstack);
                   if(choices.rudderstack) {
+                    var script = document.createElement('script');
+                    script.setAttribute('src', 'https://cdn.rudderlabs.com/v1/rudder-analytics.min.js');
+                    document.head.append(script);
                     rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId"],i=0;i<methods.length;i++){var method=methods[i];rudderanalytics[method]=function(a){return function(){rudderanalytics.push([a].concat(Array.prototype.slice.call(arguments)))}}(method)}rudderanalytics.load("${rudderStack.key}","${rudderStack.host}"),rudderanalytics.page();
                   }
                 })

@@ -23,11 +23,10 @@ const ImageStyled = styled.img`
     ${({ roundShape }) => roundShape && 'border-radius:50%'}
   }
   .slick-slide & {
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
+    width: ${({ width }) => (width ? width : '100%;')};
+    height: ${({ height }) => (height ? height : '100%;')};
   }
 `
-
 /**
  * Component
  */

@@ -12,6 +12,20 @@ const ImageWrapper = styled.div`
   ${({ inline }) => inline && 'display: inline-block; vertical-align:middle;'}
 `
 
+const ImageStyledFull = styled.img`
+  width: 100% !important;
+  height: 100% !important;
+  &,
+  .slick-slides & {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    ${({ roundShape }) => roundShape && 'border-radius:50%'}
+  }
+`
+
 const ImageStyled = styled.img`
   &,
   .slick-slide & {
@@ -23,8 +37,8 @@ const ImageStyled = styled.img`
     ${({ roundShape }) => roundShape && 'border-radius:50%'}
   }
   .slick-slide & {
-    width: ${({ width, isFullSize }) => (isFullSize ? '100%;' : width)};
-    height: ${({ height, isFullSize }) => (isFullSize ? '100%;' : height)};
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
   }
 `
 /**
@@ -93,13 +107,21 @@ const AdaptiveImage = ({
                 : '')
             }
           />
-          <ImageStyled
-            src={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
-            alt={alt}
-            roundShape={roundShape}
-            {...sizeProps}
-            isFullSize={isFullSize}
-          />
+          {isFullSize ? (
+            <ImageStyledFull
+              src={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
+              alt={alt}
+              roundShape={roundShape}
+              {...sizeProps}
+            />
+          ) : (
+            <ImageStyled
+              src={`${process.env.GATSBY_CDN_HOST}/${src}.png`}
+              alt={alt}
+              roundShape={roundShape}
+              {...sizeProps}
+            />
+          )}
         </picture>
       </LazyLoadComponent>
     </ImageWrapper>

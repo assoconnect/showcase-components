@@ -23,11 +23,10 @@ const ImageStyled = styled.img`
     ${({ roundShape }) => roundShape && 'border-radius:50%'}
   }
   .slick-slide & {
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
+    width: ${({ width }) => (isFullSize ? '100%;' : width)};
+    height: ${({ height }) => (isFullSize ? '100%;' : height)};
   }
 `
-
 /**
  * Component
  */
@@ -44,6 +43,7 @@ const AdaptiveImage = ({
   roundShape = false,
   id,
   style,
+  isFullSize = false,
 }) => {
   const sizeProps = {}
   if (width) {
@@ -98,6 +98,7 @@ const AdaptiveImage = ({
             alt={alt}
             roundShape={roundShape}
             {...sizeProps}
+            isFullSize={isFullSize}
           />
         </picture>
       </LazyLoadComponent>

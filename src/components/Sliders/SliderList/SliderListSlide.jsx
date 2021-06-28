@@ -25,9 +25,15 @@ const SliderListSlide = ({ title, image, list }) => (
           alt={image.alt}
           maxDpi={image.maxDpi}
           visibleByDefault
+          isFullSize
         />
       ) : (
-        <AdaptiveImage src={image.src} alt={image.alt} visibleByDefault />
+        <AdaptiveImage
+          src={image.src}
+          alt={image.alt}
+          visibleByDefault
+          isFullSize
+        />
       )}
     </Box>
     <Box width={1 / 2}>

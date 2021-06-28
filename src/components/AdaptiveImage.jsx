@@ -43,7 +43,7 @@ const AdaptiveImage = ({
   roundShape = false,
   id,
   style,
-  isFullSize = false,
+  isFullSize,
 }) => {
   const sizeProps = {}
   if (width) {

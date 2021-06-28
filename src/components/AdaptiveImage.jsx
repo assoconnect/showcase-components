@@ -23,8 +23,8 @@ const ImageStyled = styled.img`
     ${({ roundShape }) => roundShape && 'border-radius:50%'}
   }
   .slick-slide & {
-    width: ${({ width }) => (isFullSize ? '100%;' : width)};
-    height: ${({ height }) => (isFullSize ? '100%;' : height)};
+    width: ${({ width, isFullSize }) => (isFullSize ? '100%;' : width)};
+    height: ${({ height, isFullSize }) => (isFullSize ? '100%;' : height)};
   }
 `
 /**
